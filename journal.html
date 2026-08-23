@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Journal — Skincare &amp; Wellness Notes | Pee Skin &amp; MedSpa Abuja</title>
+<meta name="description" content="Skincare, laser and wellness writing from Pee Skin &amp; MedSpa in Gwarinpa, Abuja. Practical notes on treatments, products and Nigerian skin.">
+<link rel="canonical" href="https://peeskin.com/news/">
+<meta property="og:title" content="Journal — Pee Skin &amp; MedSpa, Gwarinpa">
+<meta property="og:description" content="Practical notes on treatments, products and Nigerian skin.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://peeskin.com/wp-content/uploads/2025/03/cropped-Untitled-design-26-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{overflow-x:hidden;-webkit-text-size-adjust:100%}
+  body{margin:0;background:#F5F0E6;color:#14100C;font-family:Karla,-apple-system,Segoe UI,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  h1,h2,h3,h4,p,ul,ol,li,figure,figcaption{margin:0;padding:0}
+  ul,ol{list-style:none}
+  img{display:block;max-width:100%}
+  a{color:#8A5A2E;text-decoration:none}
+  a:hover{color:#14100C}
+  button,input{font:inherit;color:inherit}
+  ::selection{background:#C69B54;color:#14100C}
+  :focus-visible{outline:2px solid #C69B54;outline-offset:3px}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @keyframes psRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+  [data-reveal][data-seen]{opacity:1;transform:none}
+</style>
+</helmet>
+
+<div style="background:#F5F0E6;min-height:100vh;padding-bottom:74px">
+<dc-import name="SiteNav" active="journal" hint-size="100%,58px"></dc-import>
+
+<main>
+  <section style="background:#14100C;color:#FBF7F0">
+    <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px) clamp(36px,5vw,60px);display:flex;flex-direction:column;gap:20px;max-width:880px">
+      <div style="display:flex;align-items:center;gap:15px">
+        <span style="width:44px;height:1px;background:#C69B54"></span>
+        <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Notes from the clinic</span>
+      </div>
+      <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:.96;letter-spacing:-.034em;color:#FBF7F0">The Journal</h1>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(251,247,240,.72);max-width:520px">What we tell clients in the room, written down. Practical, specific to Nigerian skin, and free of the marketing that usually comes attached.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,6vw,80px) clamp(16px,3vw,34px) clamp(28px,4vw,48px)">
+    <a data-reveal="1" href="{{ lead.href }}" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(20,16,12,.14);color:#14100C" data-lead="1">
+      <span style="display:block;aspect-ratio:16/10;overflow:hidden;background:#EDE5D6">
+        <span style="display:block;width:100%;height:100%;background-image:url('{{ lead.img }}');background-size:cover;background-position:center;filter:saturate(.85) contrast(1.03)" role="img" aria-label="{{ lead.title }}"></span>
+      </span>
+      <span style="background:#F5F0E6;padding:clamp(26px,3vw,48px);display:flex;flex-direction:column;justify-content:center;gap:14px">
+        <span style="display:flex;gap:14px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E">{{ lead.cat }}<span style="color:#7A7168">{{ lead.date }}</span></span>
+        <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(26px,3.6vw,48px);line-height:1.04;letter-spacing:-.026em">{{ lead.title }}</span>
+        <span style="font-size:16.5px;line-height:1.7;color:#4C463E;max-width:46ch">{{ lead.excerpt }}</span>
+        <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A8562F;margin-top:4px">Read the piece →</span>
+      </span>
+    </a>
+  </section>
+
+  <section style="padding:0 clamp(16px,3vw,34px) clamp(56px,8vw,110px)">
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:clamp(18px,2.4vw,32px)">
+      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="6">
+        <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:14px;color:#14100C">
+          <span style="display:block;aspect-ratio:4/3;overflow:hidden;background:#EDE5D6">
+            <span style="display:block;width:100%;height:100%;background-image:url('{{ p.img }}');background-size:cover;background-position:center;filter:saturate(.85) contrast(1.03)" role="img" aria-label="{{ p.title }}"></span>
+          </span>
+          <span style="display:flex;flex-direction:column;gap:8px">
+            <span style="display:flex;gap:12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E">{{ p.cat }}<span style="color:#7A7168">{{ p.date }}</span></span>
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(20px,2.1vw,25px);line-height:1.15">{{ p.title }}</span>
+            <span style="font-size:14.5px;line-height:1.6;color:#4C463E">{{ p.excerpt }}</span>
+          </span>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#EDE5D6;border-top:1px solid #DCD0BC">
+    <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px);display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,64px);align-items:center" data-two-col="1" data-reveal="1">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <span style="font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:#8A5A2E">One email a month</span>
+        <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,56px);line-height:1;letter-spacing:-.03em">Offers before they hit Instagram.</h2>
+        <p style="font-size:17px;line-height:1.7;color:#4C463E;max-width:40ch">Seasonal packages, new treatments and the occasional piece of writing. Nothing else, and one click to leave.</p>
+      </div>
+      <form action="#" method="post" style="display:flex;flex-direction:column;gap:12px;background:#F5F0E6;border:1px solid #DCD0BC;padding:clamp(24px,3vw,36px)">
+        <label for="j-name" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7A7168">Name</label>
+        <input id="j-name" type="text" name="name" style="padding:14px 16px;border:1px solid #DCD0BC;background:#FBF7F0;font-size:15px">
+        <label for="j-email" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7A7168;margin-top:6px">Email</label>
+        <input id="j-email" type="email" name="email" required="required" style="padding:14px 16px;border:1px solid #DCD0BC;background:#FBF7F0;font-size:15px">
+        <button type="submit" style="margin-top:14px;align-self:flex-start;background:#14100C;color:#F5F0E6;border:0;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:16px 30px;cursor:pointer" style-hover="background:#C69B54;color:#14100C">Subscribe</button>
+      </form>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const P = {
+  journal:'https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1600&q=80',
+  laser:'https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=1600&q=80',
+  spa:'https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1600&q=80',
+  aes:'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80',
+  salon:'https://images.unsplash.com/photo-1632765866070-3fadf25d3d5b?auto=format&fit=crop&w=1600&q=80',
+  facial:'https://images.unsplash.com/photo-1693004927824-f2623bbedc8b?auto=format&fit=crop&w=1600&q=80',
+  massage:'https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1600&q=80'
+};
+
+function cssToObj(s){ var o = {}; (s || '').split(';').forEach(function(d){ var i = d.indexOf(':'); if (i > 0) { var k = d.slice(0, i).trim().replace(/-([a-z])/g, function(m, c){ return c.toUpperCase(); }); o[k] = d.slice(i + 1).trim(); } }); return o; }
+function imgStyle(u, extra){ return Object.assign({width:'100%',height:'100%',backgroundImage:'url("' + u + '")',backgroundSize:'cover',backgroundPosition:'center',filter:'saturate(.85) contrast(1.03)'}, cssToObj(extra)); }
+function withImg(list, extra){ return list.map(function(o){ var c = Object.assign({}, o); if (o.img) c.imgStyle = imgStyle(o.img, extra); if (o.before) c.beforeStyle = imgStyle(o.before, extra); if (o.after) c.afterStyle = imgStyle(o.after, extra); return c; }); }
+
+class Component extends DCLogic {
+  componentDidMount(){
+    const root = this.el || document;
+    this._io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.setAttribute('data-seen',''); this._io.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
+    const mq = window.matchMedia('(min-width: 960px)');
+    const apply = () => {
+      root.querySelectorAll('[data-two-col]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '1fr 1fr' : '1fr'; });
+      root.querySelectorAll('[data-lead]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '1.15fr 1fr' : '1fr'; });
+      root.querySelectorAll('[data-reveal]').forEach(n => { if (!n.hasAttribute('data-obs')) { n.setAttribute('data-obs',''); this._io.observe(n); } });
+    };
+    this._apply = apply; this._mq = mq;
+    mq.addEventListener('change', apply); apply(); this._t = setInterval(apply, 600);
+  }
+  componentDidUpdate(){ if (this._apply) this._apply(); }
+  componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
+  renderVals(){
+    return {
+      lead: {
+        cat:'Laser', date:'August 2026',
+        title:'Laser on dark skin: what the wavelength actually does',
+        excerpt:'Almost every burn story in Nigeria traces back to the same thing — a device designed for pale skin, used on skin it was never tested on. Here is the difference between 755nm, 810nm and 1064nm, in plain terms, and the questions to ask before you let anyone treat you.',
+        img: P.laser, imgStyle: imgStyle(P.laser), href:'laser-hair-removal.html'
+      },
+      posts: withImg([
+        {cat:'Skincare', date:'April 2025', title:'Top 5 Skincare Treatments in Abuja for Glowing Skin', excerpt:'The five that consistently earn their price, and roughly what each one will and will not fix.', img:P.journal, href:'https://peeskin.com/top-5-skincare-treatments-in-abuja-for-glowing-skin/'},
+        {cat:'Industry', date:'April 2025', title:'The Rise of Beauty Aesthetics in Nigeria: What You Need to Know', excerpt:'Aesthetics has grown faster than its regulation. What that means for you as a client, and how to choose safely.', img:P.aes, href:'https://peeskin.com/the-rise-of-beauty-aesthetics-in-nigeria-what-you-need-to-know/'},
+        {cat:'Guides', date:'April 2025', title:'Choosing the Right Salon and Spa in Gwarinpa', excerpt:'Hygiene, training, equipment and pricing — the four things worth checking before you book anywhere.', img:P.salon, href:'https://peeskin.com/choosing-the-right-salon-and-spa-in-gwarinpa-what-you-should-know/'},
+        {cat:'Products', date:'April 2025', title:'Best Skincare Products for Nigerian Skin: What to Try', excerpt:'What actually works on melanin-rich skin in a hot, humid climate, and what to leave on the shelf.', img:P.facial, href:'https://peeskin.com/best-skincare-products-for-nigerian-skin-what-you-need-to-try/'},
+        {cat:'Treatments', date:'August 2026', title:'What a Moroccan hammam is, and what it is not', excerpt:'It is not a body scrub with a better name. The steam, the black soap and the kessa glove each do a specific job.', img:P.spa, href:'spa-treatments.html'},
+        {cat:'Wellness', date:'August 2026', title:'Why your shoulders hurt, and what an hour fixes', excerpt:'Abuja traffic, desk work and phone posture load the same three muscles. What deep tissue work actually reaches.', img:P.massage, href:'spa-treatments.html'}
+      ])
+    };
+  }
+}
+</script>
+</body>
+</html>

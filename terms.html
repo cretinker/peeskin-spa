@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms &amp; Conditions — Pee Skin &amp; MedSpa, Gwarinpa, Abuja</title>
+<meta name="description" content="Booking, deposits, lateness, consent, treatment suitability and liability. The terms on which Pee Skin &amp; MedSpa in Gwarinpa, Abuja provides treatment.">
+<link rel="canonical" href="https://peeskin.com/terms/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Terms &amp; Conditions — Pee Skin &amp; MedSpa">
+<meta property="og:description" content="Booking, deposits, consent, suitability and liability.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NG">
+<link rel="icon" href="https://peeskin.com/wp-content/uploads/2025/03/cropped-Untitled-design-26-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{overflow-x:hidden;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:#F5F0E6;color:#14100C;font-family:Karla,-apple-system,Segoe UI,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  h1,h2,h3,p,ul,ol,li{margin:0;padding:0}
+  ul,ol{list-style:none}
+  a{color:#8A5A2E;text-decoration:none}
+  a:hover{color:#14100C}
+  ::selection{background:#C69B54;color:#14100C}
+  :focus-visible{outline:2px solid #C69B54;outline-offset:3px}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @keyframes psRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="background:#F5F0E6;min-height:100vh;padding-bottom:74px">
+<dc-import name="SiteNav" hint-size="100%,58px"></dc-import>
+
+<main>
+  <section style="background:#14100C;color:#FBF7F0">
+    <div style="padding:clamp(44px,6vw,88px) clamp(16px,3vw,34px);display:flex;flex-direction:column;gap:18px;max-width:820px">
+      <div style="display:flex;align-items:center;gap:15px">
+        <span style="width:44px;height:1px;background:#C69B54"></span>
+        <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Last updated 1 August 2026</span>
+      </div>
+      <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(34px,6.4vw,76px);line-height:.98;letter-spacing:-.032em;color:#FBF7F0">Terms &amp; Conditions</h1>
+      <p style="font-size:clamp(16px,1.5vw,18px);line-height:1.65;color:rgba(251,247,240,.72);max-width:56ch">The terms on which we take a booking and provide treatment. Booking an appointment, in person or on WhatsApp, means these apply.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,6vw,84px) clamp(16px,3vw,34px)">
+    <div style="display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,64px);align-items:start" data-legal="1">
+      <nav aria-label="On this page" style="display:flex;flex-direction:column;gap:9px;position:sticky;top:90px">
+        <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;padding-bottom:10px;border-bottom:1px solid #DCD0BC">On this page</span>
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="10">
+          <a href="#{{ s.id }}" style="font-size:14px;line-height:1.4;color:#4C463E" style-hover="color:#8A5A2E">{{ s.n }} · {{ s.title }}</a>
+        </sc-for>
+      </nav>
+
+      <div style="display:flex;flex-direction:column;max-width:66ch">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="10">
+          <section id="{{ s.id }}" style="padding-bottom:clamp(26px,3vw,40px);margin-bottom:clamp(26px,3vw,40px);border-bottom:1px solid #DCD0BC">
+            <span style="display:block;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#8A5A2E;margin-bottom:10px">{{ s.n }}</span>
+            <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(24px,3vw,36px);line-height:1.08;letter-spacing:-.02em;margin-bottom:16px">{{ s.title }}</h2>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <sc-for list="{{ s.body }}" as="p" hint-placeholder-count="3">
+                <p style="font-size:16.5px;line-height:1.75;color:#4C463E">{{ p }}</p>
+              </sc-for>
+            </div>
+            <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
+              <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;border-top:1px solid #DCD0BC;padding-top:16px">
+                <sc-for list="{{ s.list }}" as="i" hint-placeholder-count="4">
+                  <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline">
+                    <span style="width:5px;height:5px;background:#C69B54;border-radius:50%"></span>
+                    <span style="font-size:16px;line-height:1.7;color:#4C463E">{{ i }}</span>
+                  </li>
+                </sc-for>
+              </ul>
+            </sc-if>
+          </section>
+        </sc-for>
+
+        <div style="background:#EDE5D6;border:1px solid #DCD0BC;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E">Questions about these terms</span>
+          <p style="font-size:16px;line-height:1.7;color:#4C463E">Ask at the desk, call 0905 883 0888 or email <a href="mailto:support@peeskin.com">support@peeskin.com</a>. Nothing here removes any right you have under Nigerian consumer or health law.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount(){
+    const mq = window.matchMedia('(min-width: 960px)');
+    const apply = () => {
+      const root = this.el || document;
+      root.querySelectorAll('[data-legal]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '250px minmax(0,1fr)' : '1fr'; });
+      root.querySelectorAll('nav[aria-label="On this page"]').forEach(n => { n.style.position = mq.matches ? 'sticky' : 'static'; });
+    };
+    this._apply = apply; this._mq = mq;
+    mq.addEventListener('change', apply); apply(); this._t = setInterval(apply, 700);
+  }
+  componentDidUpdate(){ if (this._apply) this._apply(); }
+  componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); clearInterval(this._t); }
+  renderVals(){
+    const raw = [
+      {id:'booking', title:'Booking an appointment', body:[
+        'An appointment is confirmed when we have replied to confirm it, not when you send the request. WhatsApp is answered fastest during opening hours: Monday to Saturday 9am to 9pm, and Sunday 1pm to 9pm.',
+        'Prices published on this website are the prices charged in the clinic. Where a treatment must be quoted after assessment, we say so on the price list and give you the total in writing before you commit.'
+      ]},
+      {id:'deposits', title:'Deposits', body:[
+        'A deposit of ₦10,000 holds any appointment longer than one hour, and any group booking. It comes off the final bill.',
+        'Prepaid courses are paid in full before the first session, or split across two payments with the second falling due before session three. A course is valid for twelve months from purchase and is locked at the price you paid even if our rates rise mid-course.'
+      ]},
+      {id:'cancelling', title:'Cancelling and moving appointments', body:[
+        'Twenty-four hours notice moves an appointment free of charge, as often as you need. Inside twenty-four hours the deposit is retained, because the slot can rarely be refilled at that notice.',
+        'Group bookings need seven days notice to move or cancel without losing the deposit.'
+      ]},
+      {id:'lateness', title:'Lateness', body:[
+        'We will treat you for the time remaining in your slot rather than run into the next client, and the full price still applies. Arriving more than twenty minutes late counts as a cancellation.',
+        'If we run late, which occasionally happens, you get the full treatment time or a reduction. We will tell you which when you arrive.'
+      ]},
+      {id:'consent', title:'Consultation and consent', body:[
+        'Every treatment requires a completed consultation form covering medical history, medication, allergies and pregnancy status. Withholding relevant information puts you at risk and releases us from liability for a resulting complication.',
+        'Laser clients are patch tested at least forty-eight hours before the first full session, with no exceptions, including clients who have had laser elsewhere.',
+        'Injectable treatments require a separate consultation at least twenty-four hours before treatment. Nobody is injected on the day they first attend.'
+      ]},
+      {id:'suitability', title:'Treatment we will decline', body:[
+        'We reserve the right to refuse or stop a treatment where it is unsafe or will not achieve what you want. Where we decline before treating, any deposit is returned in full.'
+      ], list:[
+        'Pregnancy, for laser and all injectable treatments.',
+        'Skin that is actively tanned, irritated, infected or recently waxed.',
+        'Hair with no pigment for the laser to target — grey, red and very fine blonde hair.',
+        'Expectations a treatment cannot meet, or signs of body dysmorphia.',
+        'Clients under eighteen, for any aesthetic or laser treatment.'
+      ]},
+      {id:'results', title:'Results', body:[
+        'Session counts and outcomes described on this website are typical ranges drawn from our own clients, not guarantees. Skin, hair type, hormones and how closely aftercare is followed all change the result.',
+        'Laser hair removal produces permanent reduction rather than permanent removal. Hormonal areas may need maintenance once or twice a year afterwards, and this is not a failure of the course.',
+        'Where a course does not perform as expected we will review it with you against your baseline photographs and say honestly whether more sessions will help.'
+      ]},
+      {id:'aftercare', title:'Aftercare', body:[
+        'Aftercare instructions are given verbally and in writing after every treatment. Following them is your responsibility, and most poor outcomes we see are aftercare failures rather than treatment failures.',
+        'Waxing, threading or epilating between laser sessions removes the follicle the laser needs to find, and will render the remaining sessions ineffective. We cannot replace sessions lost this way.'
+      ]},
+      {id:'liability', title:'Liability', body:[
+        'We carry professional indemnity and treatment liability insurance. Our liability is limited to the cost of the treatment provided, except where the law does not permit that limit — nothing in these terms excludes liability for death or personal injury caused by our negligence.',
+        'We are not liable for loss or damage to personal belongings left in the clinic. Lockers are provided; please use them.'
+      ]},
+      {id:'conduct', title:'Conduct and children', body:[
+        'Treatment rooms are quiet spaces. Phones stay in lockers during treatments, and photography of other clients is not permitted anywhere in the clinic.',
+        'We cannot supervise children, and children cannot be present in treatment rooms. Please arrange care before your appointment.',
+        'Abusive or threatening behaviour towards staff ends the appointment immediately with no refund.'
+      ]},
+      {id:'law', title:'Governing law', body:[
+        'These terms are governed by the laws of the Federal Republic of Nigeria, and any dispute falls to the courts of the Federal Capital Territory.',
+        'We may update these terms; the version in force is the one published here on the date of your appointment.'
+      ]}
+    ];
+    return { sections: raw.map((s, i) => ({...s, n: String(i + 1).padStart(2, '0'), hasList: !!s.list, list: s.list || []})) };
+  }
+}
+</script>
+</body>
+</html>

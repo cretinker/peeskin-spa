@@ -1,0 +1,19 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/treatments/*"
+  to = "/treatments.html"
+  status = 301
+
+[[redirects]]
+  from = "/book"
+  to = "https://wa.me/2349058830888"
+  status = 302
+  force = true

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gift Vouchers — Spa &amp; Beauty Gifts in Abuja | Pee Skin &amp; MedSpa</title>
+<meta name="description" content="Spa gift vouchers in Abuja. Choose an amount or a named treatment, delivered as a printed card anywhere in Abuja or a PDF in five minutes. Valid twelve months.">
+<link rel="canonical" href="https://peeskin.com/gift-vouchers/">
+<meta property="og:title" content="Gift Vouchers — Pee Skin &amp; MedSpa, Abuja">
+<meta property="og:description" content="Choose an amount or a named treatment. Printed card or PDF in five minutes. Valid twelve months.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://peeskin.com/wp-content/uploads/2025/03/cropped-Untitled-design-26-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{overflow-x:hidden;-webkit-text-size-adjust:100%}
+  body{margin:0;background:#F5F0E6;color:#14100C;font-family:Karla,-apple-system,Segoe UI,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  h1,h2,h3,h4,p,ul,ol,li{margin:0;padding:0}
+  ul,ol{list-style:none}
+  img{display:block;max-width:100%}
+  a{color:#8A5A2E;text-decoration:none}
+  a:hover{color:#14100C}
+  button,input,select{font:inherit;color:inherit}
+  ::selection{background:#C69B54;color:#14100C}
+  :focus-visible{outline:2px solid #C69B54;outline-offset:3px}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @keyframes psRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+  [data-reveal][data-seen]{opacity:1;transform:none}
+</style>
+</helmet>
+
+<div style="background:#F5F0E6;min-height:100vh;padding-bottom:74px">
+<dc-import name="SiteNav" hint-size="100%,58px"></dc-import>
+
+<main>
+  <section style="position:relative;overflow:hidden;background:#14100C;color:#FBF7F0">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&amp;fit=crop&amp;w=1600&amp;q=80');background-size:cover;background-position:center;opacity:.32;filter:saturate(.6)"></div>
+    <div style="position:relative;padding:clamp(48px,7vw,110px) clamp(16px,3vw,34px);display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,64px);align-items:center" data-two-col="1">
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="display:flex;align-items:center;gap:15px">
+          <span style="width:44px;height:1px;background:#C69B54"></span>
+          <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Valid twelve months</span>
+        </div>
+        <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(36px,7vw,86px);line-height:.96;letter-spacing:-.034em;color:#FBF7F0">Give her the<br><span style="font-style:italic;color:#C69B54">whole afternoon.</span></h1>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(251,247,240,.74);max-width:44ch">Choose an amount or a named treatment. A printed card delivered anywhere in Abuja, or a PDF to her phone in five minutes if you have left it late.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(245,240,230,.2)">
+        <sc-for list="{{ amounts }}" as="a" hint-placeholder-count="6">
+          <a href="{{ a.href }}" style="background:rgba(20,16,12,.72);backdrop-filter:blur(4px);padding:clamp(22px,2.6vw,34px);display:flex;flex-direction:column;gap:6px;color:#FBF7F0" style-hover="background:#C69B54;color:#14100C">
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(24px,2.6vw,34px);line-height:1">{{ a.amount }}</span>
+            <span style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;opacity:.65">{{ a.note }}</span>
+          </a>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(56px,8vw,110px) clamp(16px,3vw,34px)">
+    <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,80px);align-items:end;margin-bottom:clamp(28px,4vw,52px)" data-two-col="1">
+      <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(30px,5.4vw,68px);line-height:.98;letter-spacing:-.03em">Or give<br>a treatment.</h2>
+      <p style="font-size:17px;line-height:1.72;color:#4C463E;max-width:420px;padding-bottom:8px">A named treatment reads better on a card than a number does, and she can always put it towards something else on the menu instead.</p>
+    </div>
+    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:rgba(20,16,12,.14)">
+      <sc-for list="{{ named }}" as="n" hint-placeholder-count="6">
+        <div style="background:#F5F0E6;display:flex;flex-direction:column">
+          <span style="display:block;aspect-ratio:3/2;overflow:hidden">
+            <span style="display:block;width:100%;height:100%;background-image:url('{{ n.img }}');background-size:cover;background-position:center;filter:saturate(.85) contrast(1.03)" role="img" aria-label="{{ n.title }}"></span>
+          </span>
+          <span style="padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;gap:10px;flex:1">
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(22px,2.2vw,29px);line-height:1.08">{{ n.title }}</span>
+            <span style="font-size:14.5px;line-height:1.65;color:#4C463E">{{ n.body }}</span>
+            <span style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-top:auto;padding-top:16px;border-top:1px solid #DCD0BC">
+              <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(20px,2vw,26px);color:#A8562F">{{ n.price }}</span>
+              <a href="{{ n.href }}" style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A8562F">Buy this →</a>
+            </span>
+          </span>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <section style="background:#EDE5D6;border-top:1px solid #DCD0BC;border-bottom:1px solid #DCD0BC">
+    <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px)">
+      <h2 data-reveal="1" style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,60px);line-height:1;letter-spacing:-.03em;margin-bottom:clamp(26px,3.4vw,46px)">How it works</h2>
+      <ol data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:1px;background:rgba(20,16,12,.14)">
+        <sc-for list="{{ how }}" as="h" hint-placeholder-count="4">
+          <li style="background:#EDE5D6;padding:clamp(24px,2.6vw,36px);display:flex;flex-direction:column;gap:10px">
+            <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E">{{ h.step }}</span>
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(21px,2.2vw,27px);line-height:1.12">{{ h.title }}</span>
+            <span style="font-size:14.5px;line-height:1.65;color:#4C463E">{{ h.body }}</span>
+          </li>
+        </sc-for>
+      </ol>
+      <div data-reveal="1" style="display:flex;flex-direction:column;border-top:1px solid #DCD0BC;margin-top:clamp(28px,3.4vw,46px)">
+        <sc-for list="{{ terms }}" as="t" hint-placeholder-count="5">
+          <span style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(14px,2.4vw,34px);padding:15px 0;border-bottom:1px solid #DCD0BC;align-items:baseline">
+            <span style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#8A5A2E;min-width:100px">{{ t.title }}</span>
+            <span style="font-size:15px;line-height:1.65;color:#4C463E">{{ t.body }}</span>
+          </span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px">
+    <h2 data-reveal="1" style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,62px);line-height:1;letter-spacing:-.03em;max-width:18ch">Left it late? A PDF takes five minutes.</h2>
+    <p data-reveal="1" style="font-size:17px;line-height:1.7;color:#4C463E;max-width:46ch">Message us the amount, her name and the message you want on it. We will send the voucher back for you to forward, and post the printed card afterwards.</p>
+    <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px">
+      <a href="https://wa.me/2349058830888?text=Hi%20Pee%20Skin%20%26%20MedSpa%2C%20I%27d%20like%20to%20buy%20a%20gift%20voucher." style="background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:18px 32px" style-hover="background:#14100C;color:#C69B54">Buy on WhatsApp</a>
+      <a href="tel:+2349058830888" style="border:1px solid #14100C;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:18px 32px" style-hover="background:#14100C;color:#F5F0E6">Call 0905 883 0888</a>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+const wa = (t) => 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I\u2019d like to buy a gift voucher: ' + t);
+
+function cssToObj(s){ var o = {}; (s || '').split(';').forEach(function(d){ var i = d.indexOf(':'); if (i > 0) { var k = d.slice(0, i).trim().replace(/-([a-z])/g, function(m, c){ return c.toUpperCase(); }); o[k] = d.slice(i + 1).trim(); } }); return o; }
+function imgStyle(u, extra){ return Object.assign({width:'100%',height:'100%',backgroundImage:'url("' + u + '")',backgroundSize:'cover',backgroundPosition:'center',filter:'saturate(.85) contrast(1.03)'}, cssToObj(extra)); }
+function withImg(list, extra){ return list.map(function(o){ var c = Object.assign({}, o); if (o.img) c.imgStyle = imgStyle(o.img, extra); if (o.before) c.beforeStyle = imgStyle(o.before, extra); if (o.after) c.afterStyle = imgStyle(o.after, extra); return c; }); }
+
+class Component extends DCLogic {
+  componentDidMount(){
+    const root = this.el || document;
+    this._io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.setAttribute('data-seen',''); this._io.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
+    const mq = window.matchMedia('(min-width: 960px)');
+    const apply = () => {
+      root.querySelectorAll('[data-two-col]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '1fr 1fr' : '1fr'; });
+      root.querySelectorAll('[data-reveal]').forEach(n => { if (!n.hasAttribute('data-obs')) { n.setAttribute('data-obs',''); this._io.observe(n); } });
+    };
+    this._apply = apply; this._mq = mq;
+    mq.addEventListener('change', apply); apply(); this._t = setInterval(apply, 600);
+  }
+  componentDidUpdate(){ if (this._apply) this._apply(); }
+  componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
+  renderVals(){
+    return {
+      amounts: [
+        {amount:'₦25,000', note:'A facial', href:wa('₦25,000')},
+        {amount:'₦50,000', note:'Massage & scrub', href:wa('₦50,000')},
+        {amount:'₦75,000', note:'Half a day', href:wa('₦75,000')},
+        {amount:'₦100,000', note:'Hammam ritual', href:wa('₦100,000')},
+        {amount:'₦150,000', note:'The full day', href:wa('₦150,000')},
+        {amount:'Any amount', note:'You choose', href:wa('a custom amount')}
+      ],
+      named: withImg([
+        {title:'Moroccan Hammam', body:'Steam, black soap, kessa exfoliation and rhassoul clay. Ninety minutes, and the treatment most people return for.', price:'₦65,000', img:'https://images.unsplash.com/photo-1618509682637-e4790939cf96?auto=format&fit=crop&w=1600&q=80', href:wa('the Moroccan Hammam')},
+        {title:'Deep Tissue Massage', body:'Sixty minutes of slow, specific pressure into the layer under the ache. For the person who carries their week in their shoulders.', price:'₦45,000', img:'https://images.unsplash.com/photo-1618509682637-e4790939cf96?auto=format&fit=crop&w=1600&q=80', href:wa('a Deep Tissue Massage')},
+        {title:'Prescribed Facial', body:'Cleanse, exfoliate, extract and mask, chosen after her skin is read rather than picked off a menu.', price:'₦40,000', img:'https://images.unsplash.com/photo-1693004927824-f2623bbedc8b?auto=format&fit=crop&w=1600&q=80', href:wa('a Prescribed Facial')},
+        {title:'The Half Day', body:'Hammam, a sixty-minute massage and lunch. Four hours, and the gift people remember being given.', price:'₦120,000', img:'https://images.unsplash.com/photo-1609535895148-cf9f5c446290?auto=format&fit=crop&w=1600&q=80', href:wa('the Half Day')},
+        {title:"Men's Facial & Massage", body:'A facial built around shaving irritation and congestion, followed by an hour on the table. Two hours in total.', price:'₦80,000', img:'https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1600&q=80', href:wa("the Men's Facial & Massage")},
+        {title:'Monthly Facial, three months', body:'One prescribed facial a month for three months. For someone whose skin needs consistency rather than a single afternoon.', price:'₦180,000', img:'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80', href:wa('three months of Monthly Facials')}
+      ]),
+      how: [
+        {step:'One', title:'Choose', body:'An amount or a named treatment. Message us on WhatsApp, call, or come to the desk.'},
+        {step:'Two', title:'Tell us the message', body:'Her name and whatever you want written inside. We hand-write the printed cards.'},
+        {step:'Three', title:'Pay', body:'Transfer or card. A PDF is sent back within five minutes of payment clearing.'},
+        {step:'Four', title:'Delivery', body:'Printed cards are couriered anywhere in Abuja within two working days, or collected from the desk.'}
+      ],
+      terms: [
+        {title:'Validity', body:'Twelve months from the date of purchase. We will honour a voucher a little past its date rather than argue about it, but do not push it.'},
+        {title:'Redeemable against', body:'Anything on the menu — spa, laser, aesthetics, salon or retail products. Not exchangeable for cash.'},
+        {title:'Part use', body:'The balance stays on the voucher if she spends less than its value, and can be used across several visits.'},
+        {title:'Topping up', body:'If she chooses something dearer, she pays the difference on the day.'},
+        {title:'Transferable', body:'A voucher can be passed on to someone else. We do not check names at the desk.'}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

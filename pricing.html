@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Price List — Spa, Laser, Aesthetics &amp; Salon | Pee Skin &amp; MedSpa Abuja</title>
+<meta name="description" content="Every treatment and every price at Pee Skin &amp; MedSpa, Gwarinpa, Abuja. Spa, laser, injectables and salon, plus memberships and prepaid courses.">
+<link rel="canonical" href="https://peeskin.com/our-services/">
+<meta property="og:title" content="Price List — Pee Skin &amp; MedSpa, Gwarinpa">
+<meta property="og:description" content="Every treatment, every price. Spa, laser, injectables and salon in Gwarinpa, Abuja.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1633681926022-84c23e8cb2d6?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NG">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="https://peeskin.com/wp-content/uploads/2025/03/cropped-Untitled-design-26-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{overflow-x:hidden;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:#F5F0E6;color:#14100C;font-family:Karla,-apple-system,Segoe UI,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  h1,h2,h3,h4,p,ul,ol,li,figure,blockquote,dl,dd{margin:0;padding:0}
+  ul,ol{list-style:none}
+  a{color:#8A5A2E;text-decoration:none}
+  a:hover{color:#14100C}
+  button{font:inherit;color:inherit}
+  ::selection{background:#C69B54;color:#14100C}
+  :focus-visible{outline:2px solid #C69B54;outline-offset:3px}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @keyframes psRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+  [data-reveal][data-seen]{opacity:1;transform:none}
+</style>
+</helmet>
+
+<div style="background:#F5F0E6;min-height:100vh;padding-bottom:74px">
+<dc-import name="SiteNav" active="pricing" hint-size="100%,58px"></dc-import>
+
+<main>
+  <section style="background:#14100C;color:#FBF7F0">
+    <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px) clamp(36px,5vw,64px);display:flex;flex-direction:column;gap:20px;max-width:900px">
+      <div style="display:flex;align-items:center;gap:15px">
+        <span style="width:44px;height:1px;background:#C69B54"></span>
+        <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Updated January 2026</span>
+      </div>
+      <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:.96;letter-spacing:-.034em;color:#FBF7F0">Every price,<br><span style="font-style:italic;color:#C69B54">on one page.</span></h1>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(251,247,240,.72);max-width:560px">No “prices on request”, no consultation gate before you can find out what something costs. If a price changes, this page changes with it.</p>
+    </div>
+    <nav aria-label="Price sections" style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(245,240,230,.14);border-top:1px solid rgba(245,240,230,.14)">
+      <sc-for list="{{ jump }}" as="j" hint-placeholder-count="6">
+        <a href="{{ j.href }}" style="flex:1 1 auto;background:#14100C;padding:18px 20px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,247,240,.7);text-align:center;white-space:nowrap" style-hover="background:#211B14;color:#C69B54">{{ j.label }}</a>
+      </sc-for>
+    </nav>
+  </section>
+
+  <sc-for list="{{ sections }}" as="s" hint-placeholder-count="5">
+    <section id="{{ s.id }}" style="background:{{ s.bg }};border-bottom:1px solid #DCD0BC">
+      <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px)">
+        <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:clamp(18px,4vw,70px);align-items:end;margin-bottom:clamp(26px,3.4vw,48px)" data-two-col="1">
+          <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,62px);line-height:1;letter-spacing:-.03em">{{ s.title }}</h2>
+          <p style="font-size:16px;line-height:1.7;color:#4C463E;max-width:420px;padding-bottom:6px">{{ s.intro }}</p>
+        </div>
+        <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,56px)" data-two-col="1">
+          <sc-for list="{{ s.groups }}" as="g" hint-placeholder-count="2">
+            <div style="display:flex;flex-direction:column">
+              <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;padding-bottom:13px;border-bottom:1px solid #DCD0BC">{{ g.title }}</span>
+              <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="6">
+                <span style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid #DCD0BC">
+                  <span>
+                    <span style="display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:19px;line-height:1.2">{{ i.name }}</span>
+                    <span style="display:block;font-size:13.5px;color:#6B6357;margin-top:3px">{{ i.note }}</span>
+                  </span>
+                  <span style="text-align:right;white-space:nowrap">
+                    <span style="display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:18px;color:#A8562F">{{ i.price }}</span>
+                    <span style="display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7A7168;margin-top:3px">{{ i.dur }}</span>
+                  </span>
+                </span>
+              </sc-for>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+    </section>
+  </sc-for>
+
+  <section id="memberships" style="background:#14100C;color:#FBF7F0">
+    <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px)">
+      <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:clamp(18px,4vw,70px);align-items:end;margin-bottom:clamp(26px,3.4vw,48px)" data-two-col="1">
+        <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,62px);line-height:1;letter-spacing:-.03em;color:#FBF7F0">Memberships &amp; prepaid courses</h2>
+        <p style="font-size:16px;line-height:1.7;color:rgba(251,247,240,.62);max-width:420px;padding-bottom:6px">Skin results come from repetition, so we price repetition properly. Memberships cancel any time after three months. Prepaid courses are booked across the full cycle up front.</p>
+      </div>
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:rgba(245,240,230,.14)">
+        <sc-for list="{{ packages }}" as="p" hint-placeholder-count="4">
+          <div style="background:#14100C;padding:clamp(26px,2.8vw,40px);display:flex;flex-direction:column;gap:12px">
+            <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#C69B54">{{ p.kicker }}</span>
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(23px,2.3vw,30px);line-height:1.05;color:#FBF7F0">{{ p.title }}</span>
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(28px,3vw,40px);line-height:1;color:#C69B54">{{ p.price }}</span>
+            <span style="align-self:flex-start;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#14100C;background:#E3C68C;padding:7px 13px">{{ p.saving }}</span>
+            <span style="font-size:14.5px;line-height:1.65;color:rgba(251,247,240,.6)">{{ p.desc }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px)">
+    <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:clamp(18px,4vw,70px);align-items:start" data-two-col="1">
+      <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,62px);line-height:1;letter-spacing:-.03em">Booking, deposits<br>and cancellations</h2>
+      <div style="display:flex;flex-direction:column;border-top:1px solid #DCD0BC">
+        <sc-for list="{{ policies }}" as="p" hint-placeholder-count="6">
+          <span style="display:flex;flex-direction:column;gap:6px;padding:16px 0;border-bottom:1px solid #DCD0BC">
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:19px">{{ p.title }}</span>
+            <span style="font-size:15px;line-height:1.65;color:#4C463E">{{ p.body }}</span>
+          </span>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:#EDE5D6;border-top:1px solid #DCD0BC">
+    <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:18px">
+      <h2 data-reveal="1" style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,60px);line-height:1;letter-spacing:-.03em;max-width:18ch">Not sure which one you need?</h2>
+      <p data-reveal="1" style="font-size:17px;line-height:1.7;color:#4C463E;max-width:46ch">Send us a photo and a sentence about what is bothering you. We will tell you what we would do, how many sessions it takes and what it costs, before you come in.</p>
+      <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin-top:8px">
+        <a href="https://wa.me/2349058830888?text=Hi%20Pee%20Skin%20%26%20MedSpa%2C%20I%27d%20like%20some%20advice%20on%20which%20treatment%20I%20need." style="background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:18px 32px" style-hover="background:#14100C;color:#C69B54">Ask on WhatsApp</a>
+        <a href="concerns.html" style="border:1px solid #14100C;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:18px 32px" style-hover="background:#14100C;color:#F5F0E6">Browse by concern</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount(){
+    const root = this.el || document;
+    this._io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.setAttribute('data-seen',''); this._io.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
+    const mq = window.matchMedia('(min-width: 960px)');
+    const apply = () => {
+      root.querySelectorAll('[data-two-col]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '1fr 1fr' : '1fr'; });
+      root.querySelectorAll('[data-reveal]').forEach(n => { if (!n.hasAttribute('data-obs')) { n.setAttribute('data-obs',''); this._io.observe(n); } });
+    };
+    this._apply = apply; this._mq = mq;
+    mq.addEventListener('change', apply); apply(); this._t = setInterval(apply, 600);
+  }
+  componentDidUpdate(){ if (this._apply) this._apply(); }
+  componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
+  renderVals(){
+    return {
+      jump: [
+        {label:'Spa', href:'#spa'},
+        {label:'Laser', href:'#laser'},
+        {label:'Aesthetics', href:'#aesthetics'},
+        {label:'Salon', href:'#salon'},
+        {label:'Memberships', href:'#memberships'}
+      ],
+      sections: [
+        {id:'spa', bg:'#F5F0E6', title:'Spa & Wellness', intro:'Massage, facials, body rituals and intimate care. Group bookings of four or more attract a 10% reduction with seven days notice.', groups:[
+          {title:'Massage therapy', items:[
+            {name:'Swedish massage', note:'Light to medium pressure, full body', price:'₦35,000', dur:'60 min'},
+            {name:'Deep tissue massage', note:'Focused work into chronic tension', price:'₦45,000', dur:'60 min'},
+            {name:'Hot stone massage', note:'Heated basalt along the spine', price:'₦55,000', dur:'75 min'},
+            {name:'Moxibustion massage', note:'Mugwort heat therapy', price:'₦50,000', dur:'60 min'},
+            {name:'Couples massage', note:'Two therapists, one room', price:'₦85,000', dur:'60 min'},
+            {name:'Back, neck and shoulders', note:'The express version', price:'₦25,000', dur:'30 min'}
+          ]},
+          {title:'Facials, body and intimate', items:[
+            {name:'Prescribed facial', note:'Chosen after your skin is read', price:'₦40,000', dur:'60 min'},
+            {name:'Deep cleansing facial', note:'Congestion and blackheads', price:'₦45,000', dur:'75 min'},
+            {name:'Brightening facial', note:'Dullness and uneven tone', price:'₦50,000', dur:'75 min'},
+            {name:"Men's facial", note:'Shaving irritation and congestion', price:'₦40,000', dur:'60 min'},
+            {name:'Moroccan hammam', note:'Steam, black soap, kessa, rhassoul', price:'₦65,000', dur:'90 min'},
+            {name:'Full body scrub', note:'Exfoliation and hydration', price:'₦35,000', dur:'45 min'},
+            {name:'Body polish and wrap', note:'Scrub plus nourishing wrap', price:'₦55,000', dur:'75 min'},
+            {name:'Body sculpting session', note:'Non-invasive contouring', price:'₦60,000', dur:'60 min'},
+            {name:'Vajacial', note:'Cleanse, exfoliate, extract, calm', price:'₦30,000', dur:'45 min'}
+          ]}
+        ]},
+        {id:'laser', bg:'#EDE5D6', title:'Skin & Laser', intro:'Nd:YAG 1064nm, safe on Fitzpatrick IV–VI. Course prices are for six sessions paid up front. Consultation and patch test ₦10,000, credited against session one.', groups:[
+          {title:'Laser hair removal — single / course of six', items:[
+            {name:'Upper lip or chin', note:'Course ₦230,000', price:'₦45,000', dur:'Single'},
+            {name:'Underarms', note:'Course ₦230,000', price:'₦45,000', dur:'Single'},
+            {name:'Bikini line', note:'Course ₦306,000 · usually 8 sessions', price:'₦60,000', dur:'Single'},
+            {name:'Brazilian', note:'Course ₦433,000', price:'₦85,000', dur:'Single'},
+            {name:'Half legs', note:'Course ₦459,000', price:'₦90,000', dur:'Single'},
+            {name:'Full legs', note:'Course ₦765,000', price:'₦150,000', dur:'Single'},
+            {name:'Full body', note:'Course ₦1,632,000', price:'₦320,000', dur:'Single'},
+            {name:'Beard shaping, men', note:'Course quoted at consultation', price:'₦55,000', dur:'Single'}
+          ]},
+          {title:'Other laser and skin', items:[
+            {name:'Consultation and patch test', note:'Credited against session one', price:'₦10,000', dur:'20 min'},
+            {name:'Tattoo removal', note:'Priced by size, per session', price:'From ₦60,000', dur:'Per session'},
+            {name:'Laser acne treatment', note:'Course of five recommended', price:'₦55,000', dur:'Per session'},
+            {name:'Pigmentation programme', note:'Laser plus prescribed homecare', price:'From ₦70,000', dur:'Per session'},
+            {name:'Skin analysis and plan', note:'Written, with a total price', price:'₦15,000', dur:'30 min'}
+          ]}
+        ]},
+        {id:'aesthetics', bg:'#F5F0E6', title:'Aesthetics & Injectables', intro:'Consultation first, always — ₦20,000, credited in full against treatment. All prices include the two-week review appointment.', groups:[
+          {title:'Dermal filler', items:[
+            {name:'Consultation', note:'45 minutes, credited against treatment', price:'₦20,000', dur:'45 min'},
+            {name:'Cheek filler', note:'Per ml, usually 2ml to start', price:'₦180,000', dur:'12–18 mo'},
+            {name:'Jawline and chin', note:'Per ml', price:'₦190,000', dur:'12–18 mo'},
+            {name:'Lip filler', note:'Per ml, we start at 0.5ml', price:'₦170,000', dur:'9–12 mo'},
+            {name:'Nasolabial folds', note:'Per ml', price:'₦180,000', dur:'12 mo'}
+          ]},
+          {title:'Skin and correction', items:[
+            {name:'Skin boosters', note:'Course of three recommended', price:'₦150,000', dur:'Per session'},
+            {name:'Dissolving (hyaluronidase)', note:'Assessed first, may be staged', price:'₦90,000', dur:'Per session'}
+          ]}
+        ]},
+        {id:'salon', bg:'#EDE5D6', title:'Salon', intro:'Hair prices assume your own extensions or braiding hair, both sold at the desk. Book a salon service alongside a spa treatment on the same day and the spa treatment comes down by 15%.', groups:[
+          {title:'Hair and nails', items:[
+            {name:'Wash, blow dry and style', note:'Natural or relaxed', price:'₦15,000', dur:'60 min'},
+            {name:'Silk press', note:'Wash, treatment, press', price:'₦30,000', dur:'2 hrs'},
+            {name:'Deep conditioning treatment', note:'Steamed', price:'₦20,000', dur:'45 min'},
+            {name:'Braiding and cornrows', note:'By size and length', price:'From ₦25,000', dur:'2–5 hrs'},
+            {name:'Wig install and styling', note:'Your unit, our install', price:'From ₦30,000', dur:'90 min'},
+            {name:'Gel manicure', note:'Two weeks of wear', price:'₦20,000', dur:'60 min'},
+            {name:'Classic pedicure', note:'Soak, file, callus work, polish', price:'₦18,000', dur:'60 min'},
+            {name:'Acrylic full set', note:'Extension, shape and colour', price:'From ₦30,000', dur:'2 hrs'}
+          ]},
+          {title:'Brows, lashes and waxing', items:[
+            {name:'Brow shaping', note:'Threaded or waxed', price:'₦8,000', dur:'20 min'},
+            {name:'Brow tint and shape', note:'', price:'₦14,000', dur:'35 min'},
+            {name:'Classic lash extensions', note:'One per natural lash', price:'₦35,000', dur:'2 hrs'},
+            {name:'Volume lash extensions', note:'Fuller, still lightweight', price:'₦45,000', dur:'2.5 hrs'},
+            {name:'Lash lift and tint', note:'Your own lashes, curled', price:'₦28,000', dur:'60 min'},
+            {name:'Underarm wax', note:'', price:'₦8,000', dur:'15 min'},
+            {name:'Bikini line wax', note:'', price:'₦15,000', dur:'30 min'},
+            {name:'Brazilian wax', note:'', price:'₦25,000', dur:'45 min'}
+          ]}
+        ]}
+      ],
+      packages: [
+        {kicker:'Membership', title:'Monthly facial', price:'₦65,000', saving:'Save ₦25,000 a month', desc:'One prescribed facial each month, priority booking and 10% off all products and add-ons.'},
+        {kicker:'Membership', title:'Monthly massage', price:'₦55,000', saving:'Save ₦20,000 a month', desc:'One 60-minute massage each month, your choice of therapist, plus a guest rate for whoever you bring.'},
+        {kicker:'Prepaid course', title:'Laser, six sessions', price:'From ₦230,000', saving:'Save up to 25%', desc:'Paid up front and booked across the full cycle. Areas needing eight sessions are quoted at consultation.'},
+        {kicker:'Prepaid course', title:'Vajacial, three sessions', price:'₦75,000', saving:'Save ₦15,000', desc:'Booked fortnightly. Pairs with a laser course for ingrown hairs and dark marks.'}
+      ],
+      policies: [
+        {title:'Deposits', body:'A ₦10,000 deposit holds any appointment over an hour, and any group booking. It comes off the final bill.'},
+        {title:'Cancellations', body:'Twenty-four hours notice moves an appointment free of charge. Inside twenty-four hours, the deposit is retained.'},
+        {title:'Lateness', body:'We will treat you for the time remaining rather than run into the next client. More than twenty minutes late is a cancellation.'},
+        {title:'Payment', body:'Transfer, card and cash. Prepaid courses can be split across two payments, the second before session three.'},
+        {title:'Course expiry', body:'Prepaid courses are valid twelve months from purchase. Gift vouchers are also valid twelve months.'},
+        {title:'Prices', body:'Reviewed each January. A prepaid course is locked at the price you paid, even if rates rise mid-course.'}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

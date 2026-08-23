@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — Pee Skin &amp; MedSpa, Gwarinpa, Abuja</title>
+<meta name="description" content="How Pee Skin &amp; MedSpa collects, uses and protects your personal and health information, and the rights you have under the Nigeria Data Protection Act.">
+<link rel="canonical" href="https://peeskin.com/privacy/">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="Privacy Policy — Pee Skin &amp; MedSpa">
+<meta property="og:description" content="How we collect, use and protect your personal and health information.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NG">
+<link rel="icon" href="https://peeskin.com/wp-content/uploads/2025/03/cropped-Untitled-design-26-270x270.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{overflow-x:hidden;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:#F5F0E6;color:#14100C;font-family:Karla,-apple-system,Segoe UI,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  h1,h2,h3,p,ul,ol,li,dl,dd{margin:0;padding:0}
+  ul,ol{list-style:none}
+  a{color:#8A5A2E;text-decoration:none}
+  a:hover{color:#14100C}
+  ::selection{background:#C69B54;color:#14100C}
+  :focus-visible{outline:2px solid #C69B54;outline-offset:3px}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @keyframes psRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+</style>
+</helmet>
+
+<div style="background:#F5F0E6;min-height:100vh;padding-bottom:74px">
+<dc-import name="SiteNav" hint-size="100%,58px"></dc-import>
+
+<main>
+  <section style="background:#14100C;color:#FBF7F0">
+    <div style="padding:clamp(44px,6vw,88px) clamp(16px,3vw,34px);display:flex;flex-direction:column;gap:18px;max-width:820px">
+      <div style="display:flex;align-items:center;gap:15px">
+        <span style="width:44px;height:1px;background:#C69B54"></span>
+        <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Last updated 1 August 2026</span>
+      </div>
+      <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(34px,6.4vw,76px);line-height:.98;letter-spacing:-.032em;color:#FBF7F0">Privacy Policy</h1>
+      <p style="font-size:clamp(16px,1.5vw,18px);line-height:1.65;color:rgba(251,247,240,.72);max-width:56ch">What we collect, why we hold it, how long we keep it, and what you can ask us to do with it. This policy covers peeskin.com and the clinic at House 14, First Avenue, Gwarinpa.</p>
+    </div>
+  </section>
+
+  <section style="padding:clamp(40px,6vw,84px) clamp(16px,3vw,34px)">
+    <div style="display:grid;grid-template-columns:1fr;gap:clamp(28px,4vw,64px);align-items:start" data-legal="1">
+      <nav aria-label="On this page" style="display:flex;flex-direction:column;gap:9px;position:sticky;top:90px">
+        <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;padding-bottom:10px;border-bottom:1px solid #DCD0BC">On this page</span>
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="9">
+          <a href="#{{ s.id }}" style="font-size:14px;line-height:1.4;color:#4C463E" style-hover="color:#8A5A2E">{{ s.title }}</a>
+        </sc-for>
+      </nav>
+
+      <div style="display:flex;flex-direction:column;max-width:66ch">
+        <sc-for list="{{ sections }}" as="s" hint-placeholder-count="9">
+          <section id="{{ s.id }}" style="padding-bottom:clamp(26px,3vw,40px);margin-bottom:clamp(26px,3vw,40px);border-bottom:1px solid #DCD0BC">
+            <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(24px,3vw,36px);line-height:1.08;letter-spacing:-.02em;margin-bottom:16px">{{ s.title }}</h2>
+            <div style="display:flex;flex-direction:column;gap:14px">
+              <sc-for list="{{ s.body }}" as="p" hint-placeholder-count="3">
+                <p style="font-size:16.5px;line-height:1.75;color:#4C463E">{{ p }}</p>
+              </sc-for>
+            </div>
+            <sc-if value="{{ s.hasList }}" hint-placeholder-val="{{ false }}">
+              <ul style="display:flex;flex-direction:column;gap:10px;margin-top:16px;border-top:1px solid #DCD0BC;padding-top:16px">
+                <sc-for list="{{ s.list }}" as="i" hint-placeholder-count="4">
+                  <li style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline">
+                    <span style="width:5px;height:5px;background:#C69B54;border-radius:50%"></span>
+                    <span style="font-size:16px;line-height:1.7;color:#4C463E">{{ i }}</span>
+                  </li>
+                </sc-for>
+              </ul>
+            </sc-if>
+          </section>
+        </sc-for>
+
+        <div style="background:#EDE5D6;border:1px solid #DCD0BC;padding:clamp(22px,2.6vw,32px);display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E">Data protection contact</span>
+          <p style="font-size:16px;line-height:1.7;color:#4C463E">Questions about this policy, or a request to see, correct or delete your data, go to <a href="mailto:support@peeskin.com">support@peeskin.com</a> or 0905 883 0888. We respond within thirty days. If you are not satisfied, you may complain to the Nigeria Data Protection Commission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  componentDidMount(){
+    const mq = window.matchMedia('(min-width: 960px)');
+    const apply = () => {
+      const root = this.el || document;
+      root.querySelectorAll('[data-legal]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '220px minmax(0,1fr)' : '1fr'; });
+      root.querySelectorAll('nav[aria-label="On this page"]').forEach(n => { n.style.position = mq.matches ? 'sticky' : 'static'; });
+    };
+    this._apply = apply; this._mq = mq;
+    mq.addEventListener('change', apply); apply(); this._t = setInterval(apply, 700);
+  }
+  componentDidUpdate(){ if (this._apply) this._apply(); }
+  componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); clearInterval(this._t); }
+  renderVals(){
+    const raw = [
+      {id:'who', title:'Who we are', body:[
+        'Pee Skin & MedSpa is a spa, salon and aesthetic clinic at House 14, First Avenue, Gwarinpa, Abuja 900108, Federal Capital Territory, Nigeria. We are the data controller for the information described in this policy.',
+        'You can reach us on 0905 883 0888 or 0913 272 6901, or by email at support@peeskin.com.'
+      ]},
+      {id:'collect', title:'What we collect', body:[
+        'We collect two kinds of information: ordinary contact details, and health information you give us so we can treat you safely. The second kind is sensitive, and we treat it accordingly.'
+      ], list:[
+        'Contact details — name, phone number, email address, and occasionally a delivery address for gift vouchers.',
+        'Booking records — the treatments you have had, dates, prices paid and which practitioner treated you.',
+        'Health information — medical history, medication, allergies, pregnancy status, skin type and previous treatment elsewhere, collected on the consultation form.',
+        'Clinical photographs — before, during and after images, taken only where you have given written permission.',
+        'Website data — pages visited and approximate location, collected through analytics cookies if you accept them.'
+      ]},
+      {id:'why', title:'Why we hold it', body:[
+        'Health information exists so that we can treat you without hurting you. Laser settings depend on your skin type, injectables depend on your medication and medical history, and a patch test result determines whether we proceed at all. Without this information we would be guessing.',
+        'Contact details exist so we can confirm, move and remind you about appointments. Booking records exist so that the practitioner who sees you in six months knows what was done and at what settings.',
+        'Marketing email is sent only to people who asked for it, and never on the basis of having been a client.'
+      ]},
+      {id:'photos', title:'Clinical photographs', body:[
+        'We photograph a baseline at your first appointment for any course of treatment, because it is the only honest way to judge whether the course worked. These images are stored on your record and are not published.',
+        'Publishing an image anywhere — the website, Instagram, a printed card — requires separate written permission naming where it will appear. That permission can be withdrawn at any time by telling us, and we will remove the image from anything we control within seven days.'
+      ]},
+      {id:'sharing', title:'Who we share it with', body:[
+        'We do not sell your data, and we do not share it for anyone else\u2019s marketing.',
+        'A small number of service providers process data on our behalf: our booking and payment providers, our email newsletter provider, and our website host. Each is bound to use the data only for the service they provide to us.',
+        'We disclose information beyond that only where the law requires it, or in a medical emergency where withholding it would put you at risk.'
+      ]},
+      {id:'keeping', title:'How long we keep it', body:[
+        'Clinical records, including consultation forms and treatment notes, are kept for seven years from your last appointment. This is a clinical safety standard rather than a commercial preference — a reaction or complication years later has to be readable against what was actually done.',
+        'Marketing contact details are deleted as soon as you unsubscribe. Website analytics data is retained for twenty-six months.'
+      ]},
+      {id:'security', title:'How we protect it', body:[
+        'Paper consultation forms are kept in a locked cabinet in the clinic. Digital records are held in password-protected systems with access limited to practitioners who need them. Clinical photographs are stored separately from contact details.',
+        'Staff are told, in plain terms, that discussing a client outside the clinic is a dismissible matter.'
+      ]},
+      {id:'rights', title:'Your rights', body:[
+        'Under the Nigeria Data Protection Act 2023 you have rights over the information we hold about you. Exercising any of them costs nothing and will not affect how you are treated here.'
+      ], list:[
+        'Ask for a copy of everything we hold about you.',
+        'Ask us to correct anything that is wrong.',
+        'Ask us to delete your data, except clinical records we are required to retain for the seven-year period.',
+        'Withdraw permission for a photograph, or for marketing email, at any time.',
+        'Object to how we are using your data, and complain to the Nigeria Data Protection Commission if our answer does not satisfy you.'
+      ]},
+      {id:'cookies', title:'Cookies', body:[
+        'The website uses essential cookies to keep it working, and analytics cookies to tell us which pages people actually read. Analytics cookies are set only if you accept them, and you can refuse without losing any part of the site.',
+        'We do not use advertising cookies that follow you to other websites.'
+      ]},
+      {id:'changes', title:'Changes to this policy', body:[
+        'When this policy changes we update the date at the top of the page. If a change materially affects how we use health information, we will say so at your next appointment rather than relying on you to re-read the page.'
+      ]}
+    ];
+    return { sections: raw.map(s => ({...s, hasList: !!s.list, list: s.list || []})) };
+  }
+}
+</script>
+</body>
+</html>
