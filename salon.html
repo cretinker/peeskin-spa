@@ -70,16 +70,19 @@
         <div style="display:flex;flex-direction:column">
           <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;padding-bottom:14px;border-bottom:1px solid #DCD0BC">{{ g.title }}</span>
           <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
-            <span style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:15px 0;border-bottom:1px solid #DCD0BC">
+            <a href="{{ i.waBookUrl }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:14px 10px;border-bottom:1px solid #DCD0BC;color:#14100C;transition:background .3s ease;border-radius:4px" style-hover="background:rgba(198,155,84,.12)">
               <span>
-                <span style="display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:20px;line-height:1.2">{{ i.name }}</span>
+                <span style="display:flex;align-items:center;gap:8px;font-family:'Bodoni Moda',Georgia,serif;font-size:20px;line-height:1.2">
+                  <span>{{ i.name }}</span>
+                  <span style="font-size:11px;color:#8C6620">↗</span>
+                </span>
                 <span style="display:block;font-size:13.5px;color:#6B6357;margin-top:3px">{{ i.note }}</span>
               </span>
               <span style="text-align:right;white-space:nowrap">
                 <span style="display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:19px;color:#A8562F">{{ i.price }}</span>
                 <span style="display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7A7168;margin-top:3px">{{ i.dur }}</span>
               </span>
-            </span>
+            </a>
           </sc-for>
         </div>
       </sc-for>
@@ -122,8 +125,17 @@ class Component extends DCLogic {
   componentDidUpdate(){ if (this._apply) this._apply(); }
   componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
   renderVals(){
+    const waBook = name => 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hello Pee Skin & MedSpa, I would like to book a salon appointment for ' + name + ' at your Gwarinpa branch.');
+    const mapGroups = groups => groups.map(g => ({
+      ...g,
+      items: g.items.map(item => ({
+        ...item,
+        waBookUrl: waBook(item.name)
+      }))
+    }));
+
     return {
-      groups: [
+      groups: mapGroups([
         {title:'Hair', items:[
           {name:'Wash, blow dry and style', note:'Natural or relaxed', price:'₦15,000', dur:'60 min'},
           {name:'Silk press', note:'Wash, treatment, press', price:'₦30,000', dur:'2 hrs'},
@@ -156,7 +168,7 @@ class Component extends DCLogic {
           {name:'Brazilian', note:'', price:'₦25,000', dur:'45 min'},
           {name:'Full arm', note:'', price:'₦15,000', dur:'30 min'}
         ]}
-      ]
+      ])
     };
   }
 }

@@ -64,6 +64,109 @@
     </div>
   </section>
 
+  <!-- ================= 1. INTERACTIVE 4-STEP INTAKE QUIZ MATCHER ================= -->
+  <section id="quiz" style="padding:clamp(60px,8vw,120px) clamp(16px,3vw,34px);background:#0F0C09;color:#FBF7F0;border-bottom:1px solid rgba(198,155,84,.25)">
+    <div style="max-width:960px;margin:0 auto">
+      <div style="text-align:center;margin-bottom:clamp(28px,4vw,48px)">
+        <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54;font-weight:700;display:block;margin-bottom:10px">Interactive Client Intake</span>
+        <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(30px,5vw,60px);line-height:1.02;letter-spacing:-.03em;color:#F5F0E6">Not sure which treatment you need?</h2>
+        <p style="font-size:clamp(15px,1.2vw,17px);line-height:1.65;color:rgba(245,240,230,.7);max-width:520px;margin:12px auto 0">Answer 3 brief questions to receive an exact tailored recommendation with session timelines and pricing.</p>
+      </div>
+
+      <!-- Step Progress Tracker -->
+      <div style="display:flex;justify-content:center;gap:12px;margin-bottom:28px">
+        <span style="height:3px;width:{{ quizStep1Width }};background:{{ quizStep1Color }};border-radius:2px;transition:all .4s ease"></span>
+        <span style="height:3px;width:{{ quizStep2Width }};background:{{ quizStep2Color }};border-radius:2px;transition:all .4s ease"></span>
+        <span style="height:3px;width:{{ quizStep3Width }};background:{{ quizStep3Color }};border-radius:2px;transition:all .4s ease"></span>
+        <span style="height:3px;width:{{ quizStep4Width }};background:{{ quizStep4Color }};border-radius:2px;transition:all .4s ease"></span>
+      </div>
+
+      <!-- Card Container -->
+      <div style="background:#17130F;border:1px solid rgba(198,155,84,.35);padding:clamp(24px,4vw,48px);border-radius:14px;box-shadow:0 24px 60px rgba(0,0,0,.5)">
+        <!-- STEP 1: GOAL -->
+        <sc-if value="{{ isQuizStep1 }}" hint-placeholder-val="{{ true }}">
+          <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#C69B54;display:block;margin-bottom:8px">Step 1 of 3</span>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:clamp(22px,2.8vw,30px);line-height:1.15;margin-bottom:20px;color:#F5F0E6">What is your primary wellness or skin goal?</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
+            <sc-for list="{{ quizGoalOptions }}" as="opt" hint-placeholder-count="5">
+              <button type="button" onClick="{{ opt.select }}" style="text-align:left;background:#0F0C09;border:1px solid rgba(198,155,84,.25);padding:16px 18px;color:#F5F0E6;cursor:pointer;border-radius:8px;transition:all .3s ease" style-hover="border-color:#C69B54;background:#241D16">
+                <span style="display:block;font-size:14.5px;font-weight:600;margin-bottom:4px;color:#F5F0E6">{{ opt.title }}</span>
+                <span style="display:block;font-size:12px;color:rgba(245,240,230,.55)">{{ opt.desc }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <!-- STEP 2: TARGET AREA -->
+        <sc-if value="{{ isQuizStep2 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#C69B54">Step 2 of 3</span>
+            <button type="button" onClick="{{ quizPrevStep }}" style="background:none;border:none;color:rgba(245,240,230,.6);font-size:12px;cursor:pointer;padding:0">← Back</button>
+          </div>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:clamp(22px,2.8vw,30px);line-height:1.15;margin-bottom:20px;color:#F5F0E6">Which area are you looking to treat?</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
+            <sc-for list="{{ quizAreaOptions }}" as="opt" hint-placeholder-count="4">
+              <button type="button" onClick="{{ opt.select }}" style="text-align:left;background:#0F0C09;border:1px solid rgba(198,155,84,.25);padding:16px 18px;color:#F5F0E6;cursor:pointer;border-radius:8px;transition:all .3s ease" style-hover="border-color:#C69B54;background:#241D16">
+                <span style="display:block;font-size:14.5px;font-weight:600;margin-bottom:4px;color:#F5F0E6">{{ opt.title }}</span>
+                <span style="display:block;font-size:12px;color:rgba(245,240,230,.55)">{{ opt.desc }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <!-- STEP 3: PREFERRED STYLE -->
+        <sc-if value="{{ isQuizStep3 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+            <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#C69B54">Step 3 of 3</span>
+            <button type="button" onClick="{{ quizPrevStep }}" style="background:none;border:none;color:rgba(245,240,230,.6);font-size:12px;cursor:pointer;padding:0">← Back</button>
+          </div>
+          <h3 style="font-family:'Bodoni Moda',serif;font-size:clamp(22px,2.8vw,30px);line-height:1.15;margin-bottom:20px;color:#F5F0E6">What style of care do you prefer?</h3>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:12px">
+            <sc-for list="{{ quizStyleOptions }}" as="opt" hint-placeholder-count="3">
+              <button type="button" onClick="{{ opt.select }}" style="text-align:left;background:#0F0C09;border:1px solid rgba(198,155,84,.25);padding:16px 18px;color:#F5F0E6;cursor:pointer;border-radius:8px;transition:all .3s ease" style-hover="border-color:#C69B54;background:#241D16">
+                <span style="display:block;font-size:14.5px;font-weight:600;margin-bottom:4px;color:#F5F0E6">{{ opt.title }}</span>
+                <span style="display:block;font-size:12px;color:rgba(245,240,230,.55)">{{ opt.desc }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </sc-if>
+
+        <!-- STEP 4: RECOMMENDATION RESULT -->
+        <sc-if value="{{ isQuizStep4 }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:18px">
+            <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(245,240,230,.12);padding-bottom:12px">
+              <span style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#C69B54;font-weight:700">Recommended Protocol</span>
+              <button type="button" onClick="{{ quizRestart }}" style="background:none;border:none;color:rgba(245,240,230,.6);font-size:12px;cursor:pointer;border-bottom:1px solid rgba(245,240,230,.3)">Restart Quiz ↺</button>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr;gap:24px;align-items:center" data-two-col="1">
+              <div>
+                <span style="font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:#C69B54;font-weight:700">{{ quizRecTag }}</span>
+                <h3 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(22px,3vw,34px);line-height:1.1;color:#F5F0E6;margin:6px 0 10px">{{ quizRecTitle }}</h3>
+                <p style="font-size:14.5px;line-height:1.65;color:rgba(245,240,230,.8);margin:0 0 16px">{{ quizRecDesc }}</p>
+                <div style="display:grid;gap:8px;font-size:13px;color:rgba(245,240,230,.7);margin-bottom:16px">
+                  <div style="display:flex;gap:10px;align-items:center"><span style="color:#C69B54">✓</span> <span>Estimated Timeline: <strong>{{ quizRecTimeline }}</strong></span></div>
+                  <div style="display:flex;gap:10px;align-items:center"><span style="color:#C69B54">✓</span> <span>Skin Suitability: <strong>{{ quizRecSuitability }}</strong></span></div>
+                  <div style="display:flex;gap:10px;align-items:center"><span style="color:#C69B54">✓</span> <span>Upfront Rate: <strong style="color:#C69B54">{{ quizRecPrice }}</strong></span></div>
+                </div>
+              </div>
+
+              <div style="background:#0F0C09;padding:22px;border:1px solid rgba(198,155,84,.3);border-radius:10px;display:flex;flex-direction:column;gap:12px;text-align:center">
+                <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,230,.6)">Direct WhatsApp Booking</span>
+                <span style="font-family:'Bodoni Moda',serif;font-size:28px;color:#C69B54;line-height:1">{{ quizRecPrice }}</span>
+                <span style="font-size:11.5px;color:rgba(245,240,230,.5)">House 14, First Avenue, Gwarinpa, Abuja</span>
+                <a href="{{ quizWhatsAppUrl }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">
+                  <span>Book Protocol on WhatsApp</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+  </section>
+
   <nav aria-label="Concerns" style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(20,16,12,.14);border-bottom:1px solid #DCD0BC">
     <sc-for list="{{ concerns }}" as="c" hint-placeholder-count="9">
       <a href="{{ c.anchor }}" style="flex:1 1 auto;background:#F5F0E6;padding:15px 18px;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#6B6357;text-align:center" style-hover="background:#EDE5D6;color:#14100C">{{ c.short }}</a>
@@ -144,6 +247,10 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  state = {
+    quizStep: 1, quizGoal: 'pigmentation', quizArea: 'face', quizStyle: 'clinical'
+  };
+
   componentDidMount(){
     const root = this.el || document;
     this._io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.setAttribute('data-seen',''); this._io.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
@@ -159,6 +266,7 @@ class Component extends DCLogic {
   componentDidUpdate(){ if (this._apply) this._apply(); }
   componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
   renderVals(){
+    const s = this.state;
     const IMG = {
       laser: 'https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=1600&q=80',
       laserMale: 'https://images.unsplash.com/photo-1570554634503-9d0f79c97dd5?auto=format&fit=crop&w=1600&q=80',
@@ -171,6 +279,60 @@ class Component extends DCLogic {
       makeup: 'https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1600&q=80'
     };
     const wa = t => 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I\u2019d like to ask about ' + t + '.');
+
+    // Quiz Calculation
+    let rec = {
+      tag: 'LASER & MEDSPA PROTOCOL',
+      title: 'Nd:YAG Laser Hair Removal & Dark Spot Clearance',
+      desc: '1064nm long-pulse laser targeting deep root follicles without melanin heating, paired with topical soothing barrier care.',
+      timeline: '6–8 Sessions (every 4–6 weeks)',
+      suitability: 'Fitzpatrick IV–VI (100% Calibrated)',
+      price: 'From ₦45,000 / session',
+      waText: 'Hello Pee Skin & MedSpa, I took the intake quiz on your website and was recommended the Nd:YAG Laser Hair Removal protocol. I would like to book a patch test & consultation at your Gwarinpa clinic.'
+    };
+
+    if (s.quizGoal === 'pigmentation') {
+      rec = {
+        tag: 'CLINICAL PIGMENTATION CORRECTION',
+        title: 'Medical Dark Knuckles & Hyperpigmentation Protocol',
+        desc: 'Micro-exfoliating chemical peels paired with pigment inhibitors to dissolve stubborn friction dark marks safely.',
+        timeline: '4–6 Sessions (2 weeks apart)',
+        suitability: 'Melanin-Rich African Skin',
+        price: 'From ₦50,000 / course',
+        waText: 'Hello Pee Skin & MedSpa, I took the intake quiz and was recommended the Dark Knuckles & Pigmentation Protocol. I would like to book an appointment at your Gwarinpa branch.'
+      };
+    } else if (s.quizGoal === 'tension') {
+      rec = {
+        tag: 'ANCIENT WELLNESS & DEEP RELEASE',
+        title: 'Moxibustion Therapy & Deep Tissue Massage Ritual',
+        desc: 'Moxa herb thermal therapy with rhythmic pressure release to melt chronic shoulder, lumbar, and muscular fatigue.',
+        timeline: 'Single 90-min Session / Bi-weekly',
+        suitability: 'All Skin & Body Types',
+        price: '₦35,000 / 90 mins',
+        waText: 'Hello Pee Skin & MedSpa, I took the intake quiz and would like to book the Moxibustion Therapy & Deep Tissue Massage Ritual at your Gwarinpa spa.'
+      };
+    } else if (s.quizGoal === 'aging') {
+      rec = {
+        tag: 'AESTHETIC INJECTABLES',
+        title: 'Doctor-Led Botox & Dermal Fillers Consultation',
+        desc: 'Conservative, high-precision placement of premium hyaluronic acid fillers and botulinum toxin for lifted, smooth contouring.',
+        timeline: '1 Session with 14-day Review',
+        suitability: 'Consultation & Assessment First',
+        price: 'From ₦180,000',
+        waText: 'Hello Pee Skin & MedSpa, I took the intake quiz and would like to book a Doctor-Led Aesthetic Injectables Consultation at your Gwarinpa clinic.'
+      };
+    } else if (s.quizGoal === 'glow') {
+      rec = {
+        tag: 'HOLISTIC SKIN & VITALITY',
+        title: 'HydraFacial Glow Circuit + Skin IV Drip',
+        desc: 'Multi-step deep pore extraction, vortex hydration, and intravenous glutathione/vitamin glow infusion.',
+        timeline: 'Single Afternoon / Monthly Refresh',
+        suitability: 'All Skin Types',
+        price: '₦65,000 Complete Circuit',
+        waText: 'Hello Pee Skin & MedSpa, I completed the intake quiz and would like to book the HydraFacial Glow Circuit + Skin IV Drip at Gwarinpa.'
+      };
+    }
+
     const data = [
       {id:'razor-bumps', short:'Razor bumps', name:'Ingrown hairs & razor bumps', img:IMG.laserMale,
         cause:'Shaving and waxing cut the hair below the surface, and coarse, curved hair grows back into the follicle wall instead of out of it. The body treats it as a foreign object, so you get the bump, then the dark mark it leaves behind.',
@@ -210,6 +372,46 @@ class Component extends DCLogic {
         sessions:'Per plan', timeline:'6 months', price:'Quoted per plan', href:'bridal.html', cta:'The six-month plan'}
     ];
     return {
+      isQuizStep1: s.quizStep === 1,
+      isQuizStep2: s.quizStep === 2,
+      isQuizStep3: s.quizStep === 3,
+      isQuizStep4: s.quizStep === 4,
+      quizStep1Width: s.quizStep >= 1 ? '48px' : '24px',
+      quizStep1Color: s.quizStep >= 1 ? '#C69B54' : 'rgba(245,240,230,.2)',
+      quizStep2Width: s.quizStep >= 2 ? '48px' : '24px',
+      quizStep2Color: s.quizStep >= 2 ? '#C69B54' : 'rgba(245,240,230,.2)',
+      quizStep3Width: s.quizStep >= 3 ? '48px' : '24px',
+      quizStep3Color: s.quizStep >= 3 ? '#C69B54' : 'rgba(245,240,230,.2)',
+      quizStep4Width: s.quizStep >= 4 ? '48px' : '24px',
+      quizStep4Color: s.quizStep >= 4 ? '#C69B54' : 'rgba(245,240,230,.2)',
+      quizGoalOptions: [
+        {title:'Hyperpigmentation & Dark Knuckles', desc:'Even skin tone, fade dark marks and blemishes', select:()=>this.setState({quizGoal:'pigmentation', quizStep:2})},
+        {title:'Permanent Hair Reduction', desc:'Laser treatment for bikini, beard line, underarms', select:()=>this.setState({quizGoal:'hair', quizStep:2})},
+        {title:'Body Tension & Deep Fatigue', desc:'Moxibustion, hot stone & therapeutic massage', select:()=>this.setState({quizGoal:'tension', quizStep:2})},
+        {title:'Facial Radiance & IV Glow', desc:'HydraFacial, deep extraction & skin infusions', select:()=>this.setState({quizGoal:'glow', quizStep:2})},
+        {title:'Injectables & Fine Lines', desc:'Botox, dermal filler and facial contouring', select:()=>this.setState({quizGoal:'aging', quizStep:2})}
+      ],
+      quizAreaOptions: [
+        {title:'Face & Neck', desc:'Cheeks, jawline, forehead, full face', select:()=>this.setState({quizArea:'face', quizStep:3})},
+        {title:'Underarms & Bikini Line', desc:'Intimate areas, razor bumps, dark patches', select:()=>this.setState({quizArea:'bikini', quizStep:3})},
+        {title:'Hands & Feet (Knuckles)', desc:'Hyperpigmentation on joints, knuckles and toes', select:()=>this.setState({quizArea:'knuckles', quizStep:3})},
+        {title:'Full Body / Back', desc:'Full back, legs, shoulders, holistic body', select:()=>this.setState({quizArea:'body', quizStep:3})}
+      ],
+      quizStyleOptions: [
+        {title:'Clinical & High-Tech', desc:'Nd:YAG Laser, chemical peeling, injectables', select:()=>this.setState({quizStyle:'clinical', quizStep:4})},
+        {title:'Holistic Sanctuary & Massage', desc:'Moxibustion, Moroccan hammam, herbal scrubs', select:()=>this.setState({quizStyle:'holistic', quizStep:4})},
+        {title:'Combination Care', desc:'Dual-treatment sequenced in one visit', select:()=>this.setState({quizStyle:'both', quizStep:4})}
+      ],
+      quizPrevStep: () => this.setState(st => ({quizStep: Math.max(1, st.quizStep - 1)})),
+      quizRestart: () => this.setState({quizStep: 1, quizGoal: 'pigmentation', quizArea: 'face', quizStyle: 'clinical'}),
+      quizRecTag: rec.tag,
+      quizRecTitle: rec.title,
+      quizRecDesc: rec.desc,
+      quizRecTimeline: rec.timeline,
+      quizRecSuitability: rec.suitability,
+      quizRecPrice: rec.price,
+      quizWhatsAppUrl: 'https://wa.me/2349058830888?text=' + encodeURIComponent(rec.waText),
+
       concerns: data.map((c, i) => Object.assign({}, c, {
         n: String(i + 1).padStart(2, '0'),
         bg: i % 2 ? '#EDE5D6' : '#F5F0E6',

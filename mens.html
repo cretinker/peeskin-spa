@@ -88,15 +88,18 @@
     </div>
     <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr));gap:1px;background:rgba(20,16,12,.14)">
       <sc-for list="{{ services }}" as="s" hint-placeholder-count="6">
-        <div style="background:#F5F0E6;padding:clamp(26px,2.8vw,38px);display:flex;flex-direction:column;gap:11px">
+        <a href="{{ s.waBookUrl }}" style="background:#F5F0E6;padding:clamp(26px,2.8vw,38px);display:flex;flex-direction:column;gap:11px;color:#14100C;transition:all .3s ease;border-radius:4px" style-hover="background:#EDE5D6">
           <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E">{{ s.kicker }}</span>
-          <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(23px,2.3vw,30px);line-height:1.06">{{ s.name }}</span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(23px,2.3vw,30px);line-height:1.06">{{ s.name }}</span>
+            <span style="font-size:11px;color:#8C6620">↗</span>
+          </span>
           <span style="font-size:15px;line-height:1.65;color:#4C463E">{{ s.body }}</span>
           <span style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-top:auto;padding-top:16px;border-top:1px solid #DCD0BC">
             <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(20px,2vw,26px);color:#A8562F">{{ s.price }}</span>
             <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7168">{{ s.dur }}</span>
           </span>
-        </div>
+        </a>
       </sc-for>
     </div>
   </section>
@@ -169,15 +172,22 @@ class Component extends DCLogic {
   componentDidUpdate(){ if (this._apply) this._apply(); }
   componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
   renderVals(){
+    const rawServices = [
+      {kicker:'The main reason', name:'Beard line laser', body:'Clears the neckline and thins density without taking the beard off. You choose where the line sits. Usually seven to eight sessions because beard hair is coarse.', price:'₦55,000', dur:'Per session'},
+      {kicker:'Skin', name:"Men's facial", body:'Built around shaving irritation, ingrown hairs and congestion rather than anti-ageing. Deep cleanse, extraction where needed, and a calming mask.', price:'₦40,000', dur:'60 min'},
+      {kicker:'Recovery', name:'Deep tissue massage', body:'Slow, specific pressure into the layer under the ache. Bring the two spots that bother you most — usually the shoulders and the lower back.', price:'₦45,000', dur:'60 min'},
+      {kicker:'Body', name:'Back & shoulder laser', body:'For hair you would rather not keep waxing. Quoted at consultation, usually six to eight sessions, and better value than a permanent waxing subscription.', price:'From ₦90,000', dur:'Per session'},
+      {kicker:'Body', name:'Back facial', body:'The area you cannot reach. Cleanse, exfoliate and extract across the back and shoulders, for congestion and post-gym breakouts.', price:'₦45,000', dur:'60 min'},
+      {kicker:'Quick', name:'Back, neck and shoulders', body:'Thirty minutes for the desk, the traffic and the driving. The appointment men book on a lunch break and then book weekly.', price:'₦25,000', dur:'30 min'}
+    ];
+
+    const waBook = name => 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hello Pee Skin & MedSpa, I would like to book ' + name + ' for men at your Gwarinpa branch.');
+
     return {
-      services: [
-        {kicker:'The main reason', name:'Beard line laser', body:'Clears the neckline and thins density without taking the beard off. You choose where the line sits. Usually seven to eight sessions because beard hair is coarse.', price:'₦55,000', dur:'Per session'},
-        {kicker:'Skin', name:"Men's facial", body:'Built around shaving irritation, ingrown hairs and congestion rather than anti-ageing. Deep cleanse, extraction where needed, and a calming mask.', price:'₦40,000', dur:'60 min'},
-        {kicker:'Recovery', name:'Deep tissue massage', body:'Slow, specific pressure into the layer under the ache. Bring the two spots that bother you most — usually the shoulders and the lower back.', price:'₦45,000', dur:'60 min'},
-        {kicker:'Body', name:'Back & shoulder laser', body:'For hair you would rather not keep waxing. Quoted at consultation, usually six to eight sessions, and better value than a permanent waxing subscription.', price:'From ₦90,000', dur:'Per session'},
-        {kicker:'Body', name:'Back facial', body:'The area you cannot reach. Cleanse, exfoliate and extract across the back and shoulders, for congestion and post-gym breakouts.', price:'₦45,000', dur:'60 min'},
-        {kicker:'Quick', name:'Back, neck and shoulders', body:'Thirty minutes for the desk, the traffic and the driving. The appointment men book on a lunch break and then book weekly.', price:'₦25,000', dur:'30 min'}
-      ],
+      services: rawServices.map(s => ({
+        ...s,
+        waBookUrl: waBook(s.name)
+      })),
       faqs: [
         {q:'Why do I get bumps on my neck after shaving?', a:'Pseudofolliculitis barbae. Tightly curled beard hair curves back into the skin after shaving and the body treats it as a foreign body, which produces the bump. It is a hair-shape problem, not a hygiene or razor problem, and it repeats every time you shave.'},
         {q:'Can laser fix razor bumps on the beard line?', a:'Yes, and it is the only approach that removes the cause rather than managing it. We can thin density and clear the neckline without taking the beard off — you choose the line and we treat below it. Most men need seven or eight sessions because beard hair is coarse.'},

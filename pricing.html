@@ -73,16 +73,19 @@
             <div style="display:flex;flex-direction:column">
               <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;padding-bottom:13px;border-bottom:1px solid #DCD0BC">{{ g.title }}</span>
               <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="6">
-                <span style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:14px 0;border-bottom:1px solid #DCD0BC">
+                <a href="{{ i.waBookUrl }}" style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;align-items:baseline;padding:14px 10px;border-bottom:1px solid #DCD0BC;color:#14100C;transition:background .3s ease;border-radius:4px" style-hover="background:rgba(198,155,84,.12)">
                   <span>
-                    <span style="display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:19px;line-height:1.2">{{ i.name }}</span>
+                    <span style="display:flex;align-items:center;gap:8px;font-family:'Bodoni Moda',Georgia,serif;font-size:19px;line-height:1.2">
+                      <span>{{ i.name }}</span>
+                      <span style="font-size:11px;color:#8C6620">↗</span>
+                    </span>
                     <span style="display:block;font-size:13.5px;color:#6B6357;margin-top:3px">{{ i.note }}</span>
                   </span>
                   <span style="text-align:right;white-space:nowrap">
                     <span style="display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:18px;color:#A8562F">{{ i.price }}</span>
                     <span style="display:block;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#7A7168;margin-top:3px">{{ i.dur }}</span>
                   </span>
-                </span>
+                </a>
               </sc-for>
             </div>
           </sc-for>
@@ -99,13 +102,16 @@
       </div>
       <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:1px;background:rgba(245,240,230,.14)">
         <sc-for list="{{ packages }}" as="p" hint-placeholder-count="4">
-          <div style="background:#14100C;padding:clamp(26px,2.8vw,40px);display:flex;flex-direction:column;gap:12px">
+          <a href="{{ p.waBookUrl }}" style="background:#14100C;padding:clamp(26px,2.8vw,40px);display:flex;flex-direction:column;gap:12px;color:#FBF7F0;transition:all .3s ease" style-hover="background:#221C16">
             <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#C69B54">{{ p.kicker }}</span>
-            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(23px,2.3vw,30px);line-height:1.05;color:#FBF7F0">{{ p.title }}</span>
+            <span style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+              <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(23px,2.3vw,30px);line-height:1.05;color:#FBF7F0">{{ p.title }}</span>
+              <span style="font-size:12px;color:#C69B54">↗</span>
+            </span>
             <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(28px,3vw,40px);line-height:1;color:#C69B54">{{ p.price }}</span>
-            <span style="align-self:flex-start;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#14100C;background:#E3C68C;padding:7px 13px">{{ p.saving }}</span>
+            <span style="align-self:flex-start;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#14100C;background:#E3C68C;padding:7px 13px;font-weight:600">{{ p.saving }}</span>
             <span style="font-size:14.5px;line-height:1.65;color:rgba(251,247,240,.6)">{{ p.desc }}</span>
-          </div>
+          </a>
         </sc-for>
       </div>
     </div>
@@ -157,6 +163,25 @@ class Component extends DCLogic {
   componentDidUpdate(){ if (this._apply) this._apply(); }
   componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
   renderVals(){
+    const waBook = name => 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hello Pee Skin & MedSpa, I would like to book ' + name + ' at your Gwarinpa branch.');
+    const mapSections = sections => sections.map(s => ({
+      ...s,
+      groups: s.groups.map(g => ({
+        ...g,
+        items: g.items.map(item => ({
+          ...item,
+          waBookUrl: waBook(item.name)
+        }))
+      }))
+    }));
+
+    const rawPackages = [
+      {kicker:'Membership', title:'Monthly facial', price:'₦65,000', saving:'Save ₦25,000 a month', desc:'One prescribed facial each month, priority booking and 10% off all products and add-ons.'},
+      {kicker:'Membership', title:'Monthly massage', price:'₦55,000', saving:'Save ₦20,000 a month', desc:'One 60-minute massage each month, your choice of therapist, plus a guest rate for whoever you bring.'},
+      {kicker:'Prepaid course', title:'Laser, six sessions', price:'From ₦230,000', saving:'Save up to 25%', desc:'Paid up front and booked across the full cycle. Areas needing eight sessions are quoted at consultation.'},
+      {kicker:'Prepaid course', title:'Vajacial, three sessions', price:'₦75,000', saving:'Save ₦15,000', desc:'Booked fortnightly. Pairs with a laser course for ingrown hairs and dark marks.'}
+    ];
+
     return {
       jump: [
         {label:'Spa', href:'#spa'},
@@ -165,7 +190,7 @@ class Component extends DCLogic {
         {label:'Salon', href:'#salon'},
         {label:'Memberships', href:'#memberships'}
       ],
-      sections: [
+      sections: mapSections([
         {id:'spa', bg:'#F5F0E6', title:'Spa & Wellness', intro:'Massage, facials, body rituals and intimate care. Group bookings of four or more attract a 10% reduction with seven days notice.', groups:[
           {title:'Massage therapy', items:[
             {name:'Swedish massage', note:'Light to medium pressure, full body', price:'₦35,000', dur:'60 min'},
@@ -241,13 +266,11 @@ class Component extends DCLogic {
             {name:'Brazilian wax', note:'', price:'₦25,000', dur:'45 min'}
           ]}
         ]}
-      ],
-      packages: [
-        {kicker:'Membership', title:'Monthly facial', price:'₦65,000', saving:'Save ₦25,000 a month', desc:'One prescribed facial each month, priority booking and 10% off all products and add-ons.'},
-        {kicker:'Membership', title:'Monthly massage', price:'₦55,000', saving:'Save ₦20,000 a month', desc:'One 60-minute massage each month, your choice of therapist, plus a guest rate for whoever you bring.'},
-        {kicker:'Prepaid course', title:'Laser, six sessions', price:'From ₦230,000', saving:'Save up to 25%', desc:'Paid up front and booked across the full cycle. Areas needing eight sessions are quoted at consultation.'},
-        {kicker:'Prepaid course', title:'Vajacial, three sessions', price:'₦75,000', saving:'Save ₦15,000', desc:'Booked fortnightly. Pairs with a laser course for ingrown hairs and dark marks.'}
-      ],
+      ]),
+      packages: rawPackages.map(p => ({
+        ...p,
+        waBookUrl: waBook(p.title + ' (' + p.kicker + ')')
+      })),
       policies: [
         {title:'Deposits', body:'A ₦10,000 deposit holds any appointment over an hour, and any group booking. It comes off the final bill.'},
         {title:'Cancellations', body:'Twenty-four hours notice moves an appointment free of charge. Inside twenty-four hours, the deposit is retained.'},

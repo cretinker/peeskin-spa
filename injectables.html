@@ -85,15 +85,18 @@
     </div>
     <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:rgba(20,16,12,.14)">
       <sc-for list="{{ treatments }}" as="t" hint-placeholder-count="6">
-        <div style="background:#F5F0E6;padding:clamp(26px,2.8vw,40px);display:flex;flex-direction:column;gap:12px">
+        <a href="{{ t.waBookUrl }}" style="background:#F5F0E6;padding:clamp(24px,2.6vw,38px);display:flex;flex-direction:column;gap:12px;color:#14100C;transition:all .3s ease;border-radius:4px" style-hover="background:#EDE5D6">
           <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E">{{ t.kicker }}</span>
-          <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(24px,2.4vw,32px);line-height:1.05">{{ t.name }}</span>
+          <span style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(24px,2.4vw,32px);line-height:1.05">{{ t.name }}</span>
+            <span style="font-size:11px;color:#8C6620">↗</span>
+          </span>
           <span style="font-size:15px;line-height:1.65;color:#4C463E">{{ t.body }}</span>
           <span style="display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-top:auto;padding-top:16px;border-top:1px solid #DCD0BC">
             <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(21px,2.1vw,27px);color:#A8562F">{{ t.price }}</span>
             <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#7A7168;text-align:right">{{ t.lasts }}</span>
           </span>
-        </div>
+        </a>
       </sc-for>
     </div>
   </section>
@@ -185,15 +188,22 @@ class Component extends DCLogic {
   componentDidUpdate(){ if (this._apply) this._apply(); }
   componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
   renderVals(){
+    const rawTreatments = [
+      {kicker:'Structure', name:'Cheek filler', body:'Restores the volume that flattens the midface and drags the lower face down with it. Usually 2ml to start, placed deep on the bone rather than superficially.', price:'₦180,000 / ml', lasts:'12–18 months'},
+      {kicker:'Definition', name:'Jawline & chin', body:'Sharpens a soft jaw and balances a recessed chin. The single most effective treatment for a profile, and the one most people have never been offered.', price:'₦190,000 / ml', lasts:'12–18 months'},
+      {kicker:'Balance', name:'Lip filler', body:'Shape and hydration before volume. We start at 0.5ml on a first appointment regardless of what you asked for, and build from there if you want more.', price:'₦170,000 / ml', lasts:'9–12 months'},
+      {kicker:'Softening', name:'Nasolabial folds', body:'The lines from nose to mouth corner. Often better treated by supporting the cheek above them than by filling the fold itself.', price:'₦180,000 / ml', lasts:'12 months'},
+      {kicker:'Skin quality', name:'Skin boosters', body:'Micro-injections of hyaluronic acid across the skin rather than under it. No volume change, just hydration, glow and finer texture. A course of three, four weeks apart.', price:'₦150,000 / session', lasts:'6–9 months'},
+      {kicker:'Correction', name:'Dissolving', body:'Hyaluronidase to remove filler placed badly, here or elsewhere. Assessed first, and sometimes staged across two appointments.', price:'₦90,000', lasts:'Permanent'}
+    ];
+
+    const waBook = name => 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hello Pee Skin & MedSpa, I would like to book a Doctor-Led Aesthetic Consultation for ' + name + ' at your Gwarinpa clinic.');
+
     return {
-      treatments: [
-        {kicker:'Structure', name:'Cheek filler', body:'Restores the volume that flattens the midface and drags the lower face down with it. Usually 2ml to start, placed deep on the bone rather than superficially.', price:'₦180,000 / ml', lasts:'12–18 months'},
-        {kicker:'Definition', name:'Jawline & chin', body:'Sharpens a soft jaw and balances a recessed chin. The single most effective treatment for a profile, and the one most people have never been offered.', price:'₦190,000 / ml', lasts:'12–18 months'},
-        {kicker:'Balance', name:'Lip filler', body:'Shape and hydration before volume. We start at 0.5ml on a first appointment regardless of what you asked for, and build from there if you want more.', price:'₦170,000 / ml', lasts:'9–12 months'},
-        {kicker:'Softening', name:'Nasolabial folds', body:'The lines from nose to mouth corner. Often better treated by supporting the cheek above them than by filling the fold itself.', price:'₦180,000 / ml', lasts:'12 months'},
-        {kicker:'Skin quality', name:'Skin boosters', body:'Micro-injections of hyaluronic acid across the skin rather than under it. No volume change, just hydration, glow and finer texture. A course of three, four weeks apart.', price:'₦150,000 / session', lasts:'6–9 months'},
-        {kicker:'Correction', name:'Dissolving', body:'Hyaluronidase to remove filler placed badly, here or elsewhere. Assessed first, and sometimes staged across two appointments.', price:'₦90,000', lasts:'Permanent'}
-      ],
+      treatments: rawTreatments.map(t => ({
+        ...t,
+        waBookUrl: waBook(t.name)
+      })),
       rules: [
         {title:'Consultation before injection', body:'Never on the same day. You go home, read the plan and think about it. A twenty-four hour gap is the minimum.'},
         {title:'You see the box', body:'CE-marked product, unopened in front of you, batch sticker photographed onto your record. Ask this everywhere you go.'},

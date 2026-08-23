@@ -165,12 +165,15 @@
           <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E;text-align:right">You save</span>
         </div>
         <sc-for list="{{ prices }}" as="p" hint-placeholder-count="8">
-          <div style="display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:12px;align-items:baseline;padding:15px 0;border-bottom:1px solid #DCD0BC">
-            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(17px,1.8vw,21px);line-height:1.2">{{ p.area }}</span>
+          <a href="{{ p.waBookUrl }}" style="display:grid;grid-template-columns:minmax(0,1.6fr) repeat(3,minmax(0,1fr));gap:12px;align-items:baseline;padding:15px 10px;border-bottom:1px solid #DCD0BC;color:#14100C;transition:background .3s ease;border-radius:4px" style-hover="background:rgba(198,155,84,.12)">
+            <span style="display:flex;align-items:center;gap:6px;font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(17px,1.8vw,21px);line-height:1.2">
+              <span>{{ p.area }}</span>
+              <span style="font-size:11px;color:#8C6620">↗</span>
+            </span>
             <span style="font-size:15px;text-align:right;color:#4C463E">{{ p.single }}</span>
             <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(16px,1.7vw,19px);text-align:right;color:#14100C">{{ p.course }}</span>
             <span style="font-size:14.5px;text-align:right;color:#A8562F;font-weight:600">{{ p.save }}</span>
-          </div>
+          </a>
         </sc-for>
       </div>
       <p style="font-size:13px;color:#7A7168;margin-top:18px">Bikini line, beard and full body are typically eight sessions; the eight-session rate is quoted at consultation. Prices last reviewed January 2026.</p>
@@ -250,6 +253,19 @@ class Component extends DCLogic {
   componentDidUpdate(){ if (this._apply) this._apply(); }
   componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
   renderVals(){
+    const rawPrices = [
+      {area:'Upper lip or chin', single:'₦45,000', course:'₦230,000', save:'₦40,000'},
+      {area:'Underarms', single:'₦45,000', course:'₦230,000', save:'₦40,000'},
+      {area:'Bikini line', single:'₦60,000', course:'₦306,000', save:'₦54,000'},
+      {area:'Brazilian', single:'₦85,000', course:'₦433,000', save:'₦77,000'},
+      {area:'Half legs', single:'₦90,000', course:'₦459,000', save:'₦81,000'},
+      {area:'Full legs', single:'₦150,000', course:'₦765,000', save:'₦135,000'},
+      {area:'Beard shaping, men', single:'₦55,000', course:'₦280,000', save:'₦50,000'},
+      {area:'Full body', single:'₦320,000', course:'₦1,632,000', save:'₦288,000'}
+    ];
+
+    const waBook = area => 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hello Pee Skin & MedSpa, I would like to book a Patch Test & Laser Course for ' + area + ' at your Gwarinpa clinic.');
+
     return {
       safety: [
         {title:'Nd:YAG 1064nm only', body:'The wavelength specified for Fitzpatrick IV–VI. No diode, no IPL, for hair removal on deep skin.'},
@@ -270,16 +286,10 @@ class Component extends DCLogic {
         {title:'Full legs', meta:'Fitzpatrick IV · 6 sessions · 20 weeks', img:'https://images.unsplash.com/photo-1585890483046-9461ebc1dace?auto=format&fit=crop&w=1600&q=80'},
         {title:'Beard shaping, male client', meta:'Fitzpatrick VI · 7 sessions · 24 weeks', img:'https://images.unsplash.com/photo-1648203276014-20f97ba1f817?auto=format&fit=crop&w=1600&q=80'}
       ]),
-      prices: [
-        {area:'Upper lip or chin', single:'₦45,000', course:'₦230,000', save:'₦40,000'},
-        {area:'Underarms', single:'₦45,000', course:'₦230,000', save:'₦40,000'},
-        {area:'Bikini line', single:'₦60,000', course:'₦306,000', save:'₦54,000'},
-        {area:'Brazilian', single:'₦85,000', course:'₦433,000', save:'₦77,000'},
-        {area:'Half legs', single:'₦90,000', course:'₦459,000', save:'₦81,000'},
-        {area:'Full legs', single:'₦150,000', course:'₦765,000', save:'₦135,000'},
-        {area:'Beard shaping, men', single:'₦55,000', course:'₦280,000', save:'₦50,000'},
-        {area:'Full body', single:'₦320,000', course:'₦1,632,000', save:'₦288,000'}
-      ],
+      prices: rawPrices.map(p => ({
+        ...p,
+        waBookUrl: waBook(p.area)
+      })),
       faqs: [
         {q:'Is laser hair removal safe on dark skin?', a:'Yes, when the laser and the settings match your skin. We treat Fitzpatrick IV–VI on an Nd:YAG 1064nm laser, which passes through melanin in the skin and targets the pigment in the follicle instead. The risk on deep skin comes from the wrong device, not from laser itself.'},
         {q:'Will it burn me or leave dark patches?', a:'Burns and post-inflammatory hyperpigmentation happen when energy is too high for the skin type, or when a diode or IPL device is used on deep skin. We patch test every new client 48 hours before the first full session and start conservatively, raising energy across the course as your skin tolerates it.'},

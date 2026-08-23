@@ -123,21 +123,56 @@
           <div style="display:flex;flex-direction:column;gap:0">
             <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;padding-bottom:14px;border-bottom:1px solid #DCD0BC">{{ g.title }}</span>
             <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
-              <span style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:15px 0;border-bottom:1px solid #DCD0BC">
+              <a href="{{ i.waBookUrl }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:14px 10px;border-bottom:1px solid #DCD0BC;color:#14100C;transition:background .3s ease;border-radius:4px" style-hover="background:rgba(198,155,84,.12)">
                 <span>
-                  <span style="display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:20px;line-height:1.2">{{ i.name }}</span>
+                  <span style="display:flex;align-items:center;gap:8px;font-family:'Bodoni Moda',Georgia,serif;font-size:20px;line-height:1.2">
+                    <span>{{ i.name }}</span>
+                    <span style="font-size:11px;color:#8C6620">↗</span>
+                  </span>
                   <span style="display:block;font-size:13.5px;color:#6B6357;margin-top:3px">{{ i.note }}</span>
                 </span>
                 <span style="text-align:right;white-space:nowrap">
                   <span style="display:block;font-family:'Bodoni Moda',Georgia,serif;font-size:19px;color:#A8562F">{{ i.price }}</span>
                   <span style="display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#7A7168;margin-top:3px">{{ i.dur }}</span>
                 </span>
-              </span>
+              </a>
             </sc-for>
           </div>
         </sc-for>
       </div>
       <p style="font-size:13px;color:#7A7168;margin-top:22px">Prices last reviewed January 2026. Group bookings of four or more attract a 10% reduction and need seven days' notice.</p>
+    </div>
+  </section>
+
+  <!-- ================= 5. CURATED TREATMENT PAIRINGS ================= -->
+  <section style="background:#14100C;color:#FBF7F0;border-bottom:1px solid rgba(198,155,84,.28)">
+    <div style="padding:clamp(56px,8vw,110px) clamp(16px,3vw,34px)">
+      <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:clamp(18px,4vw,70px);align-items:end;margin-bottom:clamp(32px,4vw,56px)" data-two-col="1">
+        <div>
+          <span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#C69B54;font-weight:700;display:block;margin-bottom:8px">Curated Rituals</span>
+          <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(32px,5.4vw,64px);line-height:1;letter-spacing:-.03em;color:#FBF7F0">Two Services. One Afternoon.</h2>
+        </div>
+        <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,240,.68);max-width:440px;padding-bottom:6px">Sequenced pairings designed to dissolve tension and restore healthy radiance in a single sanctuary visit.</p>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:clamp(16px,2.2vw,28px)">
+        <sc-for list="{{ curatedPairings }}" as="pair" hint-placeholder-count="3">
+          <div style="background:#1C1712;border:1px solid rgba(198,155,84,.28);padding:clamp(28px,3vw,38px);display:flex;flex-direction:column;border-radius:12px;box-shadow:0 16px 36px rgba(0,0,0,.4);transition:all .3s ease" style-hover="border-color:#C69B54;background:#241D16">
+            <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#C69B54;font-weight:700">{{ pair.tag }}</span>
+            <h3 style="font-family:'Bodoni Moda',Georgia,serif;font-size:24px;color:#FBF7F0;line-height:1.15;margin:10px 0 6px">{{ pair.title }}</h3>
+            <div style="font-size:13px;color:rgba(245,240,230,.55);margin-bottom:12px">{{ pair.services }}</div>
+            <p style="font-size:14px;line-height:1.6;color:rgba(251,247,240,.72);margin:0 0 20px">{{ pair.desc }}</p>
+            
+            <div style="margin-top:auto;padding-top:18px;border-top:1px solid rgba(245,240,230,.12);display:flex;align-items:baseline;justify-content:space-between">
+              <div>
+                <span style="font-family:'Bodoni Moda',serif;font-size:24px;color:#C69B54;font-weight:700">{{ pair.bundlePrice }}</span>
+                <span style="font-size:12px;color:rgba(251,247,240,.4);text-decoration:line-through;margin-left:8px">{{ pair.originalPrice }}</span>
+              </div>
+              <a href="{{ pair.bookUrl }}" style="padding:10px 18px;background:#C69B54;color:#14100C;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">Book Ritual</a>
+            </div>
+          </div>
+        </sc-for>
+      </div>
     </div>
   </section>
 
@@ -210,8 +245,17 @@ class Component extends DCLogic {
   componentDidUpdate(){ if (this._apply) this._apply(); }
   componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
   renderVals(){
+    const waBook = name => 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hello Pee Skin & MedSpa, I would like to book ' + name + ' at your Gwarinpa spa.');
+    const mapGroups = groups => groups.map(g => ({
+      ...g,
+      items: g.items.map(item => ({
+        ...item,
+        waBookUrl: waBook(item.name)
+      }))
+    }));
+
     return {
-      menuGroups: [
+      menuGroups: mapGroups([
         {title:'Massage therapy', items:[
           {name:'Swedish massage', note:'Light to medium pressure, full body', price:'₦35,000', dur:'60 min'},
           {name:'Deep tissue massage', note:'Focused work into chronic tension', price:'₦45,000', dur:'60 min'},
@@ -238,6 +282,35 @@ class Component extends DCLogic {
           {name:'Vajacial course of three', note:'Booked fortnightly', price:'₦75,000', dur:'3 × 45 min'},
           {name:'Intimate area brightening', note:'A course, assessed first', price:'From ₦40,000', dur:'Per session'}
         ]}
+      ]),
+      curatedPairings: [
+        {
+          tag: 'SIGNATURE REJUVENATION',
+          title: 'The Complete Glow Circuit',
+          services: 'Deep Pore HydraFacial + Vitamin Glow IV Infusion',
+          desc: 'Simultaneous internal vitality and external dermal nourishment. Leaves your skin radiant, hydrated, and rested.',
+          bundlePrice: '₦75,000',
+          originalPrice: '₦95,000',
+          bookUrl: 'https://wa.me/2349058830888?text=Hello%20Pee%20Skin%20%26%20MedSpa%2C%20I%20would%20like%20to%20book%20The%20Complete%20Glow%20Circuit%20(HydraFacial%20%2B%20IV%20Infusion)%20at%20your%20Gwarinpa%20clinic.'
+        },
+        {
+          tag: 'DEEP TENSION RELEASE',
+          title: 'The Sanctuary Stress Melt',
+          services: 'Moxibustion Heat Therapy + 60-min Deep Tissue Massage',
+          desc: 'Combines traditional thermal herbal healing with concentrated deep-muscle tension release. Perfect for chronic back and neck strain.',
+          bundlePrice: '₦60,000',
+          originalPrice: '₦75,000',
+          bookUrl: 'https://wa.me/2349058830888?text=Hello%20Pee%20Skin%20%26%20MedSpa%2C%20I%20would%20like%20to%20book%20The%20Sanctuary%20Stress%20Melt%20(Moxibustion%20%2B%20Deep%20Tissue)%20at%20Gwarinpa.'
+        },
+        {
+          tag: 'PRECISION BODY REFINEMENT',
+          title: 'The Flawless Silk Protocol',
+          services: 'Underarm / Bikini Laser + Brightening Chemical Peel',
+          desc: 'Destroys unwanted hair follicles while fading hyperpigmentation and razor bump shadows simultaneously.',
+          bundlePrice: '₦85,000',
+          originalPrice: '₦105,000',
+          bookUrl: 'https://wa.me/2349058830888?text=Hello%20Pee%20Skin%20%26%20MedSpa%2C%20I%20would%20like%20to%20book%20The%20Flawless%20Silk%20Protocol%20(Laser%20%2B%20Brightening%20Peel)%20at%20Gwarinpa.'
+        }
       ],
       visit: [
         {step:'Before', title:'Arrive fifteen early', body:'Time to change, shower if you want to, and fill in a short health form. Come with a bare face for any facial.'},
