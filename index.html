@@ -921,16 +921,16 @@ class Component extends DCLogic {
     return {
       navShift: s.hidden ? '-100%' : '0',
       barShift: s.y > 500 ? '0' : '110%',
-      navBg: solid ? 'rgba(20,16,12,.92)' : 'rgba(20,16,12,.18)',
-      navLine: solid ? 'rgba(198,155,84,.3)' : 'rgba(251,247,240,.16)',
-      navPad: solid ? '11px' : '17px',
+      navBg: 'rgba(20,16,12,.96)',
+      navLine: 'rgba(198,155,84,.3)',
+      navPad: solid ? '11px' : '13px',
       navFg: '#FBF7F0',
-      navLogo: solid ? '15px' : '17px',
-      markSize: solid ? '32px' : '38px',
-      markGlyph: solid ? '15px' : '18px',
+      navLogo: '15px',
+      markSize: '32px',
+      markGlyph: '15px',
       markLine: 'rgba(198,155,84,.55)',
       markFg: '#C69B54',
-      markLabel: 'rgba(251,247,240,.45)',
+      markLabel: 'rgba(251,247,240,.6)',
       progress: s.progress,
       drift: 'psDrift 42s linear infinite',
 
@@ -1026,14 +1026,14 @@ class Component extends DCLogic {
       toggleMobile: () => this.setState(st => ({mobileOpen: !st.mobileOpen, menu:null})),
 
       navItems: [
-        {label:'Home', href:'index.html', enter:()=>this.setState({menu:null}), color:'rgba(251,247,240,.82)', dot:'transparent'},
-        {label:'Treatments', href:'treatments.html', enter:()=>this.setState({menu:'treatments'}), color: s.menu==='treatments' ? '#C69B54' : 'rgba(251,247,240,.82)', dot: s.menu==='treatments' ? '#C69B54' : 'transparent'},
-        {label:'Concerns', href:'concerns.html', enter:()=>this.setState({menu:'concerns'}), color: s.menu==='concerns' ? '#C69B54' : 'rgba(251,247,240,.82)', dot: s.menu==='concerns' ? '#C69B54' : 'transparent'},
-        {label:'Results', href:'results.html', enter:()=>this.setState({menu:null}), color:'rgba(251,247,240,.82)', dot:'transparent'},
-        {label:'Pricing', href:'pricing.html', enter:()=>this.setState({menu:null}), color:'rgba(251,247,240,.82)', dot:'transparent'},
-        {label:'About', href:'about.html', enter:()=>this.setState({menu:null}), color:'rgba(251,247,240,.82)', dot:'transparent'},
-        {label:'Journal', href:'journal.html', enter:()=>this.setState({menu:null}), color:'rgba(251,247,240,.82)', dot:'transparent'},
-        {label:'Visit', href:'contact.html', enter:()=>this.setState({menu:null}), color:'rgba(251,247,240,.82)', dot:'transparent'}
+        {label:'Home', href:'index.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
+        {label:'Treatments', href:'treatments.html', enter:()=>this.setState({menu:'treatments'}), color: s.menu==='treatments' ? '#C69B54' : '#FBF7F0', dot: s.menu==='treatments' ? '#C69B54' : 'transparent'},
+        {label:'Concerns', href:'concerns.html', enter:()=>this.setState({menu:'concerns'}), color: s.menu==='concerns' ? '#C69B54' : '#FBF7F0', dot: s.menu==='concerns' ? '#C69B54' : 'transparent'},
+        {label:'Results', href:'results.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
+        {label:'Pricing', href:'pricing.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
+        {label:'About', href:'about.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
+        {label:'Journal', href:'journal.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
+        {label:'Visit', href:'contact.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'}
       ],
       mobileItems: [
         {label:'Home', href:'index.html'},
