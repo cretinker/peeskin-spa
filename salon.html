@@ -70,7 +70,7 @@
         <div style="display:flex;flex-direction:column">
           <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;padding-bottom:14px;border-bottom:1px solid #DCD0BC">{{ g.title }}</span>
           <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
-            <a href="{{ i.waBookUrl }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:14px 10px;border-bottom:1px solid #DCD0BC;color:#14100C;transition:background .3s ease;border-radius:4px" style-hover="background:rgba(198,155,84,.12)">
+            <a href="{{ i.bookUrl }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:14px 10px;border-bottom:1px solid #DCD0BC;color:#14100C;transition:background .3s ease;border-radius:4px" style-hover="background:rgba(198,155,84,.12)">
               <span>
                 <span style="display:flex;align-items:center;gap:8px;font-family:'Bodoni Moda',Georgia,serif;font-size:20px;line-height:1.2">
                   <span>{{ i.name }}</span>
@@ -96,7 +96,7 @@
         <span style="font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:#C69B54">Book both</span>
         <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,56px);line-height:1;letter-spacing:-.03em;color:#FBF7F0">Hair and a facial, same afternoon.</h2>
         <p style="font-size:17px;line-height:1.7;color:rgba(251,247,240,.66);max-width:38em">Book any salon service alongside a spa treatment on the same day and the spa treatment comes down by 15%. Say so when you book — it cannot be applied afterwards.</p>
-        <a href="https://wa.me/2349058830888?text=Hi%20Pee%20Skin%20%26%20MedSpa%2C%20I%27d%20like%20to%20book%20a%20salon%20and%20spa%20appointment%20on%20the%20same%20day." style="align-self:flex-start;margin-top:8px;background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:17px 30px" style-hover="background:#FBF7F0">Book both on WhatsApp</a>
+        <a href="book.html?service=Hair%20and%20Facial%20Pairing&price=%E2%82%A650,000&dept=salon" style="align-self:flex-start;margin-top:8px;background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:17px 30px" style-hover="background:#FBF7F0">Book Pairing Online</a>
       </div>
       <div style="aspect-ratio:4/3;overflow:hidden;background:#211B14">
         <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&amp;fit=crop&amp;w=1600&amp;q=80" alt="Treatment room at Pee Skin &amp; MedSpa, Gwarinpa" style="width:100%;height:100%;object-fit:cover;filter:saturate(.8) contrast(1.03)">
@@ -130,6 +130,7 @@ class Component extends DCLogic {
       ...g,
       items: g.items.map(item => ({
         ...item,
+        bookUrl: 'book.html?service=' + encodeURIComponent(item.name) + '&price=' + encodeURIComponent(item.price) + '&dur=' + encodeURIComponent(item.dur) + '&dept=salon',
         waBookUrl: waBook(item.name)
       }))
     }));

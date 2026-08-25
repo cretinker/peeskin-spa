@@ -152,12 +152,15 @@
               </div>
 
               <div style="background:#0F0C09;padding:22px;border:1px solid rgba(198,155,84,.3);border-radius:10px;display:flex;flex-direction:column;gap:12px;text-align:center">
-                <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,230,.6)">Direct WhatsApp Booking</span>
+                <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,230,.6)">Recommended Protocol Booking</span>
                 <span style="font-family:'Bodoni Moda',serif;font-size:28px;color:#C69B54;line-height:1">{{ quizRecPrice }}</span>
                 <span style="font-size:11.5px;color:rgba(245,240,230,.5)">House 14, First Avenue, Gwarinpa, Abuja</span>
-                <a href="{{ quizWhatsAppUrl }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">
-                  <span>Book Protocol on WhatsApp</span>
+                <a href="{{ quizBookUrl }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">
+                  <span>Book Protocol Online</span>
                   <span>→</span>
+                </a>
+                <a href="{{ quizWhatsAppUrl }}" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:rgba(245,240,230,.7);text-decoration:underline;margin-top:2px">
+                  Or chat with WhatsApp concierge
                 </a>
               </div>
             </div>
@@ -410,6 +413,7 @@ class Component extends DCLogic {
       quizRecTimeline: rec.timeline,
       quizRecSuitability: rec.suitability,
       quizRecPrice: rec.price,
+      quizBookUrl: 'book.html?service=' + encodeURIComponent(rec.title) + '&price=' + encodeURIComponent(rec.price) + '&dept=' + (rec.tag.includes('LASER') ? 'laser' : (rec.tag.includes('INJECT') ? 'aesthetics' : 'spa')),
       quizWhatsAppUrl: 'https://wa.me/2349058830888?text=' + encodeURIComponent(rec.waText),
 
       concerns: data.map((c, i) => Object.assign({}, c, {

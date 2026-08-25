@@ -85,7 +85,7 @@
     </div>
     <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr));gap:1px;background:rgba(20,16,12,.14)">
       <sc-for list="{{ treatments }}" as="t" hint-placeholder-count="6">
-        <a href="{{ t.waBookUrl }}" style="background:#F5F0E6;padding:clamp(24px,2.6vw,38px);display:flex;flex-direction:column;gap:12px;color:#14100C;transition:all .3s ease;border-radius:4px" style-hover="background:#EDE5D6">
+        <a href="{{ t.bookUrl }}" style="background:#F5F0E6;padding:clamp(24px,2.6vw,38px);display:flex;flex-direction:column;gap:12px;color:#14100C;transition:all .3s ease;border-radius:4px" style-hover="background:#EDE5D6">
           <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E">{{ t.kicker }}</span>
           <span style="display:flex;align-items:center;justify-content:space-between;gap:8px">
             <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(24px,2.4vw,32px);line-height:1.05">{{ t.name }}</span>
@@ -202,6 +202,7 @@ class Component extends DCLogic {
     return {
       treatments: rawTreatments.map(t => ({
         ...t,
+        bookUrl: 'book.html?service=' + encodeURIComponent(t.name) + '&price=' + encodeURIComponent(t.price) + '&dur=' + encodeURIComponent(t.lasts) + '&dept=aesthetics',
         waBookUrl: waBook(t.name)
       })),
       rules: [

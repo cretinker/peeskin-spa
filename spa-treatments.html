@@ -123,7 +123,7 @@
           <div style="display:flex;flex-direction:column;gap:0">
             <span style="font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;padding-bottom:14px;border-bottom:1px solid #DCD0BC">{{ g.title }}</span>
             <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="5">
-              <a href="{{ i.waBookUrl }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:14px 10px;border-bottom:1px solid #DCD0BC;color:#14100C;transition:background .3s ease;border-radius:4px" style-hover="background:rgba(198,155,84,.12)">
+              <a href="{{ i.bookUrl }}" style="display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:14px 10px;border-bottom:1px solid #DCD0BC;color:#14100C;transition:background .3s ease;border-radius:4px" style-hover="background:rgba(198,155,84,.12)">
                 <span>
                   <span style="display:flex;align-items:center;gap:8px;font-family:'Bodoni Moda',Georgia,serif;font-size:20px;line-height:1.2">
                     <span>{{ i.name }}</span>
@@ -250,6 +250,7 @@ class Component extends DCLogic {
       ...g,
       items: g.items.map(item => ({
         ...item,
+        bookUrl: 'book.html?service=' + encodeURIComponent(item.name) + '&price=' + encodeURIComponent(item.price) + '&dur=' + encodeURIComponent(item.dur) + '&dept=spa',
         waBookUrl: waBook(item.name)
       }))
     }));
@@ -291,7 +292,7 @@ class Component extends DCLogic {
           desc: 'Simultaneous internal vitality and external dermal nourishment. Leaves your skin radiant, hydrated, and rested.',
           bundlePrice: '₦75,000',
           originalPrice: '₦95,000',
-          bookUrl: 'https://wa.me/2349058830888?text=Hello%20Pee%20Skin%20%26%20MedSpa%2C%20I%20would%20like%20to%20book%20The%20Complete%20Glow%20Circuit%20(HydraFacial%20%2B%20IV%20Infusion)%20at%20your%20Gwarinpa%20clinic.'
+          bookUrl: 'book.html?service=' + encodeURIComponent('The Complete Glow Circuit (HydraFacial + IV Infusion)') + '&price=%E2%82%A675,000&dept=spa'
         },
         {
           tag: 'DEEP TENSION RELEASE',
@@ -300,7 +301,7 @@ class Component extends DCLogic {
           desc: 'Combines traditional thermal herbal healing with concentrated deep-muscle tension release. Perfect for chronic back and neck strain.',
           bundlePrice: '₦60,000',
           originalPrice: '₦75,000',
-          bookUrl: 'https://wa.me/2349058830888?text=Hello%20Pee%20Skin%20%26%20MedSpa%2C%20I%20would%20like%20to%20book%20The%20Sanctuary%20Stress%20Melt%20(Moxibustion%20%2B%20Deep%20Tissue)%20at%20Gwarinpa.'
+          bookUrl: 'book.html?service=' + encodeURIComponent('The Sanctuary Stress Melt (Moxibustion + Deep Tissue)') + '&price=%E2%82%A660,000&dept=spa'
         },
         {
           tag: 'PRECISION BODY REFINEMENT',
@@ -309,7 +310,7 @@ class Component extends DCLogic {
           desc: 'Destroys unwanted hair follicles while fading hyperpigmentation and razor bump shadows simultaneously.',
           bundlePrice: '₦85,000',
           originalPrice: '₦105,000',
-          bookUrl: 'https://wa.me/2349058830888?text=Hello%20Pee%20Skin%20%26%20MedSpa%2C%20I%20would%20like%20to%20book%20The%20Flawless%20Silk%20Protocol%20(Laser%20%2B%20Brightening%20Peel)%20at%20Gwarinpa.'
+          bookUrl: 'book.html?service=' + encodeURIComponent('The Flawless Silk Protocol (Laser + Brightening Peel)') + '&price=%E2%82%A685,000&dept=laser'
         }
       ],
       visit: [

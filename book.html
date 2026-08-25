@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reserve an Appointment · Pee Skin &amp; MedSpa Gwarinpa, Abuja</title>
+<meta name="description" content="Book your spa treatment, laser session, aesthetic consultation, or salon service at Pee Skin &amp; MedSpa in Gwarinpa, Abuja. Transparent published rates and instant confirmation.">
+<link rel="canonical" href="https://peeskin.com/book.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html{overflow-x:hidden;-webkit-text-size-adjust:100%}
+  body{margin:0;background:#F5F0E6;color:#14100C;font-family:Karla,-apple-system,Segoe UI,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+  h1,h2,h3,h4,p,ul,ol,li,figure,blockquote,dl,dd{margin:0;padding:0}
+  ul,ol{list-style:none}
+  img{display:block;max-width:100%}
+  a{color:#8C6620;text-decoration:none}
+  a:hover{color:#14100C}
+  button,input,select,textarea{font:inherit;color:inherit}
+  ::selection{background:#C69B54;color:#14100C}
+  :focus-visible{outline:2px solid #C69B54;outline-offset:3px}
+  summary::-webkit-details-marker{display:none}
+  summary{list-style:none;cursor:pointer}
+  body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.04;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E")}
+  @keyframes psRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+  [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+  [data-reveal][data-seen]{opacity:1;transform:none}
+</style>
+</helmet>
+
+<div style="background:#F5F0E6;min-height:100vh;padding-bottom:74px">
+<dc-import name="SiteNav" active="treatments" hint-size="100%,58px"></dc-import>
+
+<main>
+  <!-- Header Banner -->
+  <section style="background:#14100C;color:#FBF7F0;padding:clamp(48px,6vw,80px) clamp(16px,3vw,34px);border-bottom:1px solid rgba(198,155,84,.28)">
+    <div style="max-width:960px;margin:0 auto;text-align:center;display:flex;flex-direction:column;align-items:center;gap:14px">
+      <div style="display:flex;align-items:center;gap:12px">
+        <span style="width:34px;height:1px;background:#C69B54"></span>
+        <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54;font-weight:700">Online Reservation Desk</span>
+        <span style="width:34px;height:1px;background:#C69B54"></span>
+      </div>
+      <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(34px,5.6vw,68px);line-height:1;letter-spacing:-.03em;color:#FBF7F0">
+        Book Your Session
+      </h1>
+      <p style="font-size:clamp(15px,1.2vw,17.5px);line-height:1.6;color:rgba(251,247,240,.72);max-width:540px">
+        Select your treatment, pick your preferred date and time, and receive instant confirmation with transparent published pricing.
+      </p>
+
+      <!-- Step Indicator Bar -->
+      <div style="display:flex;align-items:center;gap:clamp(8px,2vw,20px);margin-top:20px;padding:12px 24px;background:rgba(255,255,255,.05);border-radius:100px;border:1px solid rgba(198,155,84,.25)">
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="width:24px;height:24px;border-radius:50%;background:{{ step1Bg }};color:{{ step1Fg }};font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">1</span>
+          <span style="font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:{{ step1Color }}">Service</span>
+        </div>
+        <span style="width:20px;height:1px;background:rgba(245,240,230,.2)"></span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="width:24px;height:24px;border-radius:50%;background:{{ step2Bg }};color:{{ step2Fg }};font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">2</span>
+          <span style="font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:{{ step2Color }}">Date &amp; Time</span>
+        </div>
+        <span style="width:20px;height:1px;background:rgba(245,240,230,.2)"></span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="width:24px;height:24px;border-radius:50%;background:{{ step3Bg }};color:{{ step3Fg }};font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">3</span>
+          <span style="font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:{{ step3Color }}">Details</span>
+        </div>
+        <span style="width:20px;height:1px;background:rgba(245,240,230,.2)"></span>
+        <div style="display:flex;align-items:center;gap:8px">
+          <span style="width:24px;height:24px;border-radius:50%;background:{{ step4Bg }};color:{{ step4Fg }};font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center">4</span>
+          <span style="font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:{{ step4Color }}">Confirmation</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Booking Interface -->
+  <section style="padding:clamp(40px,5vw,72px) clamp(16px,3vw,34px)">
+    <div style="max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr;gap:clamp(30px,4vw,48px)" data-booking-layout="1">
+      
+      <!-- Wizard Card Body -->
+      <div style="background:#FFFFFF;border:1px solid #DCD0BC;border-radius:12px;box-shadow:0 12px 36px rgba(20,16,12,.06);padding:clamp(24px,3.5vw,44px);display:flex;flex-direction:column">
+        
+        <!-- ================= STEP 1: SERVICE & ADD-ON SELECTION ================= -->
+        <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+          <div>
+            <div style="margin-bottom:24px">
+              <span style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:6px">Step 1 of 3</span>
+              <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(24px,3.2vw,36px);line-height:1.1;color:#14100C">Choose Your Treatment</h2>
+              <p style="font-size:14.5px;color:#6B6357;margin-top:6px">Select the primary service you wish to reserve at our Gwarinpa clinic.</p>
+            </div>
+
+            <!-- Department Switcher Tabs -->
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;border-bottom:1px solid #E8E0D2;padding-bottom:14px">
+              <sc-for list="{{ deptTabs }}" as="dt" hint-placeholder-count="4">
+                <button type="button" onClick="{{ dt.select }}" style="padding:10px 18px;border-radius:6px;border:1px solid {{ dt.border }};background:{{ dt.bg }};color:{{ dt.fg }};font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s ease">
+                  {{ dt.label }}
+                </button>
+              </sc-for>
+            </div>
+
+            <!-- Service Items Radio List -->
+            <div style="display:grid;gap:10px;margin-bottom:28px">
+              <sc-for list="{{ activeServices }}" as="srv" hint-placeholder-count="6">
+                <div onClick="{{ srv.select }}" style="padding:16px 20px;border-radius:8px;border:1.5px solid {{ srv.border }};background:{{ srv.bg }};cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;transition:all .25s ease">
+                  <span style="width:20px;height:20px;border-radius:50%;border:2px solid {{ srv.radioBorder }};display:flex;align-items:center;justify-content:center;background:{{ srv.radioBg }}">
+                    <span style="width:8px;height:8px;border-radius:50%;background:#FFFFFF;display:{{ srv.radioDot }}"></span>
+                  </span>
+                  <div>
+                    <div style="display:flex;align-items:baseline;gap:8px">
+                      <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:18px;font-weight:500;color:#14100C">{{ srv.name }}</span>
+                      <span style="font-size:11.5px;color:#8A5A2E;letter-spacing:.08em;text-transform:uppercase">{{ srv.dur }}</span>
+                    </div>
+                    <span style="display:block;font-size:13px;color:#6B6357;margin-top:2px">{{ srv.desc }}</span>
+                  </div>
+                  <div style="text-align:right">
+                    <span style="font-family:'Bodoni Moda',serif;font-size:18px;font-weight:700;color:#A8562F">{{ srv.price }}</span>
+                  </div>
+                </div>
+              </sc-for>
+            </div>
+
+            <!-- Optional Add-On Enhancements -->
+            <div style="background:#FAF7F2;border:1px solid #E8E0D2;border-radius:8px;padding:20px;margin-bottom:28px">
+              <span style="font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:12px">Optional Session Enhancements</span>
+              <div style="display:grid;gap:8px">
+                <sc-for list="{{ addOns }}" as="ao" hint-placeholder-count="3">
+                  <div onClick="{{ ao.toggle }}" style="padding:12px 16px;border-radius:6px;border:1px solid {{ ao.border }};background:{{ ao.bg }};cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:all .2s ease">
+                    <div style="display:flex;align-items:center;gap:12px">
+                      <span style="width:16px;height:16px;border-radius:3px;border:1.5px solid {{ ao.checkBorder }};background:{{ ao.checkBg }};display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-size:10px">✓</span>
+                      <span style="font-size:13.5px;color:#14100C">{{ ao.name }}</span>
+                    </div>
+                    <span style="font-family:'Bodoni Moda',serif;font-size:14px;color:#A8562F;font-weight:600">{{ ao.price }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <!-- Continue Button -->
+            <div style="display:flex;justify-content:flex-end">
+              <button type="button" onClick="{{ goToStep2 }}" style="padding:16px 36px;background:#14100C;color:#FBF7F0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;transition:all .3s ease" style-hover="background:#C69B54;color:#14100C">
+                Continue to Date &amp; Time →
+              </button>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ================= STEP 2: DATE & TIME SELECTION ================= -->
+        <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="margin-bottom:24px">
+              <span style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:6px">Step 2 of 3</span>
+              <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(24px,3.2vw,36px);line-height:1.1;color:#14100C">Select Preferred Appointment Slot</h2>
+              <p style="font-size:14.5px;color:#6B6357;margin-top:6px">Open Monday–Saturday 9:00 AM – 9:00 PM · Sunday 1:00 PM – 9:00 PM.</p>
+            </div>
+
+            <!-- Date Picker Section -->
+            <div style="margin-bottom:24px">
+              <label style="display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#14100C;margin-bottom:8px">Select Appointment Date</label>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px">
+                <sc-for list="{{ dateOptions }}" as="d" hint-placeholder-count="7">
+                  <div onClick="{{ d.select }}" style="padding:14px 10px;text-align:center;border-radius:8px;border:1.5px solid {{ d.border }};background:{{ d.bg }};cursor:pointer;transition:all .2s ease">
+                    <span style="display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:{{ d.subColor }}">{{ d.dayName }}</span>
+                    <span style="display:block;font-family:'Bodoni Moda',serif;font-size:22px;font-weight:600;color:{{ d.fg }};margin:4px 0">{{ d.dayNum }}</span>
+                    <span style="display:block;font-size:11px;color:{{ d.subColor }}">{{ d.month }}</span>
+                  </div>
+                </sc-for>
+              </div>
+            </div>
+
+            <!-- Time Slots Grid -->
+            <div style="margin-bottom:28px">
+              <label style="display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#14100C;margin-bottom:8px">Available Time Slots</label>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px">
+                <sc-for list="{{ timeSlots }}" as="ts" hint-placeholder-count="8">
+                  <button type="button" onClick="{{ ts.select }}" style="padding:12px 6px;text-align:center;border-radius:6px;border:1px solid {{ ts.border }};background:{{ ts.bg }};color:{{ ts.fg }};font-size:13px;font-weight:600;cursor:pointer;transition:all .2s ease">
+                    {{ ts.time }}
+                  </button>
+                </sc-for>
+              </div>
+            </div>
+
+            <!-- Specialist Preference -->
+            <div style="background:#FAF7F2;border:1px solid #E8E0D2;border-radius:8px;padding:18px;margin-bottom:28px">
+              <label style="display:block;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A5A2E;font-weight:700;margin-bottom:6px">Practitioner Preference</label>
+              <select onChange="{{ onSpecialistChange }}" style="width:100%;padding:12px 14px;border:1px solid #DCD0BC;border-radius:6px;background:#FFFFFF;font-size:14px;color:#14100C">
+                <option value="Any Senior Practitioner">First Available Senior Practitioner (Recommended)</option>
+                <option value="Peace Adeyemi (Lead Practitioner)">Peace Adeyemi · Lead Aesthetic Specialist (Laser / Injectables)</option>
+                <option value="Female Therapist Team">Female Massage &amp; Hammam Specialist Team</option>
+                <option value="Men's Grooming Specialist">Men's Grooming Specialist</option>
+              </select>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <button type="button" onClick="{{ goToStep1 }}" style="padding:14px 24px;background:none;border:1px solid #DCD0BC;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;cursor:pointer">
+                ← Back to Service
+              </button>
+              <button type="button" onClick="{{ goToStep3 }}" style="padding:16px 36px;background:#14100C;color:#FBF7F0;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;transition:all .3s ease" style-hover="background:#C69B54;color:#14100C">
+                Continue to Guest Details →
+              </button>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ================= STEP 3: GUEST DETAILS & CONFIRMATION ================= -->
+        <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+          <div>
+            <div style="margin-bottom:24px">
+              <span style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:6px">Step 3 of 3</span>
+              <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(24px,3.2vw,36px);line-height:1.1;color:#14100C">Your Details</h2>
+              <p style="font-size:14.5px;color:#6B6357;margin-top:6px">Please provide your contact info for appointment confirmation and arrival reminders.</p>
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px" data-form-grid="1">
+              <div>
+                <label style="display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#14100C;margin-bottom:6px">Full Name *</label>
+                <input type="text" value="{{ formName }}" onInput="{{ onNameInput }}" placeholder="e.g. Amina Bello" style="width:100%;padding:14px;border:1px solid #DCD0BC;border-radius:6px;font-size:14px;background:#FFFFFF;color:#14100C">
+              </div>
+              <div>
+                <label style="display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#14100C;margin-bottom:6px">Phone Number / WhatsApp *</label>
+                <input type="tel" value="{{ formPhone }}" onInput="{{ onPhoneInput }}" placeholder="e.g. 0801 234 5678" style="width:100%;padding:14px;border:1px solid #DCD0BC;border-radius:6px;font-size:14px;background:#FFFFFF;color:#14100C">
+              </div>
+            </div>
+
+            <div style="margin-bottom:16px">
+              <label style="display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#14100C;margin-bottom:6px">Email Address (for calendar invite)</label>
+              <input type="email" value="{{ formEmail }}" onInput="{{ onEmailInput }}" placeholder="e.g. amina@example.com" style="width:100%;padding:14px;border:1px solid #DCD0BC;border-radius:6px;font-size:14px;background:#FFFFFF;color:#14100C">
+            </div>
+
+            <div style="margin-bottom:24px">
+              <label style="display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:#14100C;margin-bottom:6px">Skin / Health Notes or Special Requests (Optional)</label>
+              <textarea value="{{ formNotes }}" onInput="{{ onNotesInput }}" placeholder="Any skin sensitivities, allergies, injuries, pressure preferences, or questions..." rows="3" style="width:100%;padding:14px;border:1px solid #DCD0BC;border-radius:6px;font-size:14px;background:#FFFFFF;color:#14100C;resize:vertical"></textarea>
+            </div>
+
+            <!-- Booking Policy Card -->
+            <div style="background:#FAF7F2;border:1px solid #E8E0D2;border-radius:8px;padding:16px 20px;margin-bottom:28px;font-size:13px;line-height:1.6;color:#524B42">
+              <strong style="color:#14100C;display:block;margin-bottom:4px">Transparent Booking Policy:</strong>
+              No advance payment required for single standard services. Appointments exceeding 60 minutes or group sessions are held with a ₦10,000 reservation deposit which is deducted from your final bill on arrival. 24-hour notice allows free rescheduling.
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div style="display:flex;justify-content:space-between;align-items:center">
+              <button type="button" onClick="{{ goToStep2 }}" style="padding:14px 24px;background:none;border:1px solid #DCD0BC;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;cursor:pointer">
+                ← Back to Time
+              </button>
+              <button type="button" onClick="{{ submitBooking }}" style="padding:16px 40px;background:#C69B54;color:#14100C;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;box-shadow:0 8px 24px -6px rgba(198,155,84,.7);transition:all .3s ease" style-hover="background:#14100C;color:#C69B54">
+                Confirm Reservation &amp; Get Reference →
+              </button>
+            </div>
+          </div>
+        </sc-if>
+
+        <!-- ================= STEP 4: SUCCESS CONFIRMATION CARD ================= -->
+        <sc-if value="{{ isStep4 }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;padding:16px 0">
+            <div style="width:64px;height:64px;border-radius:50%;background:#F2EBDC;border:2px solid #C69B54;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:#C69B54;font-size:28px">
+              ✓
+            </div>
+            <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:6px">Reservation Confirmed</span>
+            <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(28px,4vw,44px);line-height:1.05;color:#14100C;margin-bottom:12px">
+              We Look Forward to Welcoming You
+            </h2>
+            <p style="font-size:15px;line-height:1.6;color:#524B42;max-width:480px;margin:0 auto 28px">
+              Your appointment has been registered at our Gwarinpa clinic. A confirmation summary has been generated below.
+            </p>
+
+            <!-- Summary Ticket Box -->
+            <div style="background:#FAF7F2;border:1.5px solid #DCD0BC;border-radius:12px;padding:clamp(20px,3vw,32px);max-width:580px;margin:0 auto 32px;text-align:left">
+              <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:16px;border-bottom:1px solid #E8E0D2;margin-bottom:18px">
+                <div>
+                  <span style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#7A7168;display:block">Booking Reference</span>
+                  <span style="font-family:'Bodoni Moda',serif;font-size:24px;font-weight:700;color:#C69B54">{{ bookingRef }}</span>
+                </div>
+                <span style="background:#14100C;color:#FBF7F0;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 12px;border-radius:4px">Reserved</span>
+              </div>
+
+              <div style="display:grid;gap:12px;font-size:14.5px;color:#2A231A">
+                <div style="display:flex;justify-content:space-between;gap:16px">
+                  <span style="color:#7A7168">Guest Name:</span>
+                  <span style="font-weight:600">{{ confirmedName }}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;gap:16px">
+                  <span style="color:#7A7168">Treatment:</span>
+                  <span style="font-weight:600;text-align:right">{{ selectedService.name }} ({{ selectedService.dur }})</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;gap:16px">
+                  <span style="color:#7A7168">Date &amp; Time:</span>
+                  <span style="font-weight:600">{{ selectedDateText }} at {{ selectedTime }}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;gap:16px">
+                  <span style="color:#7A7168">Practitioner:</span>
+                  <span style="font-weight:600">{{ selectedSpecialist }}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;gap:16px">
+                  <span style="color:#7A7168">Location:</span>
+                  <span style="font-weight:600">House 14, First Avenue, Gwarinpa, Abuja</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;gap:16px;padding-top:14px;border-top:1px solid #E8E0D2;font-size:17px">
+                  <span style="font-weight:700;color:#14100C">Estimated Total:</span>
+                  <span style="font-family:'Bodoni Moda',serif;font-weight:700;color:#A8562F;font-size:20px">{{ totalPriceDisplay }}</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- WhatsApp Fallback Action Button -->
+            <div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+              <a href="{{ whatsappSummaryUrl }}" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;padding:16px 32px;background:#25D366;color:#FFFFFF;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:6px;box-shadow:0 8px 24px -6px rgba(37,211,102,.5);transition:all .3s ease" style-hover="background:#1EBE5D">
+                <span>💬 Send Copy to WhatsApp Concierge</span>
+              </a>
+              <span style="font-size:12.5px;color:#7A7168">Optional: Sync directly with our front desk on WhatsApp for instant confirmation.</span>
+            </div>
+
+            <div style="margin-top:32px;display:flex;gap:16px;justify-content:center">
+              <button type="button" onClick="{{ resetBooking }}" style="padding:12px 24px;border:1px solid #DCD0BC;background:#FFFFFF;color:#14100C;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;cursor:pointer">
+                Book Another Service
+              </button>
+              <a href="index.html" style="padding:12px 24px;background:#14100C;color:#FBF7F0;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px">
+                Return to Homepage
+              </a>
+            </div>
+          </div>
+        </sc-if>
+
+      </div>
+
+      <!-- Right Column: Live Booking Summary Sidebar (Steps 1 to 3) -->
+      <sc-if value="{{ isNotStep4 }}" hint-placeholder-val="{{ true }}">
+        <div style="background:#FAF7F2;border:1px solid #DCD0BC;border-radius:12px;padding:clamp(24px,3vw,36px);display:flex;flex-direction:column;gap:20px;height:fit-content">
+          <div>
+            <span style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:6px">Booking Overview</span>
+            <h3 style="font-family:'Bodoni Moda',Georgia,serif;font-size:22px;color:#14100C">Reservation Summary</h3>
+          </div>
+
+          <div style="border-top:1px solid #E8E0D2;padding-top:16px;display:flex;flex-direction:column;gap:12px;font-size:14px">
+            <div style="display:flex;justify-content:space-between;gap:12px">
+              <span style="color:#7A7168">Service:</span>
+              <span style="font-weight:600;text-align:right;color:#14100C">{{ selectedService.name }}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:12px">
+              <span style="color:#7A7168">Duration:</span>
+              <span style="font-weight:600;color:#14100C">{{ selectedService.dur }}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:12px">
+              <span style="color:#7A7168">Base Rate:</span>
+              <span style="font-weight:600;color:#A8562F">{{ selectedService.price }}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:12px">
+              <span style="color:#7A7168">Date:</span>
+              <span style="font-weight:600;color:#14100C">{{ selectedDateText }}</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;gap:12px">
+              <span style="color:#7A7168">Time Slot:</span>
+              <span style="font-weight:600;color:#14100C">{{ selectedTime }}</span>
+            </div>
+          </div>
+
+          <div style="border-top:1px solid #E8E0D2;padding-top:16px;display:flex;justify-content:space-between;align-items:baseline">
+            <span style="font-size:15px;font-weight:700;color:#14100C">Estimated Total:</span>
+            <span style="font-family:'Bodoni Moda',serif;font-size:22px;font-weight:700;color:#A8562F">{{ totalPriceDisplay }}</span>
+          </div>
+
+          <!-- Secondary WhatsApp Fallback Notice -->
+          <div style="border-top:1px solid #E8E0D2;padding-top:16px;font-size:12.5px;color:#6B6357;line-height:1.5">
+            Prefer direct assistance or bespoke group packages? Message our <a href="https://wa.me/2349058830888?text=Hello%20Pee%20Skin%20%26%20MedSpa%2C%20I%20have%20a%20question%20about%20booking%20an%20appointment." target="_blank" rel="noopener noreferrer" style="color:#8C6620;font-weight:700;text-decoration:underline">WhatsApp concierge desk</a> or call <a href="tel:+2349058830888" style="color:#14100C;font-weight:700">0905 883 0888</a>.
+          </div>
+        </div>
+      </sc-if>
+
+    </div>
+  </section>
+</main>
+
+<dc-import name="SiteFooter" hint-size="100%,420px"></dc-import>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    step: 1,
+    dept: 'spa',
+    selectedServiceName: 'Swedish massage',
+    selectedAddOns: [],
+    selectedDateIndex: 0,
+    selectedTime: '10:30 AM',
+    selectedSpecialist: 'First Available Senior Practitioner',
+    formName: '',
+    formPhone: '',
+    formEmail: '',
+    formNotes: '',
+    bookingRef: '',
+    confirmedName: ''
+  };
+
+  componentDidMount(){
+    const root = this.el || document;
+    this._io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.setAttribute('data-seen',''); this._io.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
+    const mq = window.matchMedia('(min-width: 960px)');
+    const apply = () => {
+      root.querySelectorAll('[data-booking-layout]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '1.8fr 1fr' : '1fr'; });
+      root.querySelectorAll('[data-form-grid]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '1fr 1fr' : '1fr'; });
+      root.querySelectorAll('[data-reveal]').forEach(n => { if (!n.hasAttribute('data-obs')) { n.setAttribute('data-obs',''); this._io.observe(n); } });
+    };
+    this._apply = apply; this._mq = mq;
+    mq.addEventListener('change', apply); apply(); this._t = setInterval(apply, 600);
+
+    // Read URL Search Parameters
+    try {
+      const params = new URLSearchParams(window.location.search);
+      const srvParam = params.get('service');
+      const deptParam = params.get('dept');
+      if (srvParam) {
+        this.setState({
+          selectedServiceName: srvParam,
+          dept: deptParam || this.getDeptForService(srvParam)
+        });
+      }
+    } catch(e){}
+  }
+
+  componentDidUpdate(){ if (this._apply) this._apply(); }
+  componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
+
+  getDeptForService(name){
+    const lower = (name || '').toLowerCase();
+    if (lower.includes('laser') || lower.includes('patch test') || lower.includes('tattoo') || lower.includes('acne')) return 'laser';
+    if (lower.includes('filler') || lower.includes('botox') || lower.includes('inject') || lower.includes('knuckle') || lower.includes('booster')) return 'aesthetics';
+    if (lower.includes('hair') || lower.includes('press') || lower.includes('nail') || lower.includes('manicure') || lower.includes('pedicure') || lower.includes('lash') || lower.includes('brow') || lower.includes('wax')) return 'salon';
+    return 'spa';
+  }
+
+  renderVals(){
+    const s = this.state;
+
+    // Services Master Catalog by Department
+    const allServices = {
+      spa: [
+        {name:'Swedish massage', price:'₦35,000', numPrice:35000, dur:'60 min', desc:'Light to medium pressure, full body relaxation.'},
+        {name:'Deep tissue massage', price:'₦45,000', numPrice:45000, dur:'60 min', desc:'Focused pressure into chronic back, neck and shoulder tension.'},
+        {name:'Hot stone massage', price:'₦55,000', numPrice:55000, dur:'75 min', desc:'Heated volcanic basalt stones along muscle meridians.'},
+        {name:'Moxibustion massage', price:'₦50,000', numPrice:50000, dur:'60 min', desc:'Mugwort thermal therapy to stimulate microcirculation and ease fatigue.'},
+        {name:'Couples massage', price:'₦85,000', numPrice:85000, dur:'60 min', desc:'Two therapists, private couples suite.'},
+        {name:'Moroccan hammam', price:'₦65,000', numPrice:65000, dur:'90 min', desc:'Warm steam, traditional black soap, kessa glove exfoliation & rhassoul.'},
+        {name:'Prescribed facial', price:'₦40,000', numPrice:40000, dur:'60 min', desc:'Formulated specifically after reading your skin condition.'},
+        {name:'Deep cleansing facial', price:'₦45,000', numPrice:45000, dur:'75 min', desc:'Vortex extractions, pore decongestion and calming hydration.'},
+        {name:'Full body scrub', price:'₦35,000', numPrice:35000, dur:'45 min', desc:'Organic sugar and salt exfoliation followed by body butter.'},
+        {name:'Vajacial ritual', price:'₦30,000', numPrice:30000, dur:'45 min', desc:'Cleanse, gentle exfoliation, extraction and soothing mask for intimate areas.'}
+      ],
+      laser: [
+        {name:'Consultation & patch test', price:'₦10,000', numPrice:10000, dur:'20 min', desc:'48-hour safety patch test and Fitzpatrick calibration (credited against session 1).'},
+        {name:'Upper lip or chin laser', price:'₦45,000', numPrice:45000, dur:'Single Session', desc:'Nd:YAG 1064nm permanent reduction for delicate facial areas.'},
+        {name:'Underarms laser', price:'₦45,000', numPrice:45000, dur:'Single Session', desc:'Clears hair and stops post-shave friction hyperpigmentation.'},
+        {name:'Bikini line laser', price:'₦60,000', numPrice:60000, dur:'Single Session', desc:'Safe on melanin-rich skin, prevents painful ingrown razor bumps.'},
+        {name:'Brazilian laser', price:'₦85,000', numPrice:85000, dur:'Single Session', desc:'Complete intimate area hair removal protocol.'},
+        {name:'Full legs laser', price:'₦150,000', numPrice:150000, dur:'Single Session', desc:'Both full legs, cooling sapphire handpiece for comfort.'},
+        {name:'Beard shaping (Men)', price:'₦55,000', numPrice:55000, dur:'Single Session', desc:'Sharpens beard boundary and ends neck razor bumps permanently.'},
+        {name:'Laser acne treatment', price:'₦55,000', numPrice:55000, dur:'Per Session', desc:'Calms active inflammatory breakouts and kills P. acnes bacteria.'},
+        {name:'Laser tattoo removal', price:'From ₦60,000', numPrice:60000, dur:'Per Session', desc:'Q-switched Nd:YAG shattering deep pigment particles.'}
+      ],
+      aesthetics: [
+        {name:'Aesthetic Doctor Consultation', price:'₦20,000', numPrice:20000, dur:'45 min', desc:'Facial structure mapping and personalized medical plan (credited against treatment).'},
+        {name:'Cheek Dermal Fillers (1ml)', price:'₦180,000', numPrice:180000, dur:'12–18 mo', desc:'Restores midface support on the bone for lifted facial contour.'},
+        {name:'Jawline & Chin Contour (1ml)', price:'₦190,000', numPrice:190000, dur:'12–18 mo', desc:'High-definition structural enhancement and profile balancing.'},
+        {name:'Lip Definition & Hydration (1ml)', price:'₦170,000', numPrice:170000, dur:'9–12 mo', desc:'Subtle, natural lip shaping and vermillion border refinement.'},
+        {name:'Skin Boosters Protocol', price:'₦150,000', numPrice:150000, dur:'Per Session', desc:'Micro-droplet hyaluronic acid hydration for deep dewy glow.'},
+        {name:'Dark Knuckles Protocol', price:'₦50,000', numPrice:50000, dur:'Course Session', desc:'Specialized medical chemical peeling for stubborn joint pigmentation.'}
+      ],
+      salon: [
+        {name:'Wash, Blow Dry & Style', price:'₦15,000', numPrice:15000, dur:'60 min', desc:'Revitalizing scalp wash and bouncy blow-out.'},
+        {name:'Silk Press Ritual', price:'₦30,000', numPrice:30000, dur:'2 hrs', desc:'Deep moisture treatment, thermal shield and glass-smooth press.'},
+        {name:'Deep Conditioning & Steam', price:'₦20,000', numPrice:20000, dur:'45 min', desc:'Protein or moisture reconstruction under warm steam.'},
+        {name:'Gel Manicure', price:'₦20,000', numPrice:20000, dur:'60 min', desc:'Cuticle grooming, nail shaping, long-wearing high-gloss gel.'},
+        {name:'Classic Pedicure', price:'₦18,000', numPrice:18000, dur:'60 min', desc:'Warm herbal foot bath, callus smoothing, massage and polish.'},
+        {name:'Acrylic Full Set', price:'₦30,000', numPrice:30000, dur:'2 hrs', desc:'Custom sculpted nail extensions, shaping and gel finish.'},
+        {name:'Brow Shaping & Tint', price:'₦14,000', numPrice:14000, dur:'35 min', desc:'Precision facial mapping, threading and color match.'},
+        {name:'Classic Lash Extensions', price:'₦35,000', numPrice:35000, dur:'2 hrs', desc:'Individual featherweight silk lash extensions.'}
+      ]
+    };
+
+    const currentList = allServices[s.dept] || allServices.spa;
+    let selectedSrv = null;
+    for (const d of Object.keys(allServices)) {
+      const found = allServices[d].find(x => x.name.toLowerCase() === (s.selectedServiceName || '').toLowerCase());
+      if (found) { selectedSrv = found; break; }
+    }
+    if (!selectedSrv) selectedSrv = currentList[0];
+
+    // Available Enhancements
+    const availableAddOns = [
+      {id:'aroma', name:'Custom Aromatherapy Essential Oils', price:'+₦5,000', numPrice:5000},
+      {id:'scalp', name:'15-min Acupressure Scalp Tension Release', price:'+₦10,000', numPrice:10000},
+      {id:'mask', name:'Collodial Calming Dermal Sheet Mask', price:'+₦12,000', numPrice:12000}
+    ];
+
+    let addOnTotal = 0;
+    s.selectedAddOns.forEach(id => {
+      const ao = availableAddOns.find(x => x.id === id);
+      if (ao) addOnTotal += ao.numPrice;
+    });
+
+    const totalEstimated = (selectedSrv.numPrice || 0) + addOnTotal;
+    const totalPriceDisplay = '₦' + totalEstimated.toLocaleString();
+
+    // 7 Days of Date Options starting from today/tomorrow
+    const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const dateOptions = [];
+    const now = new Date();
+    for (let i = 0; i < 7; i++) {
+      const targetDate = new Date(now);
+      targetDate.setDate(now.getDate() + i);
+      const isSelected = s.selectedDateIndex === i;
+      dateOptions.push({
+        index: i,
+        dayName: i === 0 ? 'Today' : (i === 1 ? 'Tomorrow' : days[targetDate.getDay()]),
+        dayNum: targetDate.getDate(),
+        month: months[targetDate.getMonth()],
+        fullDateStr: targetDate.toLocaleDateString('en-GB', {weekday:'short', day:'numeric', month:'short', year:'numeric'}),
+        isSun: targetDate.getDay() === 0,
+        border: isSelected ? '#C69B54' : '#E8E0D2',
+        bg: isSelected ? '#14100C' : '#FFFFFF',
+        fg: isSelected ? '#C69B54' : '#14100C',
+        subColor: isSelected ? 'rgba(251,247,240,.7)' : '#7A7168',
+        select: () => this.setState({selectedDateIndex: i})
+      });
+    }
+
+    const selectedDateObj = dateOptions[s.selectedDateIndex] || dateOptions[0];
+    const isSunday = selectedDateObj.isSun;
+
+    // Time Slots (Mon-Sat 9am-9pm, Sun 1pm-9pm)
+    const slotList = isSunday ? [
+      '01:00 PM', '02:30 PM', '04:00 PM', '05:30 PM', '07:00 PM'
+    ] : [
+      '09:00 AM', '10:30 AM', '12:00 PM', '01:30 PM', '03:00 PM', '04:30 PM', '06:00 PM', '07:30 PM'
+    ];
+
+    const timeSlots = slotList.map(time => {
+      const isSelected = s.selectedTime === time;
+      return {
+        time,
+        border: isSelected ? '#C69B54' : '#E8E0D2',
+        bg: isSelected ? '#14100C' : '#FFFFFF',
+        fg: isSelected ? '#C69B54' : '#14100C',
+        select: () => this.setState({selectedTime: time})
+      };
+    });
+
+    // WhatsApp Message Text for Confirmation Sync
+    const waSummaryText = `Hello Pee Skin & MedSpa, I just completed my online reservation on your website!%0A%0A*Booking Ref:* ${s.bookingRef}%0A*Guest Name:* ${s.confirmedName || s.formName}%0A*Treatment:* ${selectedSrv.name} (${selectedSrv.dur})%0A*Date & Time:* ${selectedDateObj.fullDateStr} at ${s.selectedTime}%0A*Estimated Total:* ${totalPriceDisplay}%0A*Clinic Location:* House 14, First Avenue, Gwarinpa, Abuja%0A%0APlease confirm my appointment on your schedule.`;
+    const whatsappSummaryUrl = `https://wa.me/2349058830888?text=${waSummaryText}`;
+
+    return {
+      isStep1: s.step === 1,
+      isStep2: s.step === 2,
+      isStep3: s.step === 3,
+      isStep4: s.step === 4,
+      isNotStep4: s.step !== 4,
+
+      step1Bg: s.step >= 1 ? '#C69B54' : 'rgba(255,255,255,.15)',
+      step1Fg: s.step >= 1 ? '#14100C' : '#FBF7F0',
+      step1Color: s.step >= 1 ? '#C69B54' : 'rgba(251,247,240,.45)',
+
+      step2Bg: s.step >= 2 ? '#C69B54' : 'rgba(255,255,255,.15)',
+      step2Fg: s.step >= 2 ? '#14100C' : '#FBF7F0',
+      step2Color: s.step >= 2 ? '#C69B54' : 'rgba(251,247,240,.45)',
+
+      step3Bg: s.step >= 3 ? '#C69B54' : 'rgba(255,255,255,.15)',
+      step3Fg: s.step >= 3 ? '#14100C' : '#FBF7F0',
+      step3Color: s.step >= 3 ? '#C69B54' : 'rgba(251,247,240,.45)',
+
+      step4Bg: s.step >= 4 ? '#C69B54' : 'rgba(255,255,255,.15)',
+      step4Fg: s.step >= 4 ? '#14100C' : '#FBF7F0',
+      step4Color: s.step >= 4 ? '#C69B54' : 'rgba(251,247,240,.45)',
+
+      deptTabs: [
+        {label:'Spa & Wellness', border: s.dept==='spa' ? '#C69B54' : '#DCD0BC', bg: s.dept==='spa' ? '#14100C' : '#FFFFFF', fg: s.dept==='spa' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'spa', selectedServiceName: allServices.spa[0].name})},
+        {label:'Skin & Laser', border: s.dept==='laser' ? '#C69B54' : '#DCD0BC', bg: s.dept==='laser' ? '#14100C' : '#FFFFFF', fg: s.dept==='laser' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'laser', selectedServiceName: allServices.laser[0].name})},
+        {label:'Aesthetics & MedSpa', border: s.dept==='aesthetics' ? '#C69B54' : '#DCD0BC', bg: s.dept==='aesthetics' ? '#14100C' : '#FFFFFF', fg: s.dept==='aesthetics' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'aesthetics', selectedServiceName: allServices.aesthetics[0].name})},
+        {label:'Salon & Nails', border: s.dept==='salon' ? '#C69B54' : '#DCD0BC', bg: s.dept==='salon' ? '#14100C' : '#FFFFFF', fg: s.dept==='salon' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'salon', selectedServiceName: allServices.salon[0].name})}
+      ],
+
+      activeServices: currentList.map(srv => {
+        const isSelected = srv.name.toLowerCase() === selectedSrv.name.toLowerCase();
+        return {
+          name: srv.name,
+          price: srv.price,
+          dur: srv.dur,
+          desc: srv.desc,
+          border: isSelected ? '#C69B54' : '#E8E0D2',
+          bg: isSelected ? '#FAF7F2' : '#FFFFFF',
+          radioBorder: isSelected ? '#C69B54' : '#DCD0BC',
+          radioBg: isSelected ? '#C69B54' : '#FFFFFF',
+          radioDot: isSelected ? 'block' : 'none',
+          select: () => this.setState({selectedServiceName: srv.name})
+        };
+      }),
+
+      addOns: availableAddOns.map(ao => {
+        const isSelected = s.selectedAddOns.includes(ao.id);
+        return {
+          id: ao.id,
+          name: ao.name,
+          price: ao.price,
+          border: isSelected ? '#C69B54' : '#E8E0D2',
+          bg: isSelected ? '#FFFFFF' : 'transparent',
+          checkBorder: isSelected ? '#C69B54' : '#DCD0BC',
+          checkBg: isSelected ? '#C69B54' : '#FFFFFF',
+          toggle: () => {
+            const list = s.selectedAddOns.slice();
+            const idx = list.indexOf(ao.id);
+            if (idx >= 0) list.splice(idx, 1);
+            else list.push(ao.id);
+            this.setState({selectedAddOns: list});
+          }
+        };
+      }),
+
+      dateOptions,
+      timeSlots,
+      selectedService: selectedSrv,
+      selectedDateText: selectedDateObj.fullDateStr,
+      selectedTime: s.selectedTime,
+      selectedSpecialist: s.selectedSpecialist,
+      totalPriceDisplay,
+      bookingRef: s.bookingRef,
+      confirmedName: s.confirmedName,
+      whatsappSummaryUrl,
+
+      // Form inputs
+      formName: s.formName,
+      formPhone: s.formPhone,
+      formEmail: s.formEmail,
+      formNotes: s.formNotes,
+      onNameInput: e => this.setState({formName: e.target.value}),
+      onPhoneInput: e => this.setState({formPhone: e.target.value}),
+      onEmailInput: e => this.setState({formEmail: e.target.value}),
+      onNotesInput: e => this.setState({formNotes: e.target.value}),
+      onSpecialistChange: e => this.setState({selectedSpecialist: e.target.value}),
+
+      // Step Controls
+      goToStep1: () => this.setState({step: 1}),
+      goToStep2: () => this.setState({step: 2}),
+      goToStep3: () => {
+        this.setState({step: 3});
+      },
+      submitBooking: () => {
+        const name = s.formName.trim() || 'Valued Guest';
+        const randomDigits = Math.floor(10000 + Math.random() * 90000);
+        const ref = 'PEE-' + randomDigits;
+        this.setState({
+          step: 4,
+          confirmedName: name,
+          bookingRef: ref
+        });
+        window.scrollTo({top: 0, behavior: 'smooth'});
+      },
+      resetBooking: () => {
+        this.setState({
+          step: 1,
+          selectedAddOns: [],
+          formName: '',
+          formPhone: '',
+          formEmail: '',
+          formNotes: '',
+          bookingRef: ''
+        });
+      }
+    };
+  }
+}
+</script>
+</body>
+</html>
