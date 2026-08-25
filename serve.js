@@ -58,7 +58,9 @@ function serveFile(filePath, res) {
     res.writeHead(200, {
       'Content-Type': mimeType,
       'Access-Control-Allow-Origin': '*',
-      'Cache-Control': 'no-cache'
+      'Cache-Control': 'no-cache, no-store, must-revalidate, max-age=0',
+      'Pragma': 'no-cache',
+      'Expires': '0'
     });
     res.end(data);
   });
