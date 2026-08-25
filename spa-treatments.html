@@ -14,7 +14,7 @@
 <meta name="description" content="Moroccan hammam, massage therapy, facials, body scrubs and vajacial in Gwarinpa, Abuja. Every treatment, every duration, every price published.">
 <link rel="canonical" href="https://peeskin.com/spa/">
 <meta property="og:title" content="Spa &amp; Wellness — Pee Skin &amp; MedSpa, Gwarinpa">
-<meta property="og:description" content="Moroccan hammam, massage, facials and body rituals in Gwarinpa, Abuja. Prices published.">
+<meta property="og:description" content="Moroccan hammam, massage, facials and body therapies in Gwarinpa, Abuja. Prices published.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1609535895148-cf9f5c446290?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_NG">
@@ -25,7 +25,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"What is a Moroccan hammam?","acceptedAnswer":{"@type":"Answer","text":"A steam-and-scrub ritual. You sit in warm steam until the skin softens, are cleansed with black soap, then exfoliated with a kessa glove which lifts away dead skin in visible sheets. It finishes with a rhassoul clay mask and a rinse. It takes about 90 minutes and is done by a therapist, not by you."}},
+{"@type":"Question","name":"What is a Moroccan hammam?","acceptedAnswer":{"@type":"Answer","text":"A steam-and-scrub therapy. You sit in warm steam until the skin softens, are cleansed with black soap, then exfoliated with a kessa glove which lifts away dead skin in visible sheets. It finishes with a rhassoul clay mask and a rinse. It takes about 90 minutes and is done by a therapist, not by you."}},
 {"@type":"Question","name":"How often should I have a body scrub or hammam?","acceptedAnswer":{"@type":"Answer","text":"Once a month is plenty for most skin. The hammam exfoliates deeply, so going more often than every three weeks tends to irritate rather than improve. If you are preparing for an event, book it seven to ten days ahead, not the day before."}},
 {"@type":"Question","name":"What is a vajacial?","acceptedAnswer":{"@type":"Answer","text":"A facial for the bikini area. It cleanses, gently exfoliates, extracts where needed and calms the skin with a mask. It is booked most often after waxing or shaving to reduce ingrown hairs, bumps and dark marks, and it pairs well with a course of laser."}},
 {"@type":"Question","name":"Do you treat men?","acceptedAnswer":{"@type":"Answer","text":"Yes. Men's facials, deep tissue massage and back treatments are among our most booked services. Men's facials are built around shaving irritation, ingrown hairs along the beard line and congestion rather than anti-ageing."}},
@@ -149,7 +149,7 @@
     <div style="padding:clamp(56px,8vw,110px) clamp(16px,3vw,34px)">
       <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:clamp(18px,4vw,70px);align-items:end;margin-bottom:clamp(32px,4vw,56px)" data-two-col="1">
         <div>
-          <span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#C69B54;font-weight:700;display:block;margin-bottom:8px">Curated Rituals</span>
+          <span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#C69B54;font-weight:700;display:block;margin-bottom:8px">Curated Pairings</span>
           <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(32px,5.4vw,64px);line-height:1;letter-spacing:-.03em;color:#FBF7F0">Two Services. One Afternoon.</h2>
         </div>
         <p style="font-size:16.5px;line-height:1.7;color:rgba(251,247,240,.68);max-width:440px;padding-bottom:6px">Sequenced pairings designed to dissolve tension and restore healthy radiance in a single sanctuary visit.</p>
@@ -168,7 +168,7 @@
                 <span style="font-family:'Bodoni Moda',serif;font-size:24px;color:#C69B54;font-weight:700">{{ pair.bundlePrice }}</span>
                 <span style="font-size:12px;color:rgba(251,247,240,.4);text-decoration:line-through;margin-left:8px">{{ pair.originalPrice }}</span>
               </div>
-              <a href="{{ pair.bookUrl }}" style="padding:10px 18px;background:#C69B54;color:#14100C;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">Book Ritual</a>
+              <a href="{{ pair.bookUrl }}" style="padding:10px 18px;background:#C69B54;color:#14100C;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">Reserve Package</a>
             </div>
           </div>
         </sc-for>
@@ -272,7 +272,7 @@ class Component extends DCLogic {
           {name:"Men's facial", note:'Shaving irritation and congestion', price:'₦40,000', dur:'60 min'},
           {name:'Express facial', note:'A reset between appointments', price:'₦25,000', dur:'30 min'}
         ]},
-        {title:'Body rituals', items:[
+        {title:'Body therapies', items:[
           {name:'Moroccan hammam', note:'Steam, black soap, kessa, rhassoul', price:'₦65,000', dur:'90 min'},
           {name:'Full body scrub', note:'Exfoliation and hydration', price:'₦35,000', dur:'45 min'},
           {name:'Body polish and wrap', note:'Scrub followed by a nourishing wrap', price:'₦55,000', dur:'75 min'},
@@ -320,7 +320,7 @@ class Component extends DCLogic {
         {step:'After', title:'Water, and no rush', body:'Sit in the lounge as long as you like. We will tell you honestly whether you need a course or whether one session is enough.'}
       ],
       faqs: [
-        {q:'What is a Moroccan hammam?', a:'A steam-and-scrub ritual. You sit in warm steam until the skin softens, are cleansed with black soap, then exfoliated with a kessa glove which lifts away dead skin in visible sheets. It finishes with a rhassoul clay mask and a rinse. About ninety minutes, and it is done to you rather than by you.'},
+        {q:'What is a Moroccan hammam?', a:'A steam-and-scrub therapy. You sit in warm steam until the skin softens, are cleansed with black soap, then exfoliated with a kessa glove which lifts away dead skin in visible sheets. It finishes with a rhassoul clay mask and a rinse. About ninety minutes, and it is done to you rather than by you.'},
         {q:'How often should I have a scrub or hammam?', a:'Once a month is plenty for most skin. The hammam exfoliates deeply, so going more often than every three weeks tends to irritate rather than improve. Preparing for an event, book seven to ten days ahead, not the day before.'},
         {q:'What is a vajacial?', a:'A facial for the bikini area. It cleanses, gently exfoliates, extracts where needed and calms the skin with a mask. Most often booked after waxing or shaving to reduce ingrown hairs, bumps and dark marks, and it pairs well with a course of laser.'},
         {q:'Do you treat men?', a:"Yes. Men's facials, deep tissue massage and back treatments are among our most booked services. Men's facials are built around shaving irritation, ingrown hairs along the beard line and congestion rather than anti-ageing."},

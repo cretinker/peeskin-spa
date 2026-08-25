@@ -442,7 +442,7 @@
     <div style="max-width:1440px;margin:0 auto">
       <div data-reveal="1" style="display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:end;margin-bottom:clamp(32px,4vw,56px)">
         <div>
-          <span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#8C6620;font-weight:700;display:block;margin-bottom:8px">Curated Rituals</span>
+          <span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#8C6620;font-weight:700;display:block;margin-bottom:8px">Curated Pairings</span>
           <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(32px,5.4vw,68px);line-height:1;letter-spacing:-.03em;color:#14100C">Two Services. One Afternoon.</h2>
         </div>
         <p style="font-size:16px;line-height:1.65;color:#524B42;max-width:440px;margin:0">Clinically sequenced treatments designed to compound results in a single visit with bundled savings.</p>
@@ -461,7 +461,7 @@
                 <span style="font-family:'Bodoni Moda',serif;font-size:26px;color:#8C6620;font-weight:700">{{ pair.bundlePrice }}</span>
                 <span style="font-size:12px;color:#7A7168;text-decoration:line-through;margin-left:8px">{{ pair.originalPrice }}</span>
               </div>
-              <a href="{{ pair.bookUrl }}" style="padding:10px 18px;background:#14100C;color:#F5F0E6;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#C69B54;color:#14100C">Book Ritual</a>
+              <a href="{{ pair.bookUrl }}" style="padding:10px 18px;background:#14100C;color:#F5F0E6;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#C69B54;color:#14100C">Reserve Package</a>
             </div>
           </div>
         </sc-for>
@@ -892,12 +892,12 @@ class Component extends DCLogic {
     } else if (s.quizGoal === 'tension') {
       rec = {
         tag: 'ANCIENT WELLNESS & DEEP RELEASE',
-        title: 'Moxibustion Therapy & Deep Tissue Massage Ritual',
+        title: 'Moxibustion Therapy & Deep Tissue Massage Experience',
         desc: 'Moxa herb thermal therapy with rhythmic pressure release to melt chronic shoulder, lumbar, and muscular fatigue.',
         timeline: 'Single 90-min Session / Bi-weekly',
         suitability: 'All Skin & Body Types',
         price: '₦35,000 / 90 mins',
-        waText: 'Hello Pee Skin & MedSpa, I took the intake quiz and would like to book the Moxibustion Therapy & Deep Tissue Massage Ritual at your Gwarinpa spa.'
+        waText: 'Hello Pee Skin & MedSpa, I took the intake quiz and would like to book the Moxibustion Therapy & Deep Tissue Massage Experience at your Gwarinpa spa.'
       };
     } else if (s.quizGoal === 'aging') {
       rec = {
@@ -1143,7 +1143,7 @@ class Component extends DCLogic {
       voucherAmounts: [
         {amount:'₦25,000', note:'A facial'},
         {amount:'₦50,000', note:'Massage & scrub'},
-        {amount:'₦100,000', note:'Hammam ritual'},
+        {amount:'₦100,000', note:'Hammam experience'},
         {amount:'Any amount', note:'You choose'}
       ],
       insta: withImg([

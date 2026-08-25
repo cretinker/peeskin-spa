@@ -11,7 +11,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reserve an Appointment · Pee Skin &amp; MedSpa Gwarinpa, Abuja</title>
-<meta name="description" content="Book your spa treatment, laser session, aesthetic consultation, or salon service at Pee Skin &amp; MedSpa in Gwarinpa, Abuja. Transparent published rates and instant confirmation.">
+<meta name="description" content="Book your spa treatment, laser session, aesthetic consultation, curated package, or salon service at Pee Skin &amp; MedSpa in Gwarinpa, Abuja. Transparent published rates and instant confirmation.">
 <link rel="canonical" href="https://peeskin.com/book.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,15 +91,29 @@
         <!-- ================= STEP 1: SERVICE & ADD-ON SELECTION ================= -->
         <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
           <div>
+            <!-- Pre-selected Package Notification Banner -->
+            <sc-if value="{{ hasUrlSelection }}" hint-placeholder-val="{{ false }}">
+              <div style="background:#14100C;color:#FBF7F0;border:1px solid #C69B54;border-radius:8px;padding:16px 20px;margin-bottom:24px;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px">
+                <div>
+                  <span style="font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#C69B54;font-weight:700;display:block;margin-bottom:4px">✓ Selected Treatment Package</span>
+                  <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:19px;color:#F5F0E6;display:block;line-height:1.2">{{ selectedService.name }}</span>
+                  <span style="font-size:13px;color:rgba(251,247,240,.7);margin-top:3px;display:block">{{ selectedService.price }} · {{ selectedService.dur }}</span>
+                </div>
+                <button type="button" onClick="{{ goToStep2 }}" style="padding:12px 24px;background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border:none;border-radius:4px;cursor:pointer;white-space:nowrap;transition:all .2s ease" style-hover="background:#FBF7F0">
+                  Confirm &amp; Pick Date →
+                </button>
+              </div>
+            </sc-if>
+
             <div style="margin-bottom:24px">
               <span style="font-size:10.5px;letter-spacing:.24em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:6px">Step 1 of 3</span>
               <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(24px,3.2vw,36px);line-height:1.1;color:#14100C">Choose Your Treatment</h2>
-              <p style="font-size:14.5px;color:#6B6357;margin-top:6px">Select the primary service you wish to reserve at our Gwarinpa clinic.</p>
+              <p style="font-size:14.5px;color:#6B6357;margin-top:6px">Select the treatment or curated pairing you wish to reserve at our Gwarinpa clinic.</p>
             </div>
 
             <!-- Department Switcher Tabs -->
             <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;border-bottom:1px solid #E8E0D2;padding-bottom:14px">
-              <sc-for list="{{ deptTabs }}" as="dt" hint-placeholder-count="4">
+              <sc-for list="{{ deptTabs }}" as="dt" hint-placeholder-count="5">
                 <button type="button" onClick="{{ dt.select }}" style="padding:10px 18px;border-radius:6px;border:1px solid {{ dt.border }};background:{{ dt.bg }};color:{{ dt.fg }};font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s ease">
                   {{ dt.label }}
                 </button>
@@ -114,9 +128,10 @@
                     <span style="width:8px;height:8px;border-radius:50%;background:#FFFFFF;display:{{ srv.radioDot }}"></span>
                   </span>
                   <div>
-                    <div style="display:flex;align-items:baseline;gap:8px">
+                    <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap">
                       <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:18px;font-weight:500;color:#14100C">{{ srv.name }}</span>
                       <span style="font-size:11.5px;color:#8A5A2E;letter-spacing:.08em;text-transform:uppercase">{{ srv.dur }}</span>
+                      <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;background:#C69B54;color:#14100C;padding:2px 6px;border-radius:3px;font-weight:700;display:{{ srv.badgeDisplay }}">Selected</span>
                     </div>
                     <span style="display:block;font-size:13px;color:#6B6357;margin-top:2px">{{ srv.desc }}</span>
                   </div>
@@ -383,11 +398,22 @@
 
 </x-dc>
 <script type="text/x-dc" data-dc-script>
+function parseNairaAmount(val) {
+  if (typeof val === 'number') return val;
+  if (!val) return 0;
+  const digits = String(val).replace(/[^0-9]/g, '');
+  const n = parseInt(digits, 10);
+  return isNaN(n) ? 0 : n;
+}
+
 class Component extends DCLogic {
   state = {
     step: 1,
     dept: 'spa',
     selectedServiceName: 'Swedish massage',
+    customPrice: '',
+    customDur: '',
+    hasUrlSelection: false,
     selectedAddOns: [],
     selectedDateIndex: 0,
     selectedTime: '10:30 AM',
@@ -412,15 +438,23 @@ class Component extends DCLogic {
     this._apply = apply; this._mq = mq;
     mq.addEventListener('change', apply); apply(); this._t = setInterval(apply, 600);
 
-    // Read URL Search Parameters
+    // Robust URL Search Parameters Ingestion
     try {
       const params = new URLSearchParams(window.location.search);
       const srvParam = params.get('service');
       const deptParam = params.get('dept');
-      if (srvParam) {
+      const priceParam = params.get('price');
+      const durParam = params.get('dur');
+      if (srvParam && srvParam.trim()) {
+        const decodedService = decodeURIComponent(srvParam).trim();
+        const decodedPrice = priceParam ? decodeURIComponent(priceParam).trim() : '';
+        const decodedDur = durParam ? decodeURIComponent(durParam).trim() : '';
         this.setState({
-          selectedServiceName: srvParam,
-          dept: deptParam || this.getDeptForService(srvParam)
+          selectedServiceName: decodedService,
+          customPrice: decodedPrice,
+          customDur: decodedDur,
+          hasUrlSelection: true,
+          dept: deptParam || this.getDeptForService(decodedService)
         });
       }
     } catch(e){}
@@ -431,6 +465,7 @@ class Component extends DCLogic {
 
   getDeptForService(name){
     const lower = (name || '').toLowerCase();
+    if (lower.includes('circuit') || lower.includes('melt') || lower.includes('pair') || lower.includes('protocol') || lower.includes('combo') || lower.includes('package')) return 'packages';
     if (lower.includes('laser') || lower.includes('patch test') || lower.includes('tattoo') || lower.includes('acne')) return 'laser';
     if (lower.includes('filler') || lower.includes('botox') || lower.includes('inject') || lower.includes('knuckle') || lower.includes('booster')) return 'aesthetics';
     if (lower.includes('hair') || lower.includes('press') || lower.includes('nail') || lower.includes('manicure') || lower.includes('pedicure') || lower.includes('lash') || lower.includes('brow') || lower.includes('wax')) return 'salon';
@@ -442,6 +477,16 @@ class Component extends DCLogic {
 
     // Services Master Catalog by Department
     const allServices = {
+      packages: [
+        {name:'The Complete Glow Circuit (HydraFacial + IV Infusion)', price:'₦75,000', numPrice:75000, dur:'90 min', desc:'Deep pore HydraFacial extraction paired with intravenous glutathione and vitamin glow infusion.'},
+        {name:'The Sanctuary Stress Melt (Moxibustion + Deep Tissue)', price:'₦60,000', numPrice:60000, dur:'90 min', desc:'Mugwort thermal heat therapy combined with concentrated 60-min deep muscle tension release.'},
+        {name:'The Flawless Silk Protocol (Laser + Brightening Peel)', price:'₦85,000', numPrice:85000, dur:'75 min', desc:'Nd:YAG permanent hair reduction for bikini/underarms with dark mark chemical peel brightening.'},
+        {name:'Hair and Facial Pairing', price:'₦50,000', numPrice:50000, dur:'2 hrs', desc:'Silk press or styling paired with an organic prescribed glow facial.'},
+        {name:'Doctor-Led Botox & Dermal Fillers Consultation', price:'₦180,000', numPrice:180000, dur:'45 min', desc:'Facial assessment, contour plan, and high-precision hyaluronic acid placement.'},
+        {name:'HydraFacial Glow Circuit + Skin IV Drip', price:'₦65,000', numPrice:65000, dur:'75 min', desc:'Multi-step deep pore extraction, vortex hydration, and intravenous glow infusion.'},
+        {name:'Medical Dark Knuckles & Hyperpigmentation Protocol', price:'₦50,000', numPrice:50000, dur:'Course Session', desc:'Micro-exfoliating chemical peels paired with pigment inhibitors.'},
+        {name:'Nd:YAG Laser Hair Removal & Dark Spot Clearance', price:'₦45,000', numPrice:45000, dur:'Single Session', desc:'1064nm long-pulse laser targeting follicles without melanin heating.'}
+      ],
       spa: [
         {name:'Swedish massage', price:'₦35,000', numPrice:35000, dur:'60 min', desc:'Light to medium pressure, full body relaxation.'},
         {name:'Deep tissue massage', price:'₦45,000', numPrice:45000, dur:'60 min', desc:'Focused pressure into chronic back, neck and shoulder tension.'},
@@ -452,7 +497,7 @@ class Component extends DCLogic {
         {name:'Prescribed facial', price:'₦40,000', numPrice:40000, dur:'60 min', desc:'Formulated specifically after reading your skin condition.'},
         {name:'Deep cleansing facial', price:'₦45,000', numPrice:45000, dur:'75 min', desc:'Vortex extractions, pore decongestion and calming hydration.'},
         {name:'Full body scrub', price:'₦35,000', numPrice:35000, dur:'45 min', desc:'Organic sugar and salt exfoliation followed by body butter.'},
-        {name:'Vajacial ritual', price:'₦30,000', numPrice:30000, dur:'45 min', desc:'Cleanse, gentle exfoliation, extraction and soothing mask for intimate areas.'}
+        {name:'Vajacial Care Treatment', price:'₦30,000', numPrice:30000, dur:'45 min', desc:'Cleanse, gentle exfoliation, extraction and soothing mask for intimate areas.'}
       ],
       laser: [
         {name:'Consultation & patch test', price:'₦10,000', numPrice:10000, dur:'20 min', desc:'48-hour safety patch test and Fitzpatrick calibration (credited against session 1).'},
@@ -475,7 +520,7 @@ class Component extends DCLogic {
       ],
       salon: [
         {name:'Wash, Blow Dry & Style', price:'₦15,000', numPrice:15000, dur:'60 min', desc:'Revitalizing scalp wash and bouncy blow-out.'},
-        {name:'Silk Press Ritual', price:'₦30,000', numPrice:30000, dur:'2 hrs', desc:'Deep moisture treatment, thermal shield and glass-smooth press.'},
+        {name:'Silk Press Session', price:'₦30,000', numPrice:30000, dur:'2 hrs', desc:'Deep moisture treatment, thermal shield and glass-smooth press.'},
         {name:'Deep Conditioning & Steam', price:'₦20,000', numPrice:20000, dur:'45 min', desc:'Protein or moisture reconstruction under warm steam.'},
         {name:'Gel Manicure', price:'₦20,000', numPrice:20000, dur:'60 min', desc:'Cuticle grooming, nail shaping, long-wearing high-gloss gel.'},
         {name:'Classic Pedicure', price:'₦18,000', numPrice:18000, dur:'60 min', desc:'Warm herbal foot bath, callus smoothing, massage and polish.'},
@@ -485,13 +530,43 @@ class Component extends DCLogic {
       ]
     };
 
-    const currentList = allServices[s.dept] || allServices.spa;
+    const currentList = (allServices[s.dept] || allServices.spa).slice();
+    const selName = (s.selectedServiceName || '').toLowerCase().trim();
+
+    // Search across all catalogs
     let selectedSrv = null;
     for (const d of Object.keys(allServices)) {
-      const found = allServices[d].find(x => x.name.toLowerCase() === (s.selectedServiceName || '').toLowerCase());
-      if (found) { selectedSrv = found; break; }
+      const found = allServices[d].find(x => x.name.toLowerCase().trim() === selName);
+      if (found) {
+        selectedSrv = Object.assign({}, found);
+        if (s.customPrice && parseNairaAmount(s.customPrice) > 0) {
+          selectedSrv.price = s.customPrice;
+          selectedSrv.numPrice = parseNairaAmount(s.customPrice);
+        }
+        break;
+      }
     }
+
+    // Dynamic service fallback if passed via URL but not in predefined list
+    if (!selectedSrv && s.selectedServiceName) {
+      const parsedNum = parseNairaAmount(s.customPrice || '35000');
+      selectedSrv = {
+        name: s.selectedServiceName,
+        price: s.customPrice || ('₦' + parsedNum.toLocaleString()),
+        numPrice: parsedNum,
+        dur: s.customDur || 'Curated Session',
+        desc: 'Specialized pre-selected wellness treatment experience.',
+        isCustom: true
+      };
+    }
+
     if (!selectedSrv) selectedSrv = currentList[0];
+
+    // Ensure the selected service is present at the top of the displayed department list
+    const inCurrentList = currentList.some(x => x.name.toLowerCase().trim() === selectedSrv.name.toLowerCase().trim());
+    if (!inCurrentList) {
+      currentList.unshift(selectedSrv);
+    }
 
     // Available Enhancements
     const availableAddOns = [
@@ -564,6 +639,7 @@ class Component extends DCLogic {
       isStep3: s.step === 3,
       isStep4: s.step === 4,
       isNotStep4: s.step !== 4,
+      hasUrlSelection: s.hasUrlSelection,
 
       step1Bg: s.step >= 1 ? '#C69B54' : 'rgba(255,255,255,.15)',
       step1Fg: s.step >= 1 ? '#14100C' : '#FBF7F0',
@@ -582,25 +658,27 @@ class Component extends DCLogic {
       step4Color: s.step >= 4 ? '#C69B54' : 'rgba(251,247,240,.45)',
 
       deptTabs: [
-        {label:'Spa & Wellness', border: s.dept==='spa' ? '#C69B54' : '#DCD0BC', bg: s.dept==='spa' ? '#14100C' : '#FFFFFF', fg: s.dept==='spa' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'spa', selectedServiceName: allServices.spa[0].name})},
-        {label:'Skin & Laser', border: s.dept==='laser' ? '#C69B54' : '#DCD0BC', bg: s.dept==='laser' ? '#14100C' : '#FFFFFF', fg: s.dept==='laser' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'laser', selectedServiceName: allServices.laser[0].name})},
-        {label:'Aesthetics & MedSpa', border: s.dept==='aesthetics' ? '#C69B54' : '#DCD0BC', bg: s.dept==='aesthetics' ? '#14100C' : '#FFFFFF', fg: s.dept==='aesthetics' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'aesthetics', selectedServiceName: allServices.aesthetics[0].name})},
-        {label:'Salon & Nails', border: s.dept==='salon' ? '#C69B54' : '#DCD0BC', bg: s.dept==='salon' ? '#14100C' : '#FFFFFF', fg: s.dept==='salon' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'salon', selectedServiceName: allServices.salon[0].name})}
+        {label:'Curated Packages', border: s.dept==='packages' ? '#C69B54' : '#DCD0BC', bg: s.dept==='packages' ? '#14100C' : '#FFFFFF', fg: s.dept==='packages' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'packages', selectedServiceName: allServices.packages[0].name, customPrice: allServices.packages[0].price, customDur: allServices.packages[0].dur})},
+        {label:'Spa & Wellness', border: s.dept==='spa' ? '#C69B54' : '#DCD0BC', bg: s.dept==='spa' ? '#14100C' : '#FFFFFF', fg: s.dept==='spa' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'spa', selectedServiceName: allServices.spa[0].name, customPrice:'', customDur:''})},
+        {label:'Skin & Laser', border: s.dept==='laser' ? '#C69B54' : '#DCD0BC', bg: s.dept==='laser' ? '#14100C' : '#FFFFFF', fg: s.dept==='laser' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'laser', selectedServiceName: allServices.laser[0].name, customPrice:'', customDur:''})},
+        {label:'Aesthetics & MedSpa', border: s.dept==='aesthetics' ? '#C69B54' : '#DCD0BC', bg: s.dept==='aesthetics' ? '#14100C' : '#FFFFFF', fg: s.dept==='aesthetics' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'aesthetics', selectedServiceName: allServices.aesthetics[0].name, customPrice:'', customDur:''})},
+        {label:'Salon & Nails', border: s.dept==='salon' ? '#C69B54' : '#DCD0BC', bg: s.dept==='salon' ? '#14100C' : '#FFFFFF', fg: s.dept==='salon' ? '#C69B54' : '#14100C', select:()=>this.setState({dept:'salon', selectedServiceName: allServices.salon[0].name, customPrice:'', customDur:''})}
       ],
 
       activeServices: currentList.map(srv => {
-        const isSelected = srv.name.toLowerCase() === selectedSrv.name.toLowerCase();
+        const isSelected = srv.name.toLowerCase().trim() === selectedSrv.name.toLowerCase().trim();
         return {
           name: srv.name,
           price: srv.price,
           dur: srv.dur,
           desc: srv.desc,
+          badgeDisplay: isSelected ? 'inline-block' : 'none',
           border: isSelected ? '#C69B54' : '#E8E0D2',
           bg: isSelected ? '#FAF7F2' : '#FFFFFF',
           radioBorder: isSelected ? '#C69B54' : '#DCD0BC',
           radioBg: isSelected ? '#C69B54' : '#FFFFFF',
           radioDot: isSelected ? 'block' : 'none',
-          select: () => this.setState({selectedServiceName: srv.name})
+          select: () => this.setState({selectedServiceName: srv.name, customPrice: srv.price, customDur: srv.dur})
         };
       }),
 
@@ -648,9 +726,13 @@ class Component extends DCLogic {
 
       // Step Controls
       goToStep1: () => this.setState({step: 1}),
-      goToStep2: () => this.setState({step: 2}),
+      goToStep2: () => {
+        this.setState({step: 2});
+        window.scrollTo({top: 280, behavior: 'smooth'});
+      },
       goToStep3: () => {
         this.setState({step: 3});
+        window.scrollTo({top: 280, behavior: 'smooth'});
       },
       submitBooking: () => {
         const name = s.formName.trim() || 'Valued Guest';
@@ -671,7 +753,8 @@ class Component extends DCLogic {
           formPhone: '',
           formEmail: '',
           formNotes: '',
-          bookingRef: ''
+          bookingRef: '',
+          hasUrlSelection: false
         });
       }
     };
