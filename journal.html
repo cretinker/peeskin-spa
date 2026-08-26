@@ -79,9 +79,9 @@
     <sc-if value="{{ showFeatured }}" hint-placeholder-val="{{ true }}">
       <section style="padding:clamp(36px,5vw,72px) clamp(16px,3vw,34px) clamp(24px,3vw,40px)">
         <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(20,16,12,.14);color:#14100C;cursor:pointer;border-radius:4px;overflow:hidden" data-lead="1" onClick="{{ featuredArticle.open }}">
-          <span style="display:block;aspect-ratio:16/10;overflow:hidden;background:#EDE5D6">
-            <span style="display:block;width:100%;height:100%;background-image:url('{{ featuredArticle.img }}');background-size:cover;background-position:center;filter:saturate(.85) contrast(1.03);transition:transform .6s ease" style-hover="transform:scale(1.03)" role="img" aria-label="{{ featuredArticle.title }}"></span>
-          </span>
+          <div style="position:relative;width:100%;height:100%;min-height:300px;overflow:hidden;background:#EDE5D6">
+            <span style="display:block;width:100%;height:100%;background-image:url('{{ featuredArticle.img }}');background-size:cover;background-position:center;filter:saturate(.88) contrast(1.04);transition:transform .6s ease" style-hover="transform:scale(1.03)" role="img" aria-label="{{ featuredArticle.title }}"></span>
+          </div>
           <div style="background:#F5F0E6;padding:clamp(26px,3.4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:14px">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
               <span style="display:flex;gap:14px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E;font-weight:700">{{ featuredArticle.cat }}<span style="color:#7A7168;font-weight:400">{{ featuredArticle.date }}</span></span>
