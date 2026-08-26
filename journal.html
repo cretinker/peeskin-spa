@@ -133,19 +133,13 @@
   <!-- ================= 2. FULL EDITORIAL ARTICLE READER (When activeArticle is set) ================= -->
   <sc-if value="{{ isReaderView }}" hint-placeholder-val="{{ false }}">
     <article style="background:#F5F0E6;animation:psRise .4s ease both">
-      <!-- Sticky Article Navigation Bar -->
-      <div style="position:sticky;top:58px;z-index:60;background:#0F0C09;color:#FBF7F0;padding:14px clamp(16px,3vw,34px);border-bottom:1px solid rgba(198,155,84,.35);display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.4)">
-        <button type="button" onClick="{{ closeArticle }}" style="background:none;border:none;color:#C69B54;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:8px;padding:0">
-          <span>←</span> <span>Back to All Notes</span>
-        </button>
-        <div style="display:flex;align-items:center;gap:20px;font-size:12px">
-          <a href="{{ activeArticle.bookHref }}" style="background:#C69B54;color:#14100C;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border-radius:3px">Book Protocol →</a>
-        </div>
-      </div>
-
       <!-- Article Hero Header -->
       <header style="background:#14100C;color:#FBF7F0;padding:clamp(56px,8vw,110px) clamp(16px,3vw,34px) clamp(40px,6vw,72px)">
         <div style="max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
+          <button type="button" onClick="{{ closeArticle }}" style="align-self:flex-start;background:none;border:none;color:#C69B54;font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;cursor:pointer;display:inline-flex;align-items:center;gap:8px;padding:0;margin-bottom:4px;transition:color .3s ease" style-hover="color:#F5F0E6">
+            <span>←</span> <span>Back to All Notes</span>
+          </button>
+
           <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
             <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#C69B54;font-weight:700">{{ activeArticle.cat }}</span>
             <span style="color:rgba(251,247,240,.3)">·</span>
