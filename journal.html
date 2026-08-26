@@ -54,15 +54,17 @@
 <main>
   <!-- ================= 1. JOURNAL DIRECTORY VIEW (When no article is active) ================= -->
   <sc-if value="{{ isListingView }}" hint-placeholder-val="{{ true }}">
-    <!-- Hero Header -->
-    <section style="background:#14100C;color:#FBF7F0">
-      <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px) clamp(36px,5vw,60px);display:flex;flex-direction:column;gap:20px;max-width:880px">
+    <!-- Hero Header with Background Image -->
+    <section style="position:relative;overflow:hidden;background:#14100C;min-height:clamp(420px,56vh,580px);display:flex;align-items:flex-end">
+      <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&amp;fit=crop&amp;w=1600&amp;q=80');background-size:cover;background-position:center 35%;filter:saturate(.85) contrast(1.05)"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(12,9,7,.94) 0%,rgba(12,9,7,.72) 48%,rgba(12,9,7,.35) 75%,rgba(12,9,7,.65) 100%)"></div>
+      <div style="position:relative;padding:clamp(44px,7vw,88px) clamp(16px,3vw,34px);display:flex;flex-direction:column;gap:20px;max-width:960px">
         <div style="display:flex;align-items:center;gap:15px">
           <span style="width:44px;height:1px;background:#C69B54"></span>
           <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Clinical Writing &amp; Guides</span>
         </div>
-        <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:.96;letter-spacing:-.034em;color:#FBF7F0">The Journal</h1>
-        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(251,247,240,.72);max-width:560px">What we explain to clients inside the consultation room, written down. Practical, grounded in Nigerian skin biology, and free of the usual beauty industry exaggeration.</p>
+        <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:.96;letter-spacing:-.034em;color:#FBF7F0">The Journal<br><span style="font-style:italic;color:#C69B54">from the clinic.</span></h1>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.62;color:rgba(251,247,240,.75);max-width:580px">What we explain to clients inside the consultation room, written down. Practical, grounded in Nigerian skin biology, and free of the usual beauty industry exaggeration.</p>
       </div>
     </section>
 

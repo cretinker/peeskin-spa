@@ -160,16 +160,17 @@ class Component extends DCLogic {
       toggleMobile: () => this.setState(st => ({mobileOpen: !st.mobileOpen, menu:null})),
       navItems: [
         item('Home', 'index.html', 'home'),
+        item('About', 'about.html', 'about'),
         item('Treatments', 'treatments.html', 'treatments'),
         item('Concerns', 'concerns.html', 'concerns'),
         item('Results', 'results.html', 'results'),
         item('Pricing', 'pricing.html', 'pricing'),
-        item('About', 'about.html', 'about'),
         item('Journal', 'journal.html', 'journal'),
         item('Visit', 'contact.html', 'contact')
       ],
       mobileItems: [
         {label:'Home', href:'index.html'},
+        {label:'About Clinic', href:'about.html'},
         {label:'All treatments', href:'treatments.html'},
         {label:'Spa & Wellness', href:'spa-treatments.html'},
         {label:'Laser Hair Removal', href:'laser-hair-removal.html'},
@@ -181,7 +182,7 @@ class Component extends DCLogic {
         {label:'By concern', href:'concerns.html'},
         {label:'Results & Proof', href:'results.html'},
         {label:'Pricing Guide', href:'pricing.html'},
-        {label:'About Clinic', href:'about.html'},
+        {label:'Journal Notes', href:'journal.html'},
         {label:'Contact / Visit', href:'contact.html'}
       ],
       treatmentPages: [

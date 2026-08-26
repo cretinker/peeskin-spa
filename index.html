@@ -1054,17 +1054,18 @@ class Component extends DCLogic {
       toggleMobile: () => this.setState(st => ({mobileOpen: !st.mobileOpen, menu:null})),
 
       navItems: [
-        {label:'Home', href:'index.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
+        {label:'Home', href:'index.html', enter:()=>this.setState({menu:null}), color: '#C69B54', dot:'#C69B54'},
+        {label:'About', href:'about.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
         {label:'Treatments', href:'treatments.html', enter:()=>this.setState({menu:'treatments'}), color: s.menu==='treatments' ? '#C69B54' : '#FBF7F0', dot: s.menu==='treatments' ? '#C69B54' : 'transparent'},
         {label:'Concerns', href:'concerns.html', enter:()=>this.setState({menu:'concerns'}), color: s.menu==='concerns' ? '#C69B54' : '#FBF7F0', dot: s.menu==='concerns' ? '#C69B54' : 'transparent'},
         {label:'Results', href:'results.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
         {label:'Pricing', href:'pricing.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
-        {label:'About', href:'about.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
         {label:'Journal', href:'journal.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'},
         {label:'Visit', href:'contact.html', enter:()=>this.setState({menu:null}), color: '#FBF7F0', dot:'transparent'}
       ],
       mobileItems: [
         {label:'Home', href:'index.html'},
+        {label:'About Clinic', href:'about.html'},
         {label:'All treatments', href:'treatments.html'},
         {label:'Spa & Wellness', href:'spa-treatments.html'},
         {label:'Laser Hair Removal', href:'laser-hair-removal.html'},
@@ -1076,7 +1077,7 @@ class Component extends DCLogic {
         {label:'By concern', href:'concerns.html'},
         {label:'Results & Proof', href:'results.html'},
         {label:'Pricing Guide', href:'pricing.html'},
-        {label:'About Clinic', href:'about.html'},
+        {label:'Journal Notes', href:'journal.html'},
         {label:'Contact / Visit', href:'contact.html'}
       ],
       treatmentPages: [
