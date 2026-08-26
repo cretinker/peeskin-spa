@@ -10,13 +10,13 @@
 <helmet>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Journal — Skincare &amp; Wellness Notes | Pee Skin &amp; MedSpa Abuja</title>
-<meta name="description" content="Skincare, laser and wellness writing from Pee Skin &amp; MedSpa in Gwarinpa, Abuja. Practical notes on treatments, products and Nigerian skin.">
-<link rel="canonical" href="https://peeskin.com/news/">
-<meta property="og:title" content="Journal — Pee Skin &amp; MedSpa, Gwarinpa">
-<meta property="og:description" content="Practical notes on treatments, products and Nigerian skin.">
+<title>Journal — Skincare, Laser &amp; Wellness Notes | Pee Skin &amp; MedSpa Abuja</title>
+<meta name="description" content="Clinical notes, laser wavelength science, aesthetic guides and wellness writing from Pee Skin &amp; MedSpa in Gwarinpa, Abuja. Written specifically for Nigerian skin.">
+<link rel="canonical" href="https://peeskin.com/journal/">
+<meta property="og:title" content="The Journal — Pee Skin &amp; MedSpa, Gwarinpa">
+<meta property="og:description" content="Clinical notes, aesthetic guides, and practical skincare science tailored for Nigerian skin.">
 <meta property="og:image" content="https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&amp;fit=crop&amp;w=1600&amp;q=80">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:locale" content="en_NG">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="https://peeskin.com/wp-content/uploads/2025/03/cropped-Untitled-design-26-270x270.png">
@@ -25,9 +25,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{box-sizing:border-box}
-  html{overflow-x:hidden;-webkit-text-size-adjust:100%}
+  html{overflow-x:hidden;-webkit-text-size-adjust:100%;scroll-behavior:smooth}
   body{margin:0;background:#F5F0E6;color:#14100C;font-family:Karla,-apple-system,Segoe UI,Helvetica,sans-serif;-webkit-font-smoothing:antialiased;text-wrap:pretty}
-  h1,h2,h3,h4,p,ul,ol,li,figure,figcaption{margin:0;padding:0}
+  h1,h2,h3,h4,p,ul,ol,li,figure,figcaption,blockquote{margin:0;padding:0}
   ul,ol{list-style:none}
   img{display:block;max-width:100%}
   a{color:#8A5A2E;text-decoration:none}
@@ -39,6 +39,12 @@
   @keyframes psRise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
   [data-reveal]{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
   [data-reveal][data-seen]{opacity:1;transform:none}
+  .article-body h2 { font-family:'Bodoni Moda',Georgia,serif; font-weight:400; font-size:clamp(24px,3.2vw,36px); line-height:1.12; color:#14100C; margin:36px 0 14px; }
+  .article-body h3 { font-family:'Bodoni Moda',Georgia,serif; font-weight:400; font-size:clamp(20px,2.4vw,26px); line-height:1.2; color:#14100C; margin:28px 0 12px; }
+  .article-body p { font-size:17.5px; line-height:1.8; color:#3A342C; margin-bottom:20px; }
+  .article-body ul { margin:16px 0 24px; padding-left:20px; list-style:disc; }
+  .article-body li { font-size:16.5px; line-height:1.75; color:#3A342C; margin-bottom:10px; }
+  .article-body blockquote { border-left:3px solid #C69B54; padding:18px 24px; margin:28px 0; background:rgba(198,155,84,.08); font-family:'Bodoni Moda',Georgia,serif; font-size:clamp(19px,2.2vw,24px); line-height:1.45; font-style:italic; color:#14100C; }
 </style>
 </helmet>
 
@@ -46,61 +52,207 @@
 <dc-import name="SiteNav" active="journal" hint-size="100%,58px"></dc-import>
 
 <main>
-  <section style="background:#14100C;color:#FBF7F0">
-    <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px) clamp(36px,5vw,60px);display:flex;flex-direction:column;gap:20px;max-width:880px">
-      <div style="display:flex;align-items:center;gap:15px">
-        <span style="width:44px;height:1px;background:#C69B54"></span>
-        <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Notes from the clinic</span>
+  <!-- ================= 1. JOURNAL DIRECTORY VIEW (When no article is active) ================= -->
+  <sc-if value="{{ isListingView }}" hint-placeholder-val="{{ true }}">
+    <!-- Hero Header -->
+    <section style="background:#14100C;color:#FBF7F0">
+      <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px) clamp(36px,5vw,60px);display:flex;flex-direction:column;gap:20px;max-width:880px">
+        <div style="display:flex;align-items:center;gap:15px">
+          <span style="width:44px;height:1px;background:#C69B54"></span>
+          <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Clinical Writing &amp; Guides</span>
+        </div>
+        <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:.96;letter-spacing:-.034em;color:#FBF7F0">The Journal</h1>
+        <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(251,247,240,.72);max-width:560px">What we explain to clients inside the consultation room, written down. Practical, grounded in Nigerian skin biology, and free of the usual beauty industry exaggeration.</p>
       </div>
-      <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:.96;letter-spacing:-.034em;color:#FBF7F0">The Journal</h1>
-      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.6;color:rgba(251,247,240,.72);max-width:520px">What we tell clients in the room, written down. Practical, specific to Nigerian skin, and free of the marketing that usually comes attached.</p>
-    </div>
-  </section>
+    </section>
 
-  <section style="padding:clamp(40px,6vw,80px) clamp(16px,3vw,34px) clamp(28px,4vw,48px)">
-    <a data-reveal="1" href="{{ lead.href }}" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(20,16,12,.14);color:#14100C" data-lead="1">
-      <span style="display:block;aspect-ratio:16/10;overflow:hidden;background:#EDE5D6">
-        <span style="display:block;width:100%;height:100%;background-image:url('{{ lead.img }}');background-size:cover;background-position:center;filter:saturate(.85) contrast(1.03)" role="img" aria-label="{{ lead.title }}"></span>
-      </span>
-      <span style="background:#F5F0E6;padding:clamp(26px,3vw,48px);display:flex;flex-direction:column;justify-content:center;gap:14px">
-        <span style="display:flex;gap:14px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E">{{ lead.cat }}<span style="color:#7A7168">{{ lead.date }}</span></span>
-        <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(26px,3.6vw,48px);line-height:1.04;letter-spacing:-.026em">{{ lead.title }}</span>
-        <span style="font-size:16.5px;line-height:1.7;color:#4C463E;max-width:46ch">{{ lead.excerpt }}</span>
-        <span style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#A8562F;margin-top:4px">Read the piece →</span>
-      </span>
-    </a>
-  </section>
-
-  <section style="padding:0 clamp(16px,3vw,34px) clamp(56px,8vw,110px)">
-    <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,260px),1fr));gap:clamp(18px,2.4vw,32px)">
-      <sc-for list="{{ posts }}" as="p" hint-placeholder-count="6">
-        <a href="{{ p.href }}" style="display:flex;flex-direction:column;gap:14px;color:#14100C">
-          <span style="display:block;aspect-ratio:4/3;overflow:hidden;background:#EDE5D6">
-            <span style="display:block;width:100%;height:100%;background-image:url('{{ p.img }}');background-size:cover;background-position:center;filter:saturate(.85) contrast(1.03)" role="img" aria-label="{{ p.title }}"></span>
-          </span>
-          <span style="display:flex;flex-direction:column;gap:8px">
-            <span style="display:flex;gap:12px;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E">{{ p.cat }}<span style="color:#7A7168">{{ p.date }}</span></span>
-            <span style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(20px,2.1vw,25px);line-height:1.15">{{ p.title }}</span>
-            <span style="font-size:14.5px;line-height:1.6;color:#4C463E">{{ p.excerpt }}</span>
-          </span>
-        </a>
+    <!-- Category Filter Bar -->
+    <nav aria-label="Journal categories" style="display:flex;flex-wrap:wrap;gap:1px;background:rgba(20,16,12,.14);border-bottom:1px solid #DCD0BC;position:sticky;top:58px;z-index:30;background:#EDE5D6">
+      <sc-for list="{{ categories }}" as="cat" hint-placeholder-count="5">
+        <button type="button" onClick="{{ cat.select }}" style="flex:1 1 auto;background:{{ cat.bg }};color:{{ cat.fg }};padding:15px 18px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;text-align:center;border:none;cursor:pointer;transition:all .3s ease;white-space:nowrap" style-hover="background:#211B14;color:#C69B54">
+          {{ cat.label }} ({{ cat.count }})
+        </button>
       </sc-for>
-    </div>
-  </section>
+    </nav>
 
+    <!-- Lead / Featured Article -->
+    <sc-if value="{{ showFeatured }}" hint-placeholder-val="{{ true }}">
+      <section style="padding:clamp(36px,5vw,72px) clamp(16px,3vw,34px) clamp(24px,3vw,40px)">
+        <div data-reveal="1" style="display:grid;grid-template-columns:1fr;gap:1px;background:rgba(20,16,12,.14);color:#14100C;cursor:pointer;border-radius:4px;overflow:hidden" data-lead="1" onClick="{{ featuredArticle.open }}">
+          <span style="display:block;aspect-ratio:16/10;overflow:hidden;background:#EDE5D6">
+            <span style="display:block;width:100%;height:100%;background-image:url('{{ featuredArticle.img }}');background-size:cover;background-position:center;filter:saturate(.85) contrast(1.03);transition:transform .6s ease" style-hover="transform:scale(1.03)" role="img" aria-label="{{ featuredArticle.title }}"></span>
+          </span>
+          <div style="background:#F5F0E6;padding:clamp(26px,3.4vw,52px);display:flex;flex-direction:column;justify-content:center;gap:14px">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap">
+              <span style="display:flex;gap:14px;font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E;font-weight:700">{{ featuredArticle.cat }}<span style="color:#7A7168;font-weight:400">{{ featuredArticle.date }}</span></span>
+              <span style="font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:#C69B54;font-weight:600">⏱ {{ featuredArticle.readTime }}</span>
+            </div>
+            <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(26px,3.6vw,48px);line-height:1.04;letter-spacing:-.026em">{{ featuredArticle.title }}</h2>
+            <p style="font-size:16.5px;line-height:1.7;color:#4C463E;max-width:48ch">{{ featuredArticle.excerpt }}</p>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:6px">
+              <button type="button" onClick="{{ featuredArticle.open }}" style="background:#14100C;color:#FBF7F0;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:14px 24px;border:none;cursor:pointer;transition:all .3s ease" style-hover="background:#C69B54;color:#14100C">
+                Read Full Note →
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </sc-if>
+
+    <!-- Articles Grid -->
+    <section style="padding:clamp(16px,2.5vw,32px) clamp(16px,3vw,34px) clamp(64px,9vw,120px)">
+      <div style="margin-bottom:24px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid #DCD0BC;padding-bottom:12px">
+        <span style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#7A7168">Showing {{ visibleArticlesCount }} Published Clinical Notes</span>
+        <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#8A5A2E">Pee Skin &amp; MedSpa Library</span>
+      </div>
+
+      <div data-reveal="1" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr));gap:clamp(20px,2.6vw,36px)">
+        <sc-for list="{{ articleCards }}" as="p" hint-placeholder-count="6">
+          <div onClick="{{ p.open }}" style="display:flex;flex-direction:column;gap:14px;color:#14100C;background:#F5F0E6;border:1px solid rgba(20,16,12,.1);border-radius:4px;overflow:hidden;padding:clamp(18px,2vw,22px);cursor:pointer;transition:all .35s ease" style-hover="background:#EDE5D6;border-color:#C69B54;transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.08)">
+            <span style="display:block;aspect-ratio:16/10;overflow:hidden;background:#EDE5D6;border-radius:2px">
+              <span style="display:block;width:100%;height:100%;background-image:url('{{ p.img }}');background-size:cover;background-position:center;filter:saturate(.85) contrast(1.03);transition:transform .5s ease" style-hover="transform:scale(1.04)" role="img" aria-label="{{ p.title }}"></span>
+            </span>
+            <div style="display:flex;flex-direction:column;gap:10px;flex-grow:1">
+              <div style="display:flex;align-items:center;justify-content:space-between;gap:8px">
+                <span style="font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#8A5A2E;font-weight:700">{{ p.cat }} · {{ p.date }}</span>
+                <span style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#7A7168">⏱ {{ p.readTime }}</span>
+              </div>
+              <h3 style="font-family:'Bodoni Moda',Georgia,serif;font-size:clamp(21px,2.2vw,26px);line-height:1.15;color:#14100C">{{ p.title }}</h3>
+              <p style="font-size:14.5px;line-height:1.65;color:#4C463E;flex-grow:1">{{ p.excerpt }}</p>
+              <div style="margin-top:8px;padding-top:12px;border-top:1px solid rgba(20,16,12,.08);display:flex;align-items:center;justify-content:space-between">
+                <span style="font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#A8562F">Read Note →</span>
+                <span style="font-size:11px;color:#7A7168">Consultation Insight</span>
+              </div>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- ================= 2. FULL EDITORIAL ARTICLE READER (When activeArticle is set) ================= -->
+  <sc-if value="{{ isReaderView }}" hint-placeholder-val="{{ false }}">
+    <article style="background:#F5F0E6;animation:psRise .4s ease both">
+      <!-- Sticky Article Navigation Bar -->
+      <div style="position:sticky;top:58px;z-index:60;background:#0F0C09;color:#FBF7F0;padding:14px clamp(16px,3vw,34px);border-bottom:1px solid rgba(198,155,84,.35);display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.4)">
+        <button type="button" onClick="{{ closeArticle }}" style="background:none;border:none;color:#C69B54;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;gap:8px;padding:0">
+          <span>←</span> <span>Back to All Notes</span>
+        </button>
+        <div style="display:flex;align-items:center;gap:20px;font-size:12px">
+          <a href="{{ activeArticle.bookHref }}" style="background:#C69B54;color:#14100C;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:8px 16px;border-radius:3px">Book Protocol →</a>
+        </div>
+      </div>
+
+      <!-- Article Hero Header -->
+      <header style="background:#14100C;color:#FBF7F0;padding:clamp(56px,8vw,110px) clamp(16px,3vw,34px) clamp(40px,6vw,72px)">
+        <div style="max-width:860px;margin:0 auto;display:flex;flex-direction:column;gap:20px">
+          <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+            <span style="font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#C69B54;font-weight:700">{{ activeArticle.cat }}</span>
+            <span style="color:rgba(251,247,240,.3)">·</span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,247,240,.6)">{{ activeArticle.date }}</span>
+            <span style="color:rgba(251,247,240,.3)">·</span>
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#C69B54">⏱ {{ activeArticle.readTime }}</span>
+          </div>
+
+          <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(32px,5.6vw,72px);line-height:1.02;letter-spacing:-.03em;color:#FBF7F0">
+            {{ activeArticle.title }}
+          </h1>
+
+          <p style="font-size:clamp(17px,1.6vw,22px);line-height:1.6;color:rgba(251,247,240,.8);font-family:'Bodoni Moda',serif;font-style:italic">
+            {{ activeArticle.excerpt }}
+          </p>
+
+          <div style="display:flex;align-items:center;gap:16px;margin-top:10px;padding-top:20px;border-top:1px solid rgba(251,247,240,.12);font-size:12.5px;color:rgba(251,247,240,.6)">
+            <span>Authored by: <strong style="color:#FBF7F0">Clinical Advisory Team</strong></span>
+            <span>·</span>
+            <span>Pee Skin &amp; MedSpa · Gwarinpa, Abuja</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Featured Image Banner -->
+      <div style="max-width:960px;margin:-30px auto 0;padding:0 clamp(16px,3vw,34px)">
+        <div style="aspect-ratio:16/9;overflow:hidden;border-radius:6px;box-shadow:0 24px 60px rgba(0,0,0,.35);border:1px solid rgba(198,155,84,.3)">
+          <div style="width:100%;height:100%;background-image:url('{{ activeArticle.img }}');background-size:cover;background-position:center;filter:saturate(.88) contrast(1.04)"></div>
+        </div>
+      </div>
+
+      <!-- Article Content Body -->
+      <div style="max-width:820px;margin:0 auto;padding:clamp(48px,6vw,84px) clamp(16px,3vw,34px)">
+        <!-- Key Takeaways Box -->
+        <div style="background:#EDE5D6;border-left:4px solid #C69B54;padding:24px 28px;margin-bottom:44px;border-radius:0 4px 4px 0">
+          <span style="font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:8px">Clinical Summary &amp; Key Insight</span>
+          <p style="font-size:16px;line-height:1.7;color:#14100C;margin:0">{{ activeArticle.keyInsight }}</p>
+        </div>
+
+        <!-- Render HTML Article Content -->
+        <div class="article-body" style="font-size:17.5px;line-height:1.8;color:#2C261F">
+          <sc-for list="{{ activeArticle.sections }}" as="sec" hint-placeholder-count="4">
+            <sc-if value="{{ sec.isHeading }}" hint-placeholder-val="{{ false }}">
+              <h2>{{ sec.heading }}</h2>
+            </sc-if>
+            <sc-if value="{{ sec.isParagraph }}" hint-placeholder-val="{{ true }}">
+              <p>{{ sec.text }}</p>
+            </sc-if>
+            <sc-if value="{{ sec.isQuote }}" hint-placeholder-val="{{ false }}">
+              <blockquote>{{ sec.quote }}</blockquote>
+            </sc-if>
+            <sc-if value="{{ sec.isList }}" hint-placeholder-val="{{ false }}">
+              <ul>
+                <sc-for list="{{ sec.items }}" as="it" hint-placeholder-count="3">
+                  <li><strong>{{ it.title }}</strong>: {{ it.desc }}</li>
+                </sc-for>
+              </ul>
+            </sc-if>
+          </sc-for>
+        </div>
+
+        <!-- In-Article Treatment Prescription Box -->
+        <div style="margin-top:54px;padding:32px;background:#0F0C09;color:#FBF7F0;border:1px solid rgba(198,155,84,.4);border-radius:8px;display:grid;grid-template-columns:1fr;gap:20px" data-two-col="1">
+          <div>
+            <span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#C69B54;font-weight:700;display:block;margin-bottom:8px">Recommended Clinical Protocol</span>
+            <h3 style="font-family:'Bodoni Moda',serif;font-size:clamp(22px,2.6vw,30px);color:#FBF7F0;line-height:1.15;margin-bottom:10px">{{ activeArticle.recTitle }}</h3>
+            <p style="font-size:14.5px;line-height:1.65;color:rgba(251,247,240,.75);margin:0">{{ activeArticle.recDesc }}</p>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:center;gap:12px;background:#17130F;padding:20px;border:1px solid rgba(198,155,84,.2);border-radius:6px;text-align:center">
+            <span style="font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,247,240,.5)">Published Starting Rate</span>
+            <span style="font-family:'Bodoni Moda',serif;font-size:28px;color:#C69B54;line-height:1">{{ activeArticle.recPrice }}</span>
+            <a href="{{ activeArticle.bookHref }}" style="background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:14px 20px;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">
+              Book This Protocol →
+            </a>
+            <a href="{{ activeArticle.waHref }}" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:rgba(251,247,240,.7);text-decoration:underline">
+              Or chat with WhatsApp concierge
+            </a>
+          </div>
+        </div>
+
+        <!-- Back to Journal CTA Button -->
+        <div style="margin-top:64px;padding-top:28px;border-top:1px solid #DCD0BC;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+          <button type="button" onClick="{{ closeArticle }}" style="background:#14100C;color:#FBF7F0;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:16px 28px;border:none;cursor:pointer;transition:all .3s ease" style-hover="background:#C69B54;color:#14100C">
+            ← Back to Journal Index
+          </button>
+          <a href="concerns.html" style="font-size:12.5px;color:#8A5A2E;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid #C69B54;padding-bottom:2px">
+            Explore Concerns Matcher →
+          </a>
+        </div>
+      </div>
+    </article>
+  </sc-if>
+
+  <!-- Newsletter Signup Footer Strip -->
   <section style="background:#EDE5D6;border-top:1px solid #DCD0BC">
     <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px);display:grid;grid-template-columns:1fr;gap:clamp(24px,4vw,64px);align-items:center" data-two-col="1" data-reveal="1">
       <div style="display:flex;flex-direction:column;gap:14px">
-        <span style="font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:#8A5A2E">One email a month</span>
-        <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,56px);line-height:1;letter-spacing:-.03em">Offers before they hit Instagram.</h2>
-        <p style="font-size:17px;line-height:1.7;color:#4C463E;max-width:40ch">Seasonal packages, new treatments and the occasional piece of writing. Nothing else, and one click to leave.</p>
+        <span style="font-size:10.5px;letter-spacing:.3em;text-transform:uppercase;color:#8A5A2E">Monthly Clinical Dispatch</span>
+        <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,4.6vw,56px);line-height:1;letter-spacing:-.03em">Notes before they hit Instagram.</h2>
+        <p style="font-size:17px;line-height:1.7;color:#4C463E;max-width:40ch">Practical skincare guides, new protocols, and private client packages. Sent once a month, zero spam, and one click to unsubscribe.</p>
       </div>
       <form action="#" method="post" style="display:flex;flex-direction:column;gap:12px;background:#F5F0E6;border:1px solid #DCD0BC;padding:clamp(24px,3vw,36px)">
         <label for="j-name" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7A7168">Name</label>
         <input id="j-name" type="text" name="name" style="padding:14px 16px;border:1px solid #DCD0BC;background:#FBF7F0;font-size:15px">
         <label for="j-email" style="font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#7A7168;margin-top:6px">Email</label>
         <input id="j-email" type="email" name="email" required="required" style="padding:14px 16px;border:1px solid #DCD0BC;background:#FBF7F0;font-size:15px">
-        <button type="submit" style="margin-top:14px;align-self:flex-start;background:#14100C;color:#F5F0E6;border:0;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:16px 30px;cursor:pointer" style-hover="background:#C69B54;color:#14100C">Subscribe</button>
+        <button type="submit" style="margin-top:14px;align-self:flex-start;background:#14100C;color:#FBF7F0;border:0;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:16px 30px;cursor:pointer" style-hover="background:#C69B54;color:#14100C">Subscribe</button>
       </form>
     </div>
   </section>
@@ -114,48 +266,309 @@
 const P = {
   journal:'https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1600&q=80',
   laser:'https://images.unsplash.com/photo-1527203561188-dae1bc1a417f?auto=format&fit=crop&w=1600&q=80',
-  spa:'https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1600&q=80',
+  spa:'https://images.unsplash.com/photo-1609535895148-cf9f5c446290?auto=format&fit=crop&w=1600&q=80',
   aes:'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=1600&q=80',
   salon:'https://images.unsplash.com/photo-1632765866070-3fadf25d3d5b?auto=format&fit=crop&w=1600&q=80',
   facial:'https://images.unsplash.com/photo-1693004927824-f2623bbedc8b?auto=format&fit=crop&w=1600&q=80',
-  massage:'https://images.unsplash.com/photo-1526045478516-99145907023c?auto=format&fit=crop&w=1600&q=80'
+  massage:'https://images.unsplash.com/photo-1618509682637-e4790939cf96?auto=format&fit=crop&w=1600&q=80'
 };
 
-function cssToObj(s){ var o = {}; (s || '').split(';').forEach(function(d){ var i = d.indexOf(':'); if (i > 0) { var k = d.slice(0, i).trim().replace(/-([a-z])/g, function(m, c){ return c.toUpperCase(); }); o[k] = d.slice(i + 1).trim(); } }); return o; }
-function imgStyle(u, extra){ return Object.assign({width:'100%',height:'100%',backgroundImage:'url("' + u + '")',backgroundSize:'cover',backgroundPosition:'center',filter:'saturate(.85) contrast(1.03)'}, cssToObj(extra)); }
-function withImg(list, extra){ return list.map(function(o){ var c = Object.assign({}, o); if (o.img) c.imgStyle = imgStyle(o.img, extra); if (o.before) c.beforeStyle = imgStyle(o.before, extra); if (o.after) c.afterStyle = imgStyle(o.after, extra); return c; }); }
+const ARTICLES = [
+  {
+    id: 'laser-dark-skin',
+    cat: 'Laser Technology',
+    categoryGroup: 'laser',
+    date: 'August 2026',
+    readTime: '6 min read',
+    title: 'Laser on dark skin: what the wavelength actually does',
+    excerpt: 'Almost every laser burn story in Nigeria traces back to the same physics error — using a machine with a wavelength that heats epidermal melanin instead of bypassing it to reach the deep follicle root. Here is the difference between 755nm, 810nm and 1064nm in plain terms.',
+    img: P.laser,
+    keyInsight: 'On Fitzpatrick IV to VI skin, the only wavelength with clinical safety clearance for high-fluence permanent hair removal is 1064nm Nd:YAG. Anything shorter targets melanin on the surface rather than down at the hair bulb.',
+    recTitle: 'Nd:YAG 1064nm Laser Hair Removal Protocol',
+    recDesc: 'Long-pulse Nd:YAG laser calibrated specifically for African hair follicles and melanin protection, paired with contact cooling.',
+    recPrice: 'From ₦45,000 / session',
+    bookHref: 'book.html?service=Nd:YAG%20Laser%20Hair%20Removal&price=%E2%82%A645,000&dept=laser',
+    waHref: 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I read your journal note on Laser on Dark Skin and would like to book a 1064nm laser consultation.'),
+    sections: [
+      { isHeading: true, heading: 'The Physics of Melanin & Laser Absorption' },
+      { isParagraph: true, text: 'When a laser emits light energy, that energy must be absorbed by a target (chromophore) to produce heat. In hair removal, the target is melanin inside the hair bulb. However, in dark skin (Fitzpatrick types IV, V, and VI), there is also a high concentration of melanin in the epidermis — the surface layer of the skin.' },
+      { isParagraph: true, text: 'If a laser uses a wavelength that absorbs too aggressively into melanin, the energy is captured at the surface before it ever reaches the hair root. The result is thermal damage: blisters, burns, and post-inflammatory hyperpigmentation that can take 12 to 18 months to fade.' },
+      { isQuote: true, quote: 'The safety of laser hair removal on Black skin is not a matter of luck or therapist gentleness — it is strictly a law of laser physics.' },
+      { isHeading: true, heading: 'Comparing the Three Common Wavelengths' },
+      { isList: true, items: [
+        { title: '755nm Alexandrite', desc: 'Extremely high melanin absorption. Phenomenal on very fair skin with dark hair, but dangerous on Fitzpatrick IV–VI because it burns the epidermis.' },
+        { title: '808nm / 810nm Diode', desc: 'Moderate melanin absorption. Can be used with low fluences on lighter African skin (type IV), but carries heightened burn risk on types V and VI in hot climates.' },
+        { title: '1064nm Nd:YAG (Gold Standard)', desc: 'Longest wavelength with the lowest competitive absorption by epidermal melanin. It bypasses the surface entirely and delivers heat safely to the deep vascular supply of the hair follicle.' }
+      ]},
+      { isHeading: true, heading: 'What to Verify Before Letting Anyone Treat You' },
+      { isParagraph: true, text: 'Before booking laser hair removal anywhere in Abuja, ask two non-negotiable questions: "Is your machine a true 1064nm Nd:YAG laser?" and "Do you perform a mandatory patch test on my exact skin tone?" At Pee Skin & MedSpa in Gwarinpa, every client undergoes a patch test 48 hours prior to full session delivery.' }
+    ]
+  },
+  {
+    id: 'top-5-skincare-treatments',
+    cat: 'Clinical Protocols',
+    categoryGroup: 'aesthetics',
+    date: 'July 2026',
+    readTime: '5 min read',
+    title: 'Top 5 skincare treatments in Abuja that actually earn their price',
+    excerpt: 'The aesthetic market in Nigeria is full of imported machines with exaggerated promises. Here are the five clinical treatments that consistently deliver visible, measurable improvements on African skin.',
+    img: P.journal,
+    keyInsight: 'The most cost-effective aesthetic treatments are those that work synergistically with the skin’s natural 28-day cellular turnover cycle rather than attempting aggressive overnight miracles.',
+    recTitle: 'HydraFacial Glow Circuit + Skin Booster',
+    recDesc: 'Comprehensive multi-step pore vortex extraction, customized enzyme exfoliation, and pure hyaluronic hydration infusion.',
+    recPrice: '₦65,000 Complete Session',
+    bookHref: 'book.html?service=HydraFacial%20Glow%20Circuit&price=%E2%82%A665,000&dept=spa',
+    waHref: 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I read your Top 5 Treatments article and would like to book a HydraFacial Glow Circuit.'),
+    sections: [
+      { isHeading: true, heading: '1. Medical HydraFacial & Vortex Extraction' },
+      { isParagraph: true, text: 'Unlike traditional manual extractions that can cause pinpoint bruising or broken capillaries on melanin-rich skin, vortex suction dislodges sebum plugs, makeup residue, and keratin debris smoothly while infusing antioxidants and hyaluronic acid simultaneously.' },
+      { isHeading: true, heading: '2. Nd:YAG Laser Carbon Peel Resurfacing' },
+      { isParagraph: true, text: 'Known as the "Hollywood Peel," liquid carbon is applied to the face and penetrated by laser energy. It vaporizes dead skin, tightens enlarged pores, and immediately reduces excess oil production without peeling or downtime.' },
+      { isHeading: true, heading: '3. Staged Superficial to Medium Chemical Peels' },
+      { isParagraph: true, text: 'Lactic, mandelic, and targeted glycolic formulations designed for dark skin help safely dissolve post-acne hyperpigmentation, dark knuckles, and uneven texture without inducing rebound melanin spikes.' },
+      { isHeading: true, heading: '4. Skin Boosters (Restylane Vital / Profhilo)' },
+      { isParagraph: true, text: 'Micro-injections of pure uncrosslinked hyaluronic acid placed across the dermal matrix. This provides continuous internal hydration and elasticity that no topical serum can mimic.' },
+      { isHeading: true, heading: '5. Authentic Moroccan Hammam & Moxibustion' },
+      { isParagraph: true, text: 'Full-body eucalyptus black soap steam followed by deep kessa exfoliation. It restores circulation, sloughs away dead skin buildup, and releases deeply held muscular tension.' }
+    ]
+  },
+  {
+    id: 'rise-of-aesthetics',
+    cat: 'Aesthetics & Injectables',
+    categoryGroup: 'aesthetics',
+    date: 'June 2026',
+    readTime: '7 min read',
+    title: 'The rise of medical aesthetics in Nigeria: what you need to know',
+    excerpt: 'Botox and dermal fillers have rapidly moved into mainstream Nigerian wellness culture. But because regulations are still developing, clients must know what authentic products look like and how conservative dosing protects facial naturalness.',
+    img: P.aes,
+    keyInsight: 'Great aesthetic medicine in Nigeria should make you look rested and architecturally refined — never altered, frozen, or overfilled. Always demand to inspect sealed factory packaging before treatment.',
+    recTitle: 'Doctor-Led Aesthetics Consultation',
+    recDesc: 'Comprehensive 45-minute facial architecture assessment, product serial verification, and conservative treatment mapping.',
+    recPrice: '₦20,000 (Credited towards treatment)',
+    bookHref: 'book.html?service=Doctor-Led%20Aesthetics%20Consultation&price=%E2%82%A620,000&dept=aesthetics',
+    waHref: 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I read your article on Aesthetic Injectables in Nigeria and would like to book a Doctor Consultation.'),
+    sections: [
+      { isHeading: true, heading: 'The Difference Between Botox and Dermal Fillers' },
+      { isParagraph: true, text: 'A frequent confusion in Nigeria is treating Botox and Fillers as interchangeable. Botox (Botulinum Toxin) relaxes muscular contractions that cause dynamic expression wrinkles (forehead lines, crow’s feet). Dermal Fillers (hyaluronic acid gels) restore lost volume and structural support in areas like the cheeks, jawline, and lips.' },
+      { isQuote: true, quote: 'If a clinic cannot show you the unopened, sealed box with manufacturer batch numbers (Juvederm, Teosyal, Restylane), do not allow them to inject your face.' },
+      { isHeading: true, heading: 'Respecting African Facial Architecture' },
+      { isParagraph: true, text: 'Melanin-rich African bone structure and fat pad distribution differ from Caucasian anatomy. High cheekbone projection and natural lip volume must be enhanced with conservative, subtle micro-aliquots rather than standard Western injection templates.' },
+      { isHeading: true, heading: 'The Safety Net: Hyaluronidase' },
+      { isParagraph: true, text: 'Any clinic administering hyaluronic acid fillers must keep fresh Hyaluronidase on site at all times. Hyaluronidase is an enzyme that completely dissolves hyaluronic acid filler within minutes if a client desires reversal or in the rare event of vascular compromise.' }
+    ]
+  },
+  {
+    id: 'nigerian-skin-products',
+    cat: 'Skincare Science',
+    categoryGroup: 'skincare',
+    date: 'May 2026',
+    readTime: '5 min read',
+    title: 'Best skincare routine & ingredients for Nigerian weather',
+    excerpt: 'The combination of high UV index, urban dust, humidity, and dry harmattan winds requires a tailored approach. Here are the active ingredients that work with dark skin biology, and the dangerous bleaching agents to avoid.',
+    img: P.facial,
+    keyInsight: 'Melanin-rich skin responds to irritation by producing pigment. The most effective way to brighten dark marks is gentle anti-inflammatory inhibitors, not aggressive daily scrubbing or hydroquinone cocktails.',
+    recTitle: 'Intensive Hyperpigmentation Facial & Barrier Care',
+    recDesc: 'Clinical brightening facial featuring tranexamic acid, azelaic acid, and deep peptide barrier repair.',
+    recPrice: '₦50,000 / session',
+    bookHref: 'book.html?service=Hyperpigmentation%20Facial&price=%E2%82%A650,000&dept=spa',
+    waHref: 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I read your Skincare Routine article and would like a personalized skin consultation.'),
+    sections: [
+      { isHeading: true, heading: 'Why Heavy Bleaching Creams Destroy Skin Integrity' },
+      { isParagraph: true, text: 'In Nigeria, unregulated "organic creams" often secretly contain toxic concentrations of hydroquinone, steroids (clobetasol), and mercury. While they show rapid lightening initially, they cause steroid-induced acne, skin thinning, visible spider veins, and irreversible exogenous ochronosis (greyish-blue permanent pigmentation).' },
+      { isHeading: true, heading: 'The Safe Pigment Brightening Arsenal' },
+      { isList: true, items: [
+        { title: 'Tranexamic Acid (3–5%)', desc: 'Inhibits UV-induced plasmin activity, slowing melanocyte stimulation without bleaching surrounding skin.' },
+        { title: 'Azelaic Acid (10–15%)', desc: 'Targets hyperactive abnormal pigment cells, calms active acne inflammation, and refines texture.' },
+        { title: 'Alpha Arbutin & Kojic Acid', desc: 'Gentle tyrosinase inhibitors that fade post-acne blemishes and dark patches steadily over 8 to 12 weeks.' },
+        { title: 'Broad Spectrum SPF 50', desc: 'Non-negotiable. Without daily sunscreen, UV radiation reactivates melanin production, undoing all treatment progress.' }
+      ]},
+      { isHeading: true, heading: 'Adapting to Seasons: Harmattan vs Rainy Season' },
+      { isParagraph: true, text: 'During harmattan, switch from foaming gel cleansers to nourishing cream cleansers and incorporate ceramide-rich moisturizers to prevent transepidermal water loss. In humid months, prefer lightweight hyaluronic gels and niacinamide.' }
+    ]
+  },
+  {
+    id: 'moroccan-hammam-guide',
+    cat: 'Spa & Wellness',
+    categoryGroup: 'spa',
+    date: 'April 2026',
+    readTime: '4 min read',
+    title: 'What an authentic Moroccan Hammam is, and what it is not',
+    excerpt: 'A true Moroccan Hammam is not a routine body scrub with an exotic title. It is an ancient thermal cleansing ritual where eucalyptus steam, Savon Beldi black soap, and the Kessa glove perform three distinct physiological functions.',
+    img: P.spa,
+    keyInsight: 'The secret to genuine Hammam skin renewal is letting the black soap soften the dead stratum corneum in steam before applying gentle mechanical glove friction — never harsh dry scrubbing.',
+    recTitle: 'The Royal Moroccan Hammam Experience',
+    recDesc: 'Authentic 90-minute eucalyptus steam, Savon Beldi application, full-body kessa exfoliation, and botanical hydration massage.',
+    recPrice: '₦40,000 / 90 mins',
+    bookHref: 'book.html?service=Royal%20Moroccan%20Hammam&price=%E2%82%A640,000&dept=spa',
+    waHref: 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I read your Hammam article and would like to book a Moroccan Hammam session in Gwarinpa.'),
+    sections: [
+      { isHeading: true, heading: 'Step 1: Thermal Pore Dilation with Steam' },
+      { isParagraph: true, text: 'The ritual begins in a heated steam sanctuary. The warm moisture softens the outer lipid matrix of dead skin cells and opens pores, allowing trapped sebum and environmental pollution to loosen naturally.' },
+      { isHeading: true, heading: 'Step 2: Savon Beldi (Olive Oil & Eucalyptus Black Soap)' },
+      { isParagraph: true, text: 'Pure traditional black soap made from macerated Moroccan olives and eucalyptus essential oil is smoothed across the body. It acts as an alkaline softening agent, breaking cellular bonds of dead epidermis while offering natural antimicrobial purification.' },
+      { isHeading: true, heading: 'Step 3: The Kessa Glove Exfoliation' },
+      { isParagraph: true, text: 'Using a dedicated textured kessa mitt, our therapist applies firm, sweeping strokes. Clients are frequently amazed to see visible rolls of greyish dead keratin effortlessly roll off the skin, revealing completely refreshed, baby-soft tissue underneath.' }
+    ]
+  },
+  {
+    id: 'desk-strain-tension',
+    cat: 'Spa & Wellness',
+    categoryGroup: 'spa',
+    date: 'March 2026',
+    readTime: '5 min read',
+    title: 'Why your shoulders hurt, and what an hour of deep tissue fixes',
+    excerpt: 'Abuja traffic, long laptop hours, and mobile phone posture load the exact same muscular chain: the upper trapezius, levator scapulae, and rhomboids. Here is why light relaxation rubs fail to release it and what targeted deep tissue achieves.',
+    img: P.massage,
+    keyInsight: 'Chronic muscle tightness is caused by micro-adhesions in fascia. Light oil rubbing feels pleasant for 20 minutes, but true structural relief requires sustained neuromuscular ischemic pressure and heat.',
+    recTitle: 'Moxibustion Heat Therapy + 60-min Deep Tissue',
+    recDesc: 'Traditional thermal herbal healing paired with concentrated muscular trigger point release.',
+    recPrice: '₦60,000 Complete Experience',
+    bookHref: 'book.html?service=The%20Sanctuary%20Stress%20Melt&price=%E2%82%A660,000&dept=spa',
+    waHref: 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I read your article on shoulder tension and would like to book a Deep Tissue & Moxibustion session.'),
+    sections: [
+      { isHeading: true, heading: 'The Modern Anatomy of Upper Back Strain' },
+      { isParagraph: true, text: 'For every inch your head tilts forward over a laptop or smartphone, the effective weight of your head on the neck muscles increases by 10 pounds. Over months, the levator scapulae and trapezius stay in a state of continuous contraction, forming painful, oxygen-deprived trigger points ("knots").' },
+      { isHeading: true, heading: 'How Deep Tissue & Moxibustion Break the Cycle' },
+      { isParagraph: true, text: 'Deep tissue therapy uses deliberate elbow, forearm, and thumb pressure along muscle grain to manually separate adhered fascial sheets. When combined with Moxibustion (mugwort thermal radiation), deep infrared warmth penetrates 3–5cm into muscular layers, boosting local micro-circulation and clearing built-up lactic acid.' }
+    ]
+  },
+  {
+    id: 'ingrown-hairs-science',
+    cat: 'Laser & Clinical Care',
+    categoryGroup: 'laser',
+    date: 'February 2026',
+    readTime: '6 min read',
+    title: 'Ingrown hairs & razor bumps: why shaving keeps triggering dark marks',
+    excerpt: 'Pseudofolliculitis Barbae is not a hygiene flaw — it is an anatomical reality of curved hair follicles on African skin. Why creams and tweezing perpetuate the cycle, and how laser permanently ends it.',
+    img: P.salon,
+    keyInsight: 'As long as curved hair follicles continue producing coarse hair, shaving cuts will always curl back into the dermis. Permanently destroying the follicle bulb with Nd:YAG laser is the only definitive cure.',
+    recTitle: 'Ingrown Hair & Pseudofolliculitis Clearance Protocol',
+    recDesc: 'Permanent laser hair elimination combined with pigment-fading barrier care for beard lines, bikini, and underarms.',
+    recPrice: 'From ₦35,000 / session',
+    bookHref: 'book.html?service=Ingrown%20Hair%20Treatment&price=%E2%82%A635,000&dept=laser',
+    waHref: 'https://wa.me/2349058830888?text=' + encodeURIComponent('Hi Pee Skin & MedSpa, I read your Ingrown Hairs article and would like to book an assessment.'),
+    sections: [
+      { isHeading: true, heading: 'The Biology of Pseudofolliculitis' },
+      { isParagraph: true, text: 'African hair follicles emerge from the dermis at an angle with an elliptical, spiral cross-section. When cut with a razor or clipper blade at skin level, the sharp, beveled hair tip curves inward and re-enters the follicle wall. The body’s immune system recognizes the hair as a foreign intruder, triggering acute inflammation, pus formation, and subsequent dark marks (PIH).' },
+      { isHeading: true, heading: 'Why Plucking and Tweezing Worsen Pigmentation' },
+      { isParagraph: true, text: 'Plucking yanks the hair out unevenly, often tearing the internal follicle lining. When the hair regrows, it meets scarred, disorganized tissue and is even more likely to become trapped, creating deeper, firmer dark nodules.' },
+      { isHeading: true, heading: 'The Definitive Nd:YAG Laser Solution' },
+      { isParagraph: true, text: 'By passing 1064nm laser energy into the follicle, we destroy the hair germ cells and the dermal papilla. Once the hair stops growing, the trigger ceases to exist. The skin can then fully heal, and our brightening peels clear the existing dark marks permanently.' }
+    ]
+  }
+];
 
 class Component extends DCLogic {
+  state = {
+    selectedCategory: 'all',
+    activeArticleId: null,
+    scrollProgress: 0
+  };
+
   componentDidMount(){
     const root = this.el || document;
-    this._io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.setAttribute('data-seen',''); this._io.unobserve(e.target); } }), {rootMargin:'0px 0px -10% 0px'});
+    
+    // Check URL parameters or hash for direct article deep link
+    const params = new URLSearchParams(window.location.search);
+    const articleParam = params.get('article') || (window.location.hash ? window.location.hash.replace('#', '') : null);
+    if (articleParam) {
+      const match = ARTICLES.find(a => a.id === articleParam);
+      if (match) {
+        this.setState({ activeArticleId: match.id });
+      }
+    }
+
+    this._io = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.setAttribute('data-seen','');
+        this._io.unobserve(e.target);
+      }
+    }), {rootMargin:'0px 0px -10% 0px'});
+
     const mq = window.matchMedia('(min-width: 960px)');
     const apply = () => {
       root.querySelectorAll('[data-two-col]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '1fr 1fr' : '1fr'; });
       root.querySelectorAll('[data-lead]').forEach(n => { n.style.gridTemplateColumns = mq.matches ? '1.15fr 1fr' : '1fr'; });
-      root.querySelectorAll('[data-reveal]').forEach(n => { if (!n.hasAttribute('data-obs')) { n.setAttribute('data-obs',''); this._io.observe(n); } });
+      root.querySelectorAll('[data-reveal]').forEach(n => {
+        if (!n.hasAttribute('data-obs')) {
+          n.setAttribute('data-obs','');
+          this._io.observe(n);
+        }
+      });
     };
-    this._apply = apply; this._mq = mq;
-    mq.addEventListener('change', apply); apply(); this._t = setInterval(apply, 600);
+    this._apply = apply;
+    this._mq = mq;
+    mq.addEventListener('change', apply);
+    apply();
+    this._t = setInterval(apply, 600);
   }
-  componentDidUpdate(){ if (this._apply) this._apply(); }
-  componentWillUnmount(){ if (this._mq) this._mq.removeEventListener('change', this._apply); if (this._io) this._io.disconnect(); clearInterval(this._t); }
+
+  componentDidUpdate(){
+    if (this._apply) this._apply();
+  }
+
+  componentWillUnmount(){
+    if (this._mq) this._mq.removeEventListener('change', this._apply);
+    if (this._io) this._io.disconnect();
+    clearInterval(this._t);
+  }
+
+  openArticle = (id) => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    this.setState({ activeArticleId: id });
+    if (history.pushState) {
+      history.pushState(null, '', '?article=' + id);
+    }
+  };
+
+  closeArticle = () => {
+    this.setState({ activeArticleId: null });
+    if (history.pushState) {
+      history.pushState(null, '', 'journal.html');
+    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  setCategory = (catKey) => {
+    this.setState({ selectedCategory: catKey, activeArticleId: null });
+  };
+
   renderVals(){
+    const s = this.state;
+    const isReaderView = Boolean(s.activeArticleId);
+    const activeArticle = ARTICLES.find(a => a.id === s.activeArticleId) || ARTICLES[0];
+
+    const filtered = s.selectedCategory === 'all'
+      ? ARTICLES
+      : ARTICLES.filter(a => a.categoryGroup === s.selectedCategory);
+
+    const featuredArticle = filtered[0] || ARTICLES[0];
+    const otherArticles = filtered.slice(1);
+
+    const categories = [
+      { key:'all', label:'All Notes', count: ARTICLES.length, bg: s.selectedCategory==='all' ? '#14100C' : '#EDE5D6', fg: s.selectedCategory==='all' ? '#C69B54' : '#6B6357', select: () => this.setCategory('all') },
+      { key:'laser', label:'Laser & Skin', count: ARTICLES.filter(a=>a.categoryGroup==='laser').length, bg: s.selectedCategory==='laser' ? '#14100C' : '#EDE5D6', fg: s.selectedCategory==='laser' ? '#C69B54' : '#6B6357', select: () => this.setCategory('laser') },
+      { key:'aesthetics', label:'Aesthetics & Injectables', count: ARTICLES.filter(a=>a.categoryGroup==='aesthetics').length, bg: s.selectedCategory==='aesthetics' ? '#14100C' : '#EDE5D6', fg: s.selectedCategory==='aesthetics' ? '#C69B54' : '#6B6357', select: () => this.setCategory('aesthetics') },
+      { key:'spa', label:'Spa & Hammam', count: ARTICLES.filter(a=>a.categoryGroup==='spa').length, bg: s.selectedCategory==='spa' ? '#14100C' : '#EDE5D6', fg: s.selectedCategory==='spa' ? '#C69B54' : '#6B6357', select: () => this.setCategory('spa') },
+      { key:'skincare', label:'Skincare Science', count: ARTICLES.filter(a=>a.categoryGroup==='skincare').length, bg: s.selectedCategory==='skincare' ? '#14100C' : '#EDE5D6', fg: s.selectedCategory==='skincare' ? '#C69B54' : '#6B6357', select: () => this.setCategory('skincare') }
+    ];
+
     return {
-      lead: {
-        cat:'Laser', date:'August 2026',
-        title:'Laser on dark skin: what the wavelength actually does',
-        excerpt:'Almost every burn story in Nigeria traces back to the same thing — a device designed for pale skin, used on skin it was never tested on. Here is the difference between 755nm, 810nm and 1064nm, in plain terms, and the questions to ask before you let anyone treat you.',
-        img: P.laser, imgStyle: imgStyle(P.laser), href:'laser-hair-removal.html'
+      isListingView: !isReaderView,
+      isReaderView: isReaderView,
+      activeArticle: activeArticle,
+      closeArticle: this.closeArticle,
+      categories: categories,
+      showFeatured: Boolean(featuredArticle) && s.selectedCategory === 'all',
+      featuredArticle: {
+        ...featuredArticle,
+        open: () => this.openArticle(featuredArticle.id)
       },
-      posts: withImg([
-        {cat:'Skincare', date:'April 2025', title:'Top 5 Skincare Treatments in Abuja for Glowing Skin', excerpt:'The five that consistently earn their price, and roughly what each one will and will not fix.', img:P.journal, href:'https://peeskin.com/top-5-skincare-treatments-in-abuja-for-glowing-skin/'},
-        {cat:'Industry', date:'April 2025', title:'The Rise of Beauty Aesthetics in Nigeria: What You Need to Know', excerpt:'Aesthetics has grown faster than its regulation. What that means for you as a client, and how to choose safely.', img:P.aes, href:'https://peeskin.com/the-rise-of-beauty-aesthetics-in-nigeria-what-you-need-to-know/'},
-        {cat:'Guides', date:'April 2025', title:'Choosing the Right Salon and Spa in Gwarinpa', excerpt:'Hygiene, training, equipment and pricing — the four things worth checking before you book anywhere.', img:P.salon, href:'https://peeskin.com/choosing-the-right-salon-and-spa-in-gwarinpa-what-you-should-know/'},
-        {cat:'Products', date:'April 2025', title:'Best Skincare Products for Nigerian Skin: What to Try', excerpt:'What actually works on melanin-rich skin in a hot, humid climate, and what to leave on the shelf.', img:P.facial, href:'https://peeskin.com/best-skincare-products-for-nigerian-skin-what-you-need-to-try/'},
-        {cat:'Treatments', date:'August 2026', title:'What a Moroccan hammam is, and what it is not', excerpt:'It is not a body scrub with a better name. The steam, the black soap and the kessa glove each do a specific job.', img:P.spa, href:'spa-treatments.html'},
-        {cat:'Wellness', date:'August 2026', title:'Why your shoulders hurt, and what an hour fixes', excerpt:'Abuja traffic, desk work and phone posture load the same three muscles. What deep tissue work actually reaches.', img:P.massage, href:'spa-treatments.html'}
-      ])
+      visibleArticlesCount: filtered.length,
+      articleCards: (s.selectedCategory === 'all' ? otherArticles : filtered).map(p => ({
+        ...p,
+        open: () => this.openArticle(p.id)
+      }))
     };
   }
 }
