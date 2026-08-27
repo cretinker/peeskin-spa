@@ -151,13 +151,16 @@
                 </div>
               </div>
 
-              <div style="background:#0F0C09;padding:22px;border:1px solid rgba(198,155,84,.3);border-radius:10px;display:flex;flex-direction:column;gap:12px;text-align:center">
+              <div style="background:#0F0C09;padding:22px;border:1px solid rgba(198,155,84,.3);border-radius:10px;display:flex;flex-direction:column;gap:10px;text-align:center">
                 <span style="font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,230,.6)">Recommended Protocol Booking</span>
                 <span style="font-family:'Bodoni Moda',serif;font-size:28px;color:#C69B54;line-height:1">{{ quizRecPrice }}</span>
                 <span style="font-size:11.5px;color:rgba(245,240,230,.5)">House 14, First Avenue, Gwarinpa, Abuja</span>
-                <a href="{{ quizBookUrl }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">
-                  <span>Book Protocol Online</span>
+                <a href="{{ quizProtocolUrl }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 20px;background:#C69B54;color:#14100C;font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:#F5F0E6;color:#14100C">
+                  <span>View Dedicated Protocol</span>
                   <span>→</span>
+                </a>
+                <a href="{{ quizBookUrl }}" style="display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:12px 18px;border:1px solid rgba(245,240,230,.25);color:#F5F0E6;font-size:11px;letter-spacing:.12em;text-transform:uppercase;border-radius:4px;transition:all .3s ease" style-hover="background:rgba(245,240,230,.1)">
+                  <span>Book Online Wizard</span>
                 </a>
                 <a href="{{ quizWhatsAppUrl }}" target="_blank" rel="noopener noreferrer" style="font-size:12px;color:rgba(245,240,230,.7);text-decoration:underline;margin-top:2px">
                   Or chat with WhatsApp concierge
@@ -287,6 +290,7 @@ class Component extends DCLogic {
     let rec = {
       tag: 'LASER & MEDSPA PROTOCOL',
       title: 'Nd:YAG Laser Hair Removal & Dark Spot Clearance',
+      protocolUrl: 'ingrown-hairs.html',
       desc: '1064nm long-pulse laser targeting deep root follicles without melanin heating, paired with topical soothing barrier care.',
       timeline: '6–8 Sessions (every 4–6 weeks)',
       suitability: 'Fitzpatrick IV–VI (100% Calibrated)',
@@ -298,6 +302,7 @@ class Component extends DCLogic {
       rec = {
         tag: 'CLINICAL PIGMENTATION CORRECTION',
         title: 'Medical Dark Knuckles & Hyperpigmentation Protocol',
+        protocolUrl: 'hyperpigmentation.html',
         desc: 'Micro-exfoliating chemical peels paired with pigment inhibitors to dissolve stubborn friction dark marks safely.',
         timeline: '4–6 Sessions (2 weeks apart)',
         suitability: 'Melanin-Rich African Skin',
@@ -308,6 +313,7 @@ class Component extends DCLogic {
       rec = {
         tag: 'ANCIENT WELLNESS & DEEP RELEASE',
         title: 'Moxibustion Therapy & Deep Tissue Massage Experience',
+        protocolUrl: 'tension-relief.html',
         desc: 'Moxa herb thermal therapy with rhythmic pressure release to melt chronic shoulder, lumbar, and muscular fatigue.',
         timeline: 'Single 90-min Session / Bi-weekly',
         suitability: 'All Skin & Body Types',
@@ -318,6 +324,7 @@ class Component extends DCLogic {
       rec = {
         tag: 'AESTHETIC INJECTABLES',
         title: 'Doctor-Led Botox & Dermal Fillers Consultation',
+        protocolUrl: 'fine-lines.html',
         desc: 'Conservative, high-precision placement of premium hyaluronic acid fillers and botulinum toxin for lifted, smooth contouring.',
         timeline: '1 Session with 14-day Review',
         suitability: 'Consultation & Assessment First',
@@ -328,6 +335,7 @@ class Component extends DCLogic {
       rec = {
         tag: 'HOLISTIC SKIN & VITALITY',
         title: 'HydraFacial Glow Circuit + Skin IV Drip',
+        protocolUrl: 'acne-scars.html',
         desc: 'Multi-step deep pore extraction, vortex hydration, and intravenous glutathione/vitamin glow infusion.',
         timeline: 'Single Afternoon / Monthly Refresh',
         suitability: 'All Skin Types',
@@ -340,39 +348,39 @@ class Component extends DCLogic {
       {id:'razor-bumps', short:'Razor bumps', name:'Ingrown hairs & razor bumps', img:IMG.laserMale,
         cause:'Shaving and waxing cut the hair below the surface, and coarse, curved hair grows back into the follicle wall instead of out of it. The body treats it as a foreign object, so you get the bump, then the dark mark it leaves behind.',
         plan:'Laser removes the hair that keeps re-entering the follicle, so the bumps stop forming rather than being managed. Existing marks are treated separately with a pigmentation programme once the hair is gone.',
-        sessions:'6–8', timeline:'16–24 weeks', price:'₦45,000', href:'ingrown-hairs.html', cta:'Razor bumps page'},
+        sessions:'6–8', timeline:'16–24 weeks', price:'₦45,000', href:'ingrown-hairs.html', cta:'Razor bumps protocol →'},
       {id:'dark-underarms', short:'Dark underarms', name:'Dark underarms & inner thighs', img:IMG.laser,
         cause:'Friction from clothing, shaving irritation and heat all trigger pigment production in the same places. Deodorant and bleaching creams tend to inflame the area further, which deepens the colour.',
         plan:'Stop the trigger first with laser hair removal, then treat the pigment with a course of brightening treatments and a homecare routine that does not contain hydroquinone.',
-        sessions:'6 laser + 3 skin', timeline:'20 weeks', price:'₦45,000', href:'ingrown-hairs.html', cta:'How we treat it'},
+        sessions:'6 laser + 3 skin', timeline:'20 weeks', price:'₦45,000', href:'dark-underarms.html', cta:'Dark underarms protocol →'},
       {id:'pigmentation', short:'Pigmentation', name:'Hyperpigmentation & dark spots', img:IMG.facialDark,
         cause:'Melasma, sun exposure and post-acne marks are three different problems that look similar. Which one you have determines whether it will respond quickly, slowly, or return each dry season without maintenance.',
         plan:'A written skin assessment first, naming the type. Then a staged programme of laser, prescribed topicals and daily SPF, with photographs at every review so progress is measured rather than remembered.',
-        sessions:'4–6', timeline:'12–20 weeks', price:'From ₦70,000', href:'laser-hair-removal.html', cta:'Pigmentation programme'},
+        sessions:'4–6', timeline:'12–20 weeks', price:'From ₦70,000', href:'hyperpigmentation.html', cta:'Hyperpigmentation protocol →'},
       {id:'acne', short:'Acne & scarring', name:'Acne and acne scarring', img:IMG.facial,
         cause:'Active breakouts and the texture left behind need different treatment, and treating the scarring while the acne is still active wastes money. Clogged follicles, hormones and the wrong products usually all contribute.',
         plan:'Calm the active acne with deep cleansing facials and laser acne treatment, then address the scarring and marks once the skin is stable. If it is hormonal or cystic, we will tell you it needs a dermatologist.',
-        sessions:'5+', timeline:'12–24 weeks', price:'₦55,000', href:'laser-hair-removal.html', cta:'Acne treatment'},
+        sessions:'5+', timeline:'12–24 weeks', price:'₦55,000', href:'acne-scars.html', cta:'Acne & scars protocol →'},
       {id:'stretch-marks', short:'Stretch marks', name:'Stretch marks & loose skin', img:IMG.spa,
         cause:'Rapid stretching tears the dermis, and once a mark has turned silver it is a scar rather than a pigment problem. Post-pregnancy skin laxity is a separate matter of collagen and elastin.',
         plan:'Body treatments that improve texture and tone, honestly framed: newer red and purple marks respond considerably better than old silver ones, and no treatment removes them entirely.',
-        sessions:'6–8', timeline:'3–6 months', price:'₦60,000', href:'spa-treatments.html', cta:'Body treatments'},
+        sessions:'6–8', timeline:'3–6 months', price:'₦60,000', href:'stretch-marks.html', cta:'Stretch marks protocol →'},
       {id:'fine-lines', short:'Fine lines', name:'Fine lines and volume loss', img:IMG.clinic,
         cause:'Lines form where the face moves and where support has been lost underneath. Filling a line without addressing the volume loss above it is what makes work look done rather than rested.',
         plan:'A 45-minute consultation that maps the face before anything is bought, filler placed where the support has gone, and a two-week review included in the price of every treatment.',
-        sessions:'1 + review', timeline:'12–18 months', price:'₦180,000', href:'injectables.html', cta:'Aesthetics page'},
+        sessions:'1 + review', timeline:'12–18 months', price:'₦180,000', href:'fine-lines.html', cta:'Fine lines protocol →'},
       {id:'tattoos', short:'Tattoos', name:'Unwanted tattoos', img:IMG.laser,
         cause:'Ink sits at different depths and different colours absorb different wavelengths, so black lifts readily while greens and light blues resist. Older, faded work usually clears in fewer sessions than fresh work.',
         plan:'A patch test to check how your skin responds, then staged sessions six to eight weeks apart, priced by size. We will show you what realistic fading looks like before you commit to full removal.',
-        sessions:'6–12', timeline:'9–18 months', price:'From ₦60,000', href:'laser-hair-removal.html', cta:'Tattoo removal'},
+        sessions:'6–12', timeline:'9–18 months', price:'From ₦60,000', href:'tattoo-removal.html', cta:'Tattoo removal protocol →'},
       {id:'tension', short:'Tension', name:'Back, neck and shoulder tension', img:IMG.massage,
         cause:'Desk work, Abuja traffic and carrying stress in the upper back all shorten the same muscles. It presents as tightness across the shoulders, headaches and a neck that will not turn fully.',
         plan:'Deep tissue work into the specific layer rather than general relaxation massage, with hot stone or moxibustion added where heat helps the tissue release. Monthly maintenance costs less than the fortnightly rescue.',
-        sessions:'Ongoing', timeline:'Same day relief', price:'₦25,000', href:'spa-treatments.html', cta:'Massage therapy'},
+        sessions:'Ongoing', timeline:'Same day relief', price:'₦25,000', href:'tension-relief.html', cta:'Tension relief protocol →'},
       {id:'bridal', short:'Bridal prep', name:'Bridal prep, six months out', img:IMG.makeup,
         cause:'Every treatment worth having needs time: laser needs a full growth cycle, pigmentation needs months, and filler needs settling before photographs. Booking six weeks out is what forces the compromises.',
         plan:'A month-by-month plan worked backwards from the date, with the last fortnight deliberately kept clear of anything new. Trials scheduled early enough that there is time to change your mind.',
-        sessions:'Per plan', timeline:'6 months', price:'Quoted per plan', href:'bridal.html', cta:'The six-month plan'}
+        sessions:'Per plan', timeline:'6 months', price:'Quoted per plan', href:'bridal.html', cta:'Bridal 6-month plan →'}
     ];
     return {
       isQuizStep1: s.quizStep === 1,
@@ -413,6 +421,7 @@ class Component extends DCLogic {
       quizRecTimeline: rec.timeline,
       quizRecSuitability: rec.suitability,
       quizRecPrice: rec.price,
+      quizProtocolUrl: rec.protocolUrl || 'concerns.html',
       quizBookUrl: 'book.html?service=' + encodeURIComponent(rec.title) + '&price=' + encodeURIComponent(rec.price) + '&dept=' + (rec.tag.includes('LASER') ? 'laser' : (rec.tag.includes('INJECT') ? 'aesthetics' : 'spa')),
       quizWhatsAppUrl: 'https://wa.me/2349058830888?text=' + encodeURIComponent(rec.waText),
 
