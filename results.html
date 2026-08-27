@@ -46,14 +46,16 @@
 <dc-import name="SiteNav" active="results" hint-size="100%,58px"></dc-import>
 
 <main>
-  <section style="background:#14100C;color:#FBF7F0">
-    <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px) clamp(36px,5vw,60px);display:flex;flex-direction:column;gap:20px;max-width:920px">
+  <section style="position:relative;overflow:hidden;background:#14100C;min-height:clamp(420px,58vh,600px);display:flex;align-items:flex-end">
+    <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=1600&q=80');background-size:cover;background-position:center 35%;filter:saturate(.85) contrast(1.05)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(105deg,rgba(12,9,7,.94) 0%,rgba(12,9,7,.7) 46%,rgba(12,9,7,.3) 76%,rgba(12,9,7,.62) 100%)"></div>
+    <div style="position:relative;padding:clamp(44px,7vw,88px) clamp(16px,3vw,34px);display:flex;flex-direction:column;gap:20px;max-width:960px">
       <div style="display:flex;align-items:center;gap:15px">
         <span style="width:44px;height:1px;background:#C69B54"></span>
         <span style="font-size:10.5px;letter-spacing:.28em;text-transform:uppercase;color:#C69B54">Photographed at the clinic, unretouched</span>
       </div>
       <h1 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(38px,7.4vw,92px);line-height:.96;letter-spacing:-.034em;color:#FBF7F0">Results, with the<br><span style="font-style:italic;color:#C69B54">numbers attached.</span></h1>
-      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(251,247,240,.72);max-width:620px">A before-and-after without a skin type, a session count and an elapsed time tells you nothing. Every image on this page carries all three, shot in the same light, at the same distance, against the same background.</p>
+      <p style="font-size:clamp(16px,1.5vw,19px);line-height:1.65;color:rgba(251,247,240,.75);max-width:620px">A before-and-after without a skin type, a session count and an elapsed time tells you nothing. Every image on this page carries all three, shot in the same light, at the same distance, against the same background.</p>
     </div>
   </section>
 
@@ -135,7 +137,10 @@
 
   <section style="background:#EDE5D6;border-top:1px solid #DCD0BC;border-bottom:1px solid #DCD0BC">
     <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px);display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,70px);align-items:start" data-two-col="1" data-reveal="1">
-      <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,60px);line-height:1;letter-spacing:-.03em">How to read a before and after</h2>
+      <div style="position:sticky;top:90px">
+        <span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:10px">Clinical Transparency</span>
+        <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,60px);line-height:1;letter-spacing:-.03em">How to read a<br><span style="font-style:italic;color:#A8562F">before and after.</span></h2>
+      </div>
       <div style="display:flex;flex-direction:column;gap:18px">
         <p style="font-size:17px;line-height:1.75;color:#4C463E">Lighting does more work than most treatments. A photograph taken under a window will always flatter against one taken under a ceiling light, and a clinic that changes the angle between the two shots is telling you something about the result.</p>
         <p style="font-size:17px;line-height:1.75;color:#4C463E">Ask three questions of any gallery, including this one. How many sessions produced that? How long between the two photographs? And what skin type is the client, because a result on Fitzpatrick II tells you very little about what will happen on Fitzpatrick V.</p>
