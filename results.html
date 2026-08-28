@@ -87,25 +87,25 @@
       </div>
 
       <!-- Before / After Interactive Split Container -->
-      <div style="position:relative;aspect-ratio:16/11;overflow:hidden;border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,.14);user-select:none;touch-action:none;background:#211B14" onMouseMove="{{ onSliderMove }}" onTouchMove="{{ onSliderTouchMove }}">
+      <div style="position:relative;aspect-ratio:16/11;overflow:hidden;border-radius:8px;box-shadow:0 18px 40px rgba(0,0,0,.14);user-select:none;touch-action:none;background:#211B14;cursor:ew-resize" onMouseMove="{{ onSliderMove }}" onTouchMove="{{ onSliderTouchMove }}">
         <!-- After image (Full background) -->
         <div style="position:absolute;inset:0;background-image:url('{{ sliderCase.afterImg }}');background-size:cover;background-position:center;filter:saturate(.9) contrast(1.04)">
           <span style="position:absolute;right:14px;top:14px;background:#C69B54;color:#14100C;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:6px 10px;border-radius:3px">After</span>
         </div>
-        <!-- Before image (Clipped overlay) -->
-        <div style="position:absolute;inset:0;width:{{ sliderPos }}%;overflow:hidden;border-right:2px solid #C69B54">
-          <div style="position:absolute;top:0;left:0;bottom:0;width:100%;min-width:320px;height:100%;background-image:url('{{ sliderCase.beforeImg }}');background-size:cover;background-position:center;filter:saturate(.9) contrast(1.04)">
-            <span style="position:absolute;left:14px;top:14px;background:rgba(20,16,12,.8);color:#FBF7F0;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:6px 10px;border-radius:3px">Before</span>
-          </div>
+        <!-- Before image (Pixel-perfect Clip-Path) -->
+        <div style="position:absolute;inset:0;background-image:url('{{ sliderCase.beforeImg }}');background-size:cover;background-position:center;filter:saturate(.9) contrast(1.04);clip-path:polygon(0 0, {{ sliderPos }}% 0, {{ sliderPos }}% 100%, 0 100%);border-right:2px solid #C69B54">
+          <span style="position:absolute;left:14px;top:14px;background:rgba(20,16,12,.85);color:#FBF7F0;font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:6px 10px;border-radius:3px">Before</span>
         </div>
-        <!-- Slider Handle -->
-        <div style="position:absolute;top:50%;left:{{ sliderPos }}%;transform:translate(-50%,-50%);width:36px;height:36px;background:#C69B54;color:#14100C;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.45);pointer-events:none;font-size:13px;font-weight:900">
-          ↔
+        <!-- Divider Line & Handle -->
+        <div style="position:absolute;top:0;bottom:0;left:{{ sliderPos }}%;width:2px;background:#C69B54;pointer-events:none">
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:36px;height:36px;background:#C69B54;color:#14100C;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.5);font-size:13px;font-weight:900">
+            ↔
+          </div>
         </div>
       </div>
     </div>
 
-    <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:clamp(28px,4vw,48px)">
+    <div style="display:flex;flex-wrap:wrap;gap:9px;margin-bottom:clamp(28px,4vw,48px);overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:4px">
       <sc-for list="{{ filters }}" as="f" hint-placeholder-count="5">
         <button type="button" onClick="{{ f.click }}" style="border:1px solid {{ f.border }};background:{{ f.bg }};color:{{ f.fg }};font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:13px 22px;border-radius:4px;transition:background .3s ease,color .3s ease,border-color .3s ease">{{ f.label }}</button>
       </sc-for>
@@ -137,7 +137,7 @@
 
   <section style="background:#EDE5D6;border-top:1px solid #DCD0BC;border-bottom:1px solid #DCD0BC">
     <div style="padding:clamp(48px,7vw,100px) clamp(16px,3vw,34px);display:grid;grid-template-columns:1fr;gap:clamp(20px,4vw,70px);align-items:start" data-two-col="1" data-reveal="1">
-      <div style="position:sticky;top:90px">
+      <div style="position:sticky;top:90px" data-sticky-col="1">
         <span style="font-size:10.5px;letter-spacing:.26em;text-transform:uppercase;color:#8A5A2E;font-weight:700;display:block;margin-bottom:10px">Clinical Transparency</span>
         <h2 style="font-family:'Bodoni Moda',Georgia,serif;font-weight:400;font-size:clamp(28px,5vw,60px);line-height:1;letter-spacing:-.03em">How to read a<br><span style="font-style:italic;color:#A8562F">before and after.</span></h2>
       </div>
